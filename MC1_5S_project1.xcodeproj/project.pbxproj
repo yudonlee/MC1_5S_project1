@@ -22,7 +22,6 @@
 		A7447D7427FD250A0012BBB3 /* SearchViewDivView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */; };
 		A7447D7627FD25180012BBB3 /* MyQuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */; };
 		A7447D7A27FD29050012BBB3 /* QuestionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7927FD29050012BBB3 /* QuestionDetailView.swift */; };
-		A7447D7E27FD3C2A0012BBB3 /* SegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7D27FD3C2A0012BBB3 /* SegmentedController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewDivView.swift; sourceTree = "<group>"; };
 		A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionListView.swift; sourceTree = "<group>"; };
 		A7447D7927FD29050012BBB3 /* QuestionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailView.swift; sourceTree = "<group>"; };
-		A7447D7D27FD3C2A0012BBB3 /* SegmentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 				A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */,
 				A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */,
 				A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */,
-				A7447D7D27FD3C2A0012BBB3 /* SegmentedController.swift */,
 				76AC7E4127FD213B003BC5A4 /* AnswerCardView.swift */,
 				76AC7E4327FD2177003BC5A4 /* RecentQuestionListView.swift */,
 				76AC7E4527FD2184003BC5A4 /* SearchView.swift */,
@@ -187,7 +184,6 @@
 				A7447D7027FD24EA0012BBB3 /* QuestionCardView.swift in Sources */,
 				76AC7E4227FD213B003BC5A4 /* AnswerCardView.swift in Sources */,
 				A7447D6E27FD24DB0012BBB3 /* HotQuestionListView.swift in Sources */,
-				A7447D7E27FD3C2A0012BBB3 /* SegmentedController.swift in Sources */,
 				76AC7E4427FD2177003BC5A4 /* RecentQuestionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

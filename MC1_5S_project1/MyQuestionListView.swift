@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct MyQuestionListView: View {
-    @State private var MaterialType = 0
+    @State private var myMenu = 0
+    
     var body: some View {
-        List {
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
-            Text("#익명\n sample data")
+        VStack {
+            Picker("what is your menu?", selection: $myMenu) {
+                Text("내 질문").tag(0)
+                Text("내 답변").tag(1)
+                Text("스크랩").tag(2)
+            }.pickerStyle(.segmented)
+            
+//            List(0..<50){ index in
+//                Text("#익명\n sample data")
+//            }
         }
     }
+//    init() {
+//        UITableView.appearance().backgroundColor = .white
+//    }
 }
 
 struct MyQuestionListView_Previews: PreviewProvider {
