@@ -16,6 +16,11 @@
 		76AC7E4627FD2184003BC5A4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC7E4527FD2184003BC5A4 /* SearchView.swift */; };
 		76AC7E4827FD2197003BC5A4 /* MyAnswerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC7E4727FD2197003BC5A4 /* MyAnswerListView.swift */; };
 		76AC7E4A27FD21A4003BC5A4 /* MyScrapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC7E4927FD21A4003BC5A4 /* MyScrapListView.swift */; };
+		A7447D6E27FD24DB0012BBB3 /* HotQuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */; };
+		A7447D7027FD24EA0012BBB3 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */; };
+		A7447D7227FD24F80012BBB3 /* CompletAnswerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */; };
+		A7447D7427FD250A0012BBB3 /* SearchViewDivView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */; };
+		A7447D7627FD25180012BBB3 /* MyQuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		76AC7E4527FD2184003BC5A4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		76AC7E4727FD2197003BC5A4 /* MyAnswerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnswerListView.swift; sourceTree = "<group>"; };
 		76AC7E4927FD21A4003BC5A4 /* MyScrapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrapListView.swift; sourceTree = "<group>"; };
+		A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotQuestionListView.swift; sourceTree = "<group>"; };
+		A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
+		A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletAnswerListView.swift; sourceTree = "<group>"; };
+		A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewDivView.swift; sourceTree = "<group>"; };
+		A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,11 @@
 			isa = PBXGroup;
 			children = (
 				76AC7E3327FD19D1003BC5A4 /* MC1_5S_project1App.swift */,
+				A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */,
+				A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */,
+				A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */,
+				A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */,
+				A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */,
 				76AC7E4127FD213B003BC5A4 /* AnswerCardView.swift */,
 				76AC7E4327FD2177003BC5A4 /* RecentQuestionListView.swift */,
 				76AC7E4527FD2184003BC5A4 /* SearchView.swift */,
@@ -152,12 +167,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7447D7627FD25180012BBB3 /* MyQuestionListView.swift in Sources */,
 				76AC7E4827FD2197003BC5A4 /* MyAnswerListView.swift in Sources */,
+				A7447D7227FD24F80012BBB3 /* CompletAnswerListView.swift in Sources */,
+				A7447D7427FD250A0012BBB3 /* SearchViewDivView.swift in Sources */,
 				76AC7E4627FD2184003BC5A4 /* SearchView.swift in Sources */,
 				76AC7E3627FD19D1003BC5A4 /* ContentView.swift in Sources */,
 				76AC7E4A27FD21A4003BC5A4 /* MyScrapListView.swift in Sources */,
 				76AC7E3427FD19D1003BC5A4 /* MC1_5S_project1App.swift in Sources */,
+				A7447D7027FD24EA0012BBB3 /* QuestionCardView.swift in Sources */,
 				76AC7E4227FD213B003BC5A4 /* AnswerCardView.swift in Sources */,
+				A7447D6E27FD24DB0012BBB3 /* HotQuestionListView.swift in Sources */,
 				76AC7E4427FD2177003BC5A4 /* RecentQuestionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
