@@ -41,7 +41,10 @@ private let answerCommentList: [answerComment] = [
     
 ]
 
+  
 struct CompletAnswerListView: View {
+    
+    
     @State private var questionContent = "사진 촬영 동의시 부모님 서명이 필요한가요?"
     @State private var answerLists = ["아닙니다", "맞아요 같이 서명해서 제출하면 돼요", "좋아요!", "고마워요!"]
     @State private var nameLists = ["익명1", "익명2", "닐", "파스타"]
@@ -201,6 +204,9 @@ extension UIScreen{
 
 struct CompletAnswerListView_Previews: PreviewProvider {
     static var previews: some View {
-        CompletAnswerListView()
+        Group {
+            CompletAnswerListView()
+            CompletAnswerListView()
+        }
     }
 }
