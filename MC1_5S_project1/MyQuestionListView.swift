@@ -11,16 +11,21 @@ struct MyQuestionListView: View {
     @State private var myMenu = 0
     
     var body: some View {
-        VStack {
-            Picker("what is your menu?", selection: $myMenu) {
-                Text("내 질문").tag(0)
-                Text("내 답변").tag(1)
-                Text("스크랩").tag(2)
-            }.pickerStyle(.segmented)
-            
-//            List(0..<50){ index in
-//                Text("#익명\n sample data")
-//            }
+        NavigationView {
+            VStack {
+                Picker("what menu?", selection: $myMenu) {
+                    Text("내 질문").tag(0)
+                    Text("내 답변").tag(1)
+                    Text("스크랩").tag(2)
+                }
+                .pickerStyle(.segmented)
+                .padding()
+                
+                
+//                List(0..<50){ index in
+//                    Text("#익명\n sample data")
+//                }
+            }.navigationTitle("MY")
         }
     }
 //    init() {
