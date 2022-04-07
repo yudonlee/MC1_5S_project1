@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    var postContents: [PostContent]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(postContents) { post in
+                Text(post.title)
+            }
+        }
+
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(postContents: postContentList)
     }
 }
