@@ -8,54 +8,10 @@
 import SwiftUI
 
 struct MyQuestionListView: View {
-    @State private var myMenu = 0
-    
     var body: some View {
         NavigationView {
             VStack {
-                HStack { //프로필 아이콘, 레벨, 닉네임
-                    Image("apple")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                    VStack (alignment: .leading, spacing: 10){
-                        Text("LV.1")
-                        Text("오감이")
-                    }
-                    Spacer()
-                    
-                    HStack (alignment: .top) { //검색,알림 버튼
-                        Button(action: { //검색 버튼
-                            print("검색")
-                        }){
-                            Image(systemName: "magnifyingglass")
-                        }
-                        .font(.system(size: 20))
-                        .foregroundColor(.black)
-                        
-                        Button(action: { //알림 버튼
-                            print("알림")
-                        }){
-                            Image(systemName: "bell.fill")
-                        }
-                        .font(.system(size: 20))
-                        .foregroundColor(.black)
-                        .padding(.leading)
-                    }
-                    
-                   
-                    
-                }.padding()
-                
-                Picker("what menu?", selection: $myMenu) {
-                    Text("내 질문").tag(0)
-                    Text("내 답변").tag(1)
-                    Text("스크랩").tag(2)
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                
+                profileView()
                 
                 List(questionLists){ list in
                     QuestionView(list: list)
@@ -68,6 +24,74 @@ struct MyQuestionListView: View {
 //    }
 }
 
+enum SideOfMenu: String, CaseIterable {
+    case myQuestion = "내 질문"
+    case myAnswer = "내 답변"
+    case myScrap = "스크랩"
+}
+
+//struct ChosenMenuView: View {
+//    var selectedSide: SideOfMenu
+//
+////    var body: some View {
+////        switch selectedSide {
+////            case .myQuestion:
+////
+////            case .myAnswer:
+////
+////            case .myScrap:
+////        }
+////    }
+//}
+
+struct profileView: View { //상단 프로필 화면
+    @State private var myMenu = 0
+    var body: some View {
+        HStack { //프로필 아이콘, 레벨, 닉네임
+            Image("apple")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+            VStack (alignment: .leading, spacing: 10){
+                Text("LV.1")
+                Text("오감이")
+            }
+            Spacer()
+            
+            HStack (alignment: .top) { //검색,알림 버튼
+                Button(action: { //검색 버튼
+                    print("검색")
+                }){
+                    Image(systemName: "magnifyingglass")
+                }
+                .font(.system(size: 20))
+                .foregroundColor(.black)
+                
+                Button(action: { //알림 버튼
+                    print("알림")
+                }){
+                    Image(systemName: "bell.fill")
+                }
+                .font(.system(size: 20))
+                .foregroundColor(.black)
+                .padding(.leading)
+            }
+            
+        }.padding()
+        
+        //segmented control
+        Picker("what menu?", selection: $myMenu) {
+            Text("내 질문").tag(0)
+            Text("내 답변").tag(1)
+            Text("스크랩").tag(2)
+        }
+        .pickerStyle(.segmented)
+        .padding()
+    }
+}
+
+//게시글 샘플 데이터
 let questionLists = [
     QuestionList(name: "익명", title: "사진 촬영 동의서 부모님 서명 필요한가요?", answerCount: "0"),
     QuestionList(name: "익명", title: "오늘 점심은 다들 뭐 드시나요?", answerCount: "10"),
@@ -90,7 +114,7 @@ struct QuestionView: View { //리스트 항목별 화면 구성
         HStack {
             VStack(alignment: .leading, spacing: 5) {
                 Text(list.name) //작성자 닉네임
-                Text(list.title)
+                Text(list.title) //게시글 내용
                     .bold()
             }
             Spacer()
