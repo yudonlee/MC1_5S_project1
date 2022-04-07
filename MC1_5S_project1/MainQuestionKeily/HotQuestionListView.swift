@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-// examples_QnA
-struct examplesQuestions : View {
-    var body: some View {
-        Text ("@Keily\n출입증은 어디서 수령하나요?")
-            .font(.system(size:15))
-    }
-}
 // SwitchOnBest
 struct ButtonToAsk : View {
     var body : some View {
@@ -36,7 +29,7 @@ struct HotQuestionListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Spacer()
+//                Spacer()
                 //SelectHotOrNew
                 HStack{
                     Picker("", selection: $myMenu) {
@@ -48,9 +41,13 @@ struct HotQuestionListView: View {
                     .offset(x: -23)
                     ButtonToAsk()
                 }
-            
-                List (0..<30) {_ in
-                    examplesQuestions()
+                ForEach(postContentList) {
+                    answer in
+                    VStack(alignment:.leading) {
+                        HStack {
+                            Text(answer.title)
+                        }
+                    }
                 }.searchable(text: /*@PLACEHOLDER=$text@*/.constant("")/*@END_MENU_TOKEN@*/, placement: /*@START_MENU_TOKEN@*/.automatic)
             }
         }
