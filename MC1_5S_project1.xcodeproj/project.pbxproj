@@ -16,9 +16,6 @@
 		76AC7E4627FD2184003BC5A4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC7E4527FD2184003BC5A4 /* SearchView.swift */; };
 		76AC7E4827FD2197003BC5A4 /* MyAnswerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC7E4727FD2197003BC5A4 /* MyAnswerListView.swift */; };
 		76AC7E4A27FD21A4003BC5A4 /* MyScrapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC7E4927FD21A4003BC5A4 /* MyScrapListView.swift */; };
-		A7329E9E27FE881D005005F2 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7329E9D27FE881D005005F2 /* posts.json */; };
-		A7329EA027FE8823005005F2 /* PostContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7329E9F27FE8823005005F2 /* PostContent.swift */; };
-		A7329EA227FE8827005005F2 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7329EA127FE8827005005F2 /* PostData.swift */; };
 		A7447D6E27FD24DB0012BBB3 /* HotQuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */; };
 		A7447D7027FD24EA0012BBB3 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */; };
 		A7447D7227FD24F80012BBB3 /* CompletAnswerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */; };
@@ -39,9 +36,6 @@
 		76AC7E4727FD2197003BC5A4 /* MyAnswerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnswerListView.swift; sourceTree = "<group>"; };
 		76AC7E4927FD21A4003BC5A4 /* MyScrapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrapListView.swift; sourceTree = "<group>"; };
 		76AC7E4C27FD2605003BC5A4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A7329E9D27FE881D005005F2 /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = posts.json; path = ../../../../Downloads/posts.json; sourceTree = "<group>"; };
-		A7329E9F27FE8823005005F2 /* PostContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostContent.swift; path = ../../../../Downloads/PostContent.swift; sourceTree = "<group>"; };
-		A7329EA127FE8827005005F2 /* PostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostData.swift; path = ../../../../Downloads/PostData.swift; sourceTree = "<group>"; };
 		A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotQuestionListView.swift; sourceTree = "<group>"; };
 		A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
 		A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletAnswerListView.swift; sourceTree = "<group>"; };
@@ -81,9 +75,6 @@
 		76AC7E3227FD19D1003BC5A4 /* MC1_5S_project1 */ = {
 			isa = PBXGroup;
 			children = (
-				A7329E9F27FE8823005005F2 /* PostContent.swift */,
-				A7329E9D27FE881D005005F2 /* posts.json */,
-				A7329EA127FE8827005005F2 /* PostData.swift */,
 				76AC7E3327FD19D1003BC5A4 /* MC1_5S_project1App.swift */,
 				A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */,
 				A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */,
@@ -170,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				76AC7E3B27FD19D2003BC5A4 /* Preview Assets.xcassets in Resources */,
-				A7329E9E27FE881D005005F2 /* posts.json in Resources */,
 				76AC7E3827FD19D2003BC5A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,8 +181,6 @@
 				76AC7E3627FD19D1003BC5A4 /* ContentView.swift in Sources */,
 				76AC7E4A27FD21A4003BC5A4 /* MyScrapListView.swift in Sources */,
 				76AC7E3427FD19D1003BC5A4 /* MC1_5S_project1App.swift in Sources */,
-				A7329EA027FE8823005005F2 /* PostContent.swift in Sources */,
-				A7329EA227FE8827005005F2 /* PostData.swift in Sources */,
 				A7447D7027FD24EA0012BBB3 /* QuestionCardView.swift in Sources */,
 				76AC7E4227FD213B003BC5A4 /* AnswerCardView.swift in Sources */,
 				A7447D6E27FD24DB0012BBB3 /* HotQuestionListView.swift in Sources */,

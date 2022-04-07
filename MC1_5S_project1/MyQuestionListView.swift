@@ -89,12 +89,12 @@ struct QuestionView: View { //리스트 항목별 화면 구성
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 5) {
-                Text(list.name)
+                Text(list.name) //작성자 닉네임
                 Text(list.title)
                     .bold()
             }
             Spacer()
-            Text("("+list.answerCount+")")
+            Text("("+list.answerCount+")") //댓글 개수
         }
     }
 }
