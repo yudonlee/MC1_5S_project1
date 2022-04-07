@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct MyQuestionListView: View {
+    
+    
     var body: some View {
         NavigationView {
             VStack {
                 profileView()
-                
-                List(questionLists){ list in
-                    QuestionView(list: list)
-                }
+                MyQList(postContents: postContentList)
             }
         }
     }
@@ -78,9 +77,12 @@ struct profileView: View { //상단 프로필 화면
                 .padding(.leading)
             }
             
-        }.padding()
+        }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
+            .background(Color.mint)
         
-        //segmented control
+        Spacer().frame(height: 10)
+        
+        //segmented control picker
         Picker("what menu?", selection: $myMenu) {
             Text("내 질문").tag(0)
             Text("내 답변").tag(1)
@@ -91,35 +93,32 @@ struct profileView: View { //상단 프로필 화면
     }
 }
 
-//게시글 샘플 데이터
-let questionLists = [
-    QuestionList(name: "익명", title: "사진 촬영 동의서 부모님 서명 필요한가요?", answerCount: "0"),
-    QuestionList(name: "익명", title: "오늘 점심은 다들 뭐 드시나요?", answerCount: "10"),
-    QuestionList(name: "익명", title: "기숙사에 택배 부쳐도 되나요?", answerCount: "3"),
-    QuestionList(name: "익명", title: "미로에서 코멘트 어떻게 남기나요?", answerCount: "0"),
-    QuestionList(name: "오감이", title: "프로젝트 하는데 너무 힘들어요ㅠㅠ 다들 어떻게 진행하시나요?", answerCount: "1")
-]
-
-struct QuestionList: Identifiable {
-    let id = UUID()
-    let name: String
-    let title: String
-    let answerCount: String
-}
-
-struct QuestionView: View { //리스트 항목별 화면 구성
-    var list: QuestionList
-    
+struct MyQList: View { //내 질문 리스트
+    var postContents: [PostContent]
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 5) {
-                Text(list.name) //작성자 닉네임
-                Text(list.title) //게시글 내용
-                    .bold()
-            }
-            Spacer()
-            Text("("+list.answerCount+")") //댓글 개수
+        ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
+            VStack(spacing: 15) {
+                ForEach(postContents) { post in
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(post.name) //작성자 닉네임
+                                .bold()
+                            Text(post.title) //게시글 내용
+                        }
+                        Spacer()
+                        HStack(spacing: 3) {
+                            Image(systemName: "bubble.right")
+                            Text(post.answerCount) //댓글 개수
+                        }
+                        
+                    }
+                    Rectangle() //구분선
+                        .frame(height: 0.5)
+                        .foregroundColor(.gray)
+                }
+            }.padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
         }
+        
     }
 }
 
