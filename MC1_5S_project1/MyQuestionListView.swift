@@ -13,6 +13,19 @@ struct MyQuestionListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Image("apple")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                    VStack (alignment: .leading, spacing: 10){
+                        Text("LV.1")
+                        Text("오감이")
+                    }
+                    
+                }
+                
                 Picker("what menu?", selection: $myMenu) {
                     Text("내 질문").tag(0)
                     Text("내 답변").tag(1)
@@ -25,7 +38,7 @@ struct MyQuestionListView: View {
 //                List(0..<50){ index in
 //                    Text("#익명\n sample data")
 //                }
-            }.navigationTitle("MY")
+            }
         }
     }
 //    init() {
