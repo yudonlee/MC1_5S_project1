@@ -13,7 +13,7 @@ struct MyQuestionListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
+                HStack { //프로필 아이콘, 레벨, 닉네임
                     Image("apple")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -25,6 +25,26 @@ struct MyQuestionListView: View {
                     }
                     Spacer()
                     
+                    HStack (alignment: .top) { //검색,알림 버튼
+                        Button(action: { //검색 버튼
+                            print("검색")
+                        }){
+                            Image(systemName: "magnifyingglass")
+                        }
+                        .font(.system(size: 20))
+                        .foregroundColor(.black)
+                        
+                        Button(action: { //알림 버튼
+                            print("알림")
+                        }){
+                            Image(systemName: "bell.fill")
+                        }
+                        .font(.system(size: 20))
+                        .foregroundColor(.black)
+                        .padding(.leading)
+                    }
+                    
+                   
                     
                 }.padding()
                 
