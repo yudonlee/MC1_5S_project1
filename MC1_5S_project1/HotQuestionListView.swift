@@ -15,11 +15,15 @@ struct examplesQuestions : View {
     }
 }
 // SwitchOnBest
-//struct ButtonToLists : View {
-//    var body : some View {
-//
-//    }
-//}
+struct ButtonToAsk : View {
+    var body : some View {
+        Button(action: {
+        }){
+            Text("icon")
+                .fontWeight(.bold)
+        }
+    }
+}
 //RoundedRectangle(cornerRadius: 19)
 //    .stroke(Color.gray, lineWidth: 1.5)
 //    .frame(width: 350, height: 600)
@@ -32,26 +36,22 @@ struct HotQuestionListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                //SelectedHotPage
-                Picker("", selection: $myMenu) {
-                    Text("Hot").tag(0)
-                    Text("New").tag(1)
-                }.pickerStyle(.segmented).frame(width: 300, alignment: .center)
-                
-                    .frame(height:40)
-                    .searchable(text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=$text@*/.constant("")/*@END_MENU_TOKEN@*/, placement: /*@START_MENU_TOKEN@*/.toolbar/*@END_MENU_TOKEN@*/)
+                Spacer()
+                //SelectHotOrNew
+                HStack{
+                    Picker("", selection: $myMenu) {
+                        Text("Hot").tag(0)
+                        Text("New").tag(1)
+                    }
+                    .frame(width: 250, height:40)
+                    .pickerStyle(.segmented)
+                    .offset(x: -23)
+                    ButtonToAsk()
+                }
+            
                 List (0..<30) {_ in
                     examplesQuestions()
-                }
-                //                .frame(width: 300, height: 600)
-                //                .padding(15)
-                //            .offset(x: -35.0, y: -50.0)
-                //                .border(Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2)
-                //                .cornerRadius(19.0)
-                
-                
-                
-                //            .frame(width: 350)
+                }.searchable(text: /*@PLACEHOLDER=$text@*/.constant("")/*@END_MENU_TOKEN@*/, placement: /*@START_MENU_TOKEN@*/.automatic)
             }
         }
     }
