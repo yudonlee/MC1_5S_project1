@@ -4,18 +4,17 @@
 //
 //  Created by 김원희 on 2022/04/06.
 //
+//뷰 위치
+//피커 연결
+//json 내질문, 내답변, 스크랩 골라 오기
 
 import SwiftUI
 
 struct MyQuestionListView: View {
-    
-    
     var body: some View {
-        NavigationView {
-            VStack {
-                profileView()
-                MyQList(postContents: postContentList)
-            }
+        VStack {
+            profileView()
+            MyQList(postContents: postContentList)
         }
     }
 //    init() {
@@ -29,67 +28,73 @@ enum SideOfMenu: String, CaseIterable {
     case myScrap = "스크랩"
 }
 
-//struct ChosenMenuView: View {
-//    var selectedSide: SideOfMenu
-//
-////    var body: some View {
-////        switch selectedSide {
-////            case .myQuestion:
-////
-////            case .myAnswer:
-////
-////            case .myScrap:
-////        }
-////    }
-//}
+struct ChosenMenuView: View {
+    var selectedSide: SideOfMenu
+
+    var body: some View {
+        switch selectedSide {
+            case .myQuestion:
+                MyQList(postContents: postContentList)
+            case .myAnswer:
+                MyAnswerListView(postContents: postContentList)
+            case .myScrap:
+                MyScrapListView(postContents: postContentList)
+        }
+    }
+}
 
 struct profileView: View { //상단 프로필 화면
     @State private var myMenu = 0
+    @State private var selectedSide: SideOfMenu = .myQuestion
     var body: some View {
-        HStack { //프로필 아이콘, 레벨, 닉네임
-            Image("apple")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
-                .clipShape(Circle())
-            VStack (alignment: .leading, spacing: 10){
-                Text("LV.1")
-                Text("오감이")
-            }
-            Spacer()
-            
-            HStack (alignment: .top) { //검색,알림 버튼
-                Button(action: { //검색 버튼
-                    print("검색")
-                }){
-                    Image(systemName: "magnifyingglass")
-                }
-                .font(.system(size: 20))
-                .foregroundColor(.black)
+        NavigationView {
+            VStack {
+                HStack { //프로필 아이콘, 레벨, 닉네임
+                    Image("apple")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                    VStack (alignment: .leading, spacing: 10){
+                        Text("LV.1")
+                        Text("오감이")
+                    }
+                    Spacer()
+                    
+                    HStack (alignment: .top) { //검색,알림 버튼
+                        Button(action: { //검색 버튼
+                            print("검색")
+                        }){
+                            Image(systemName: "magnifyingglass")
+                        }
+                        .font(.system(size: 20))
+                        .foregroundColor(.black)
+                        
+                        Button(action: { //알림 버튼
+                            print("알림")
+                        }){
+                            Image(systemName: "bell.fill")
+                        }
+                        .font(.system(size: 20))
+                        .foregroundColor(.black)
+                        .padding(.leading)
+                    }
+                    
+                    
+                }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
+                    .background(Color.mint)
                 
-                Button(action: { //알림 버튼
-                    print("알림")
-                }){
-                    Image(systemName: "bell.fill")
+                //segmented control picker
+                Picker("what menu?", selection: $selectedSide) {
+                    ForEach(SideOfMenu.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
                 }
-                .font(.system(size: 20))
-                .foregroundColor(.black)
-                .padding(.leading)
+                .pickerStyle(.segmented)
+                .padding()
             }
-            
-        }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
-            .background(Color.mint)
-        
-        Spacer().frame(height: 10)
-        
-        //segmented control picker
-        Picker("what menu?", selection: $myMenu) {
-            Text("내 질문").tag(0)
-            Text("내 답변").tag(1)
-            Text("스크랩").tag(2)
         }
-        .pickerStyle(.segmented)
-        .padding()
+        .frame(height: 300)
     }
 }
 
@@ -127,3 +132,4 @@ struct MyQuestionListView_Previews: PreviewProvider {
         MyQuestionListView()
     }
 }
+ 
