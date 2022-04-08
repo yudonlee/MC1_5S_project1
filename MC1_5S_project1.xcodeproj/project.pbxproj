@@ -61,6 +61,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7659646727FFC471003CD4B8 /* MainQuestionKeily */ = {
+			isa = PBXGroup;
+			children = (
+				A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */,
+				76AC7E4327FD2177003BC5A4 /* RecentQuestionListView.swift */,
+			);
+			path = MainQuestionKeily;
+			sourceTree = "<group>";
+		};
+		7659646827FFC48D003CD4B8 /* AnswerCardPasta */ = {
+			isa = PBXGroup;
+			children = (
+				A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */,
+				76AC7E4127FD213B003BC5A4 /* AnswerCardView.swift */,
+			);
+			path = AnswerCardPasta;
+			sourceTree = "<group>";
+		};
+		7659646927FFC4D1003CD4B8 /* AnswerDetailNeal */ = {
+			isa = PBXGroup;
+			children = (
+				A7447D7927FD29050012BBB3 /* QuestionDetailView.swift */,
+				A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */,
+			);
+			path = AnswerDetailNeal;
+			sourceTree = "<group>";
+		};
+		7659646A27FFC4EE003CD4B8 /* SearchViewLena */ = {
+			isa = PBXGroup;
+			children = (
+				A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */,
+				76AC7E4527FD2184003BC5A4 /* SearchView.swift */,
+			);
+			path = SearchViewLena;
+			sourceTree = "<group>";
+		};
+		7659646B27FFC505003CD4B8 /* MyListMay */ = {
+			isa = PBXGroup;
+			children = (
+				A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */,
+				76AC7E4727FD2197003BC5A4 /* MyAnswerListView.swift */,
+				76AC7E4927FD21A4003BC5A4 /* MyScrapListView.swift */,
+			);
+			path = MyListMay;
+			sourceTree = "<group>";
+		};
 		76AC7E2727FD19D1003BC5A4 = {
 			isa = PBXGroup;
 			children = (
@@ -83,17 +129,11 @@
 			children = (
 				A7329EA327FE9708005005F2 /* posts.json */,
 				76AC7E3327FD19D1003BC5A4 /* MC1_5S_project1App.swift */,
-				A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */,
-				A7447D6F27FD24EA0012BBB3 /* QuestionCardView.swift */,
-				A7447D7927FD29050012BBB3 /* QuestionDetailView.swift */,
-				A7447D7127FD24F80012BBB3 /* CompletAnswerListView.swift */,
-				A7447D7327FD250A0012BBB3 /* SearchViewDivView.swift */,
-				A7447D7527FD25180012BBB3 /* MyQuestionListView.swift */,
-				76AC7E4127FD213B003BC5A4 /* AnswerCardView.swift */,
-				76AC7E4327FD2177003BC5A4 /* RecentQuestionListView.swift */,
-				76AC7E4527FD2184003BC5A4 /* SearchView.swift */,
-				76AC7E4727FD2197003BC5A4 /* MyAnswerListView.swift */,
-				76AC7E4927FD21A4003BC5A4 /* MyScrapListView.swift */,
+				7659646727FFC471003CD4B8 /* MainQuestionKeily */,
+				7659646827FFC48D003CD4B8 /* AnswerCardPasta */,
+				7659646927FFC4D1003CD4B8 /* AnswerDetailNeal */,
+				7659646A27FFC4EE003CD4B8 /* SearchViewLena */,
+				7659646B27FFC505003CD4B8 /* MyListMay */,
 				76AC7E3527FD19D1003BC5A4 /* ContentView.swift */,
 				7659645A27FE7338003CD4B8 /* PostContent.swift */,
 				7659645E27FE79A9003CD4B8 /* PostData.swift */,
