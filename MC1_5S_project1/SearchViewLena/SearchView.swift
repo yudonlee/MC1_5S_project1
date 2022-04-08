@@ -13,7 +13,7 @@ struct SearchView: View {
     var body: some View {
         VStack {
             SearchBar(text: self.$text)
-//            SearchResultAnswerDetailView(postContents: postContentList)
+            SearchResultAnswerDetailView(postContents: postContentList)
 //            SearchResultNoAnswerDetailView(postContents: postContentList)
         }
     }
