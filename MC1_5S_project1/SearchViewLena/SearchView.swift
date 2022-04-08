@@ -11,9 +11,11 @@ struct SearchView: View {
     @State var text : String = ""
 
     var body: some View {
-        SearchBar(text: self.$text)
-        SearchResultAnswerDetailView(postContents: postContentList)
-        SearchResultNoAnswerDetailView(postContents: postContentList)
+        VStack {
+            SearchBar(text: self.$text)
+//            SearchResultAnswerDetailView(postContents: postContentList)
+//            SearchResultNoAnswerDetailView(postContents: postContentList)
+        }
     }
 }
 

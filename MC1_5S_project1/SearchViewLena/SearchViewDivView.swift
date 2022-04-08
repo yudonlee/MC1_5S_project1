@@ -11,8 +11,10 @@ struct SearchViewDivView: View {
     @State var text : String = "" // searchBar에서 텍스트 입력을 받기 위한 변수
     
     var body: some View {
-        SearchBar(text: self.$text)
-        SearchResultSectionView(postContents: postContentList)
+        VStack {
+            SearchBar(text: self.$text)
+            SearchResultSectionView(postContents: postContentList)
+        }
     }
 }
 
@@ -89,8 +91,6 @@ struct SearchResultSectionView: View {
                     .padding(.vertical, 5)
                 } // VStack
             } // ScrollView
-            
-        // 더보기 버튼
 
         }
         // border
@@ -98,8 +98,12 @@ struct SearchResultSectionView: View {
         .padding(.horizontal, 15)
         
         
-        MoreButton()
-            .padding(.bottom, 5)
+        VStack {
+            NavigationView(content: {
+                NavigationLink(destination: SearchResultAnswerDetailView(postContents: postContentList)) { MoreButton().padding(.bottom, 5)}
+            })
+        }
+
         
         Divider()
         
