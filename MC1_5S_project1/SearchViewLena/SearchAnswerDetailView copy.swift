@@ -14,7 +14,7 @@ struct SearchAnswerDetailView: View {
         VStack {
             SearchBar(text: self.$text)
             SearchResultAnswerDetailView(postContents: postContentList)
-//            SearchResultNoAnswerDetailView(postContents: postContentList)
+
         }
     }
 }
@@ -55,9 +55,6 @@ struct SearchResultAnswerDetailView: View {
     }
 }
         
-
-
-
 struct SearchAnswerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         SearchAnswerDetailView()
