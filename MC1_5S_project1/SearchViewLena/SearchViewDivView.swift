@@ -22,6 +22,8 @@ struct SearchViewDivView: View {
                 
                 SearchResultSectionNoAnswerView(postContents: postContentList)
                 
+                NavigationLink(destination: SearchNoAnswerDetailView(), label: {
+                    AnyButton(buttonText: "더보기")})
 
             } // VStack
             .navigationBarTitle("")
