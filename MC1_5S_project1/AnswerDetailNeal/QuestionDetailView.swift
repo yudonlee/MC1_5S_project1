@@ -133,7 +133,12 @@ struct QuestionDetailView: View {
                                 .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
                             Button(action: {
                                 print("scaling")
-                                mul *= 2
+                                if(scailing) {
+                                    mul *= 2
+                                } else {
+                                    mul /= 2
+                                }
+                                scailing = !(scailing)
                             }) {
                                 if(scailing) {
                                     Image(systemName: "arrow.up.backward.and.arrow.down.forward")
