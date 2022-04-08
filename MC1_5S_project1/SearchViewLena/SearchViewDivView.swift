@@ -16,17 +16,18 @@ struct SearchViewDivView: View {
                 SearchBar(text: self.$text)
                 SearchResultSectionAnsxwerView(postContents: postContentList)
                 
-                NavigationLink(destination: SearchResultAnswerDetailView(postContents: postContentList), label: { MoreButton().padding(5)}
-                )
-               
+                NavigationLink(destination: SearchView(), label: {
+                    MoreButton()})
+                
                 
                 SearchResultSectionNoAnswerView(postContents: postContentList)
+                
                 MoreButton()
                     .padding(5)
             } // VStack
             .navigationBarTitle("")
             .navigationBarHidden(true)
-        }
+        } // NavigationView
     }
 }
 
@@ -158,16 +159,14 @@ struct SearchResultSectionNoAnswerView: View {
 // 더보기 버튼
 struct MoreButton : View {
     var body : some View {
-        Button(action: {
-        }){
-            Text("더보기")
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .padding(7)
-                .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
-        }
-        .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
-        .cornerRadius(8)
+        Text("더보기")
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .padding(7)
+            .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
+            .padding(5)
+            .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
+            .cornerRadius(8)
     }
 }
 
