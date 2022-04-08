@@ -23,7 +23,7 @@ let dateFormatter: DateFormatter = {
     return formatter
 }()
 
-private struct answerComment: Identifiable {
+struct answerComment: Identifiable {
     let name: String
     let content: String
     let certified: Bool
@@ -33,7 +33,7 @@ private struct answerComment: Identifiable {
 }
 
 let currentTime = Date()
-private let answerCommentList: [answerComment] = [
+let answerCommentList: [answerComment] = [
     answerComment(name: "익명1", content: "아닙니다", certified: false, isAnonymous: true, lastUpdateTime: Date()),
     answerComment(name: "익명2", content: "맞아요 같이 서명해서 제출하면 돼요", certified: false, isAnonymous: true, lastUpdateTime: Date()),
     answerComment(name: "닐", content: "좋아요! 맞습니다.", certified: false, isAnonymous: false, lastUpdateTime: Date()),
@@ -41,28 +41,26 @@ private let answerCommentList: [answerComment] = [
     
 ]
 
-  
+
 struct CompletAnswerListView: View {
-    
-    
     @State private var questionContent = "사진 촬영 동의시 부모님 서명이 필요한가요?"
     @State private var answerLists = ["아닙니다", "맞아요 같이 서명해서 제출하면 돼요", "좋아요!", "고마워요!"]
     @State private var nameLists = ["익명1", "익명2", "닐", "파스타"]
     @State private var anonymousCount: Int = 1
+    
     var body: some View {
         VStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 19)
                 .stroke(appMainColor, lineWidth: 4)
-                .frame(width: UIScreen.screenWidth, height: 200, alignment: .center)
+                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.25, alignment: .center)
                 .overlay(
                     HStack(alignment: .top){
                         Text("Q.")
                             .foregroundColor(appMainColor)
                             .fontWeight(.bold)
-//                            .multilineTextAlignment(.leading)
                         Text("\(questionContent)")
                             .multilineTextAlignment(.leading)
-
+                        
                     }
                 )
             
@@ -72,78 +70,43 @@ struct CompletAnswerListView: View {
             
             Spacer()
             
-//            List rounded rectangle
-            
-            
-//            Text("답변들")
-//                .multilineTextAlignment(.leading)
-//            RoundedRectangle(cornerRadius: 19)
-//                .stroke(appMainColor, lineWidth: 4)
-//                .frame(width: UIScreen.screenWidth, height: 400, alignment: .center)
-            
-//            NavigationView {
-                List {
-                    Section(header: HStack{
-                        Text("답변들")
-                        Image(systemName: "flame.fill")
-                    }
-                        .foregroundColor(appMainColor)
-                        .font(.headline)
-                            
-                    )
-                    {
-                        
-                        ForEach(answerCommentList) { answer  in
-                            VStack(alignment:.leading) {
-                                HStack{
-                                    Image(systemName: "applelogo")
-                                    Text(answer.name)
-//                                    if(answer.isAnonymous) {
-//                                        Text("익명 \(anonymousCount)")
-//                                        anonymousCount += 1
-//
-//                                    } else {
-//                                        Text(answer.name)
-//                                    }
-                                    
-                                    Spacer()
-                                    Button("수정") {
-                                        print("수정")
-                                    }
-                                    Button("삭제") {
-                                        print("delete")
-                                    }
-                                }
-                                Text("\(answer.content)")
-                                    .frame(height: 50)
-                                Text(dateFormatter.string(from: answer.lastUpdateTime))
-                                    .frame(alignment: .leading)
-                            }
-                        }
-//                        .listRowBackground(appMainColor)
-                    }
+            List {
+                Section(header: HStack{
+                    Text("답변들")
+                    Image(systemName: "flame.fill")
                 }
-                .listStyle(InsetGroupedListStyle())
-//                .onAppear{
-//                    UITableView.appearance().backgroundColor = .clear
-//                }
-
+                    .foregroundColor(appMainColor)
+                    .font(.headline)
+                        
+                )
+                {
+                    
+                    ForEach(answerCommentList) { answer  in
+                        VStack(alignment:.leading) {
+                            HStack{
+                                Image(systemName: "applelogo")
+                                Text(answer.name)
+                                
+                                Spacer()
+                                Button("수정") {
+                                    print("수정")
+                                }
+                                Button("삭제") {
+                                    print("delete")
+                                }
+                            }
+                            Text("\(answer.content)")
+                                .frame(height: 50)
+                            Text(dateFormatter.string(from: answer.lastUpdateTime))
+                                .frame(alignment: .leading)
+                        }
+                    }
+                    
+                }
+            }
+            .listStyle(InsetGroupedListStyle())
+            
             HStack(alignment: .center){
-//                Button("수정") {
-//                    print("수정")
-//                }
-//                RoundedRectangle(cornerRadius: 19)
-//                    .foregroundColor(appMainColor)
-////                .foregroundColor(.white)
-//                .padding()
-//                .overlay(
-//                    Button("수정") {
-//                        print("수정")
-//                    }
-//                        .foregroundColor(.white)
-////                    RoundedRectangle(cornerRadius: 19)
-////                        .foregroundColor(appMainColor)
-//                )
                 
                 Button("수정"){
                     print("s")
@@ -155,51 +118,29 @@ struct CompletAnswerListView: View {
                     appMainColor
                 )
                 .cornerRadius(19)
-//                Spacer()
+                //                Spacer()
                 Button("삭제"){
                     print("s")
                 }
-                           .font(.title)
-                           .padding(7)
-                           .foregroundColor(.white)
-                           .background(
-                            appMainColor
-                           )
-//                           .overlay(starOverlay, alignment: .topTrailing)
-//                           .foregroundColor(.white)
-                           .cornerRadius(19)
-//                Button("삭제") {
-//                    print("삭제")
-//                }
-//                .padding()
-//                .overlay(
-//                    RoundedRectangle(cornerRadius: 19)
-//                        .foregroundColor(appMainColor)
-//                                      .stroke(Color.mint, lineWidth: 4)
-//
-//                )
-            
-            }
-            
+                .font(.title)
+                .padding(7)
+                .foregroundColor(.white)
+                .background(
+                    appMainColor
+                )
+                .cornerRadius(19)
                 
-//            Text("사진 촬영 동의시 부모님 서명이")
-//                .padding(50)
-//                .overlay(
-//                    RoundedRectangle(cornerRadius: 19)
-//                        .stroke(Color.mint, lineWidth: 4)
-//
-//    //                    .frame(width: UIScreen.screenWidth, height: 50, alignment: .center)
-//                )
-//            .frame(width: 400, height: 200, alignment: .center)
+            }
             
         }
     }
 }
 
+
 extension UIScreen{
-   static let screenWidth = UIScreen.main.bounds.size.width
-   static let screenHeight = UIScreen.main.bounds.size.height
-   static let screenSize = UIScreen.main.bounds.size
+    static let screenWidth = UIScreen.main.bounds.size.width
+    static let screenHeight = UIScreen.main.bounds.size.height
+    static let screenSize = UIScreen.main.bounds.size
 }
 
 struct CompletAnswerListView_Previews: PreviewProvider {

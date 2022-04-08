@@ -9,9 +9,10 @@ import Foundation
 import SwiftUI
 
 struct PostContent: Codable, Identifiable {
-    struct Answer: Codable {
+    struct Answer: Codable, Identifiable {
         let name: String
         let contents: String
+        var id: String { name }
     }
     
     let title: String
