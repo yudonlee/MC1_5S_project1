@@ -10,9 +10,10 @@ import SwiftUI
 
 struct QuestionDetailView: View {
     //    @State private var postContent
-    @State var mul: Double = 2.0
+    @State var mul: Double = 0.5
     @State var index: Int
     @State var scailing: Bool = true
+    @State private var alsoQuestionable: Bool = false
     @State private var questionContent = "사진 촬영 동의시 부모님 서명이 필요한가요?"
     @State private var answerLists = ["아닙니다", "맞아요 같이 서명해서 제출하면 돼요", "좋아요!", "고마워요!"]
     @State private var nameLists = ["익명1", "익명2", "닐", "파스타"]
@@ -47,13 +48,31 @@ struct QuestionDetailView: View {
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.leading)
                             //ScrollView로 이것도 바꿔야하나??? 아니 이게 웹페이지라면 그냥 바로 할 수 있을것 같기도 한데!!
-                            Text("\(postContentList[index].title) ")
+                            Text("형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래형읠위하논래")
+//                            Text("\(postContentList[index].title) ")
                                 .multilineTextAlignment(.leading)
                                 .fixedSize(horizontal: false, vertical: true)
-                                .padding(EdgeInsets(top: 10, leading: 0, bottom: 5, trailing: 0))
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
                             
                         }
                         .padding(EdgeInsets(top: 10, leading: 0, bottom: 5, trailing: 0))
+                        Spacer()
+                        HStack {
+                            Toggle(isOn: $alsoQuestionable)
+                            {
+                                Label("나도 궁금해요", systemImage: "checkmark.square")
+                            }
+                            .toggleStyle(.button)
+                            Spacer()
+                            if(postContentList[index].answerCountToInt > 0) {
+                                Image(systemName: "bubble.right.fill")
+                            } else {
+                                Image(systemName: "bubble.right")
+                            }
+                            Text(postContentList[index].answerCount)
+                            
+                        }
+                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 10, trailing: 10))
                         
                         
                     }
@@ -129,7 +148,7 @@ struct QuestionDetailView: View {
                     .frame(width: UIScreen.screenWidth * (2.5 / 3), height: UIScreen.screenHeight * 0.25 * mul, alignment: .center)
                     .overlay(
                         HStack {
-                            TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                            TextField("답변을 입력하시오", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
                                 .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
                             Button(action: {
                                 print("scaling")

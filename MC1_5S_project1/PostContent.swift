@@ -20,6 +20,11 @@ struct PostContent: Codable, Identifiable {
     let index: String
     let certifiedUser: Bool
     let answerCount: String
+    
+    var answerCountToInt: Int {
+        return Int(answerCount) ?? 0
+    }
+    
     let answer: [Answer]
     var id: String { name }
     
