@@ -17,9 +17,7 @@ struct ButtonToAsk : View {
         }
     }
 }
-//RoundedRectangle(cornerRadius: 19)
-//    .stroke(Color.gray, lineWidth: 1.5)
-//    .frame(width: 350, height: 600)
+
 struct HotQuestionListView: View {
     @State private var myMenu = 0
     init() {
@@ -29,7 +27,7 @@ struct HotQuestionListView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                Spacer()
+                Spacer()
                 //SelectHotOrNew
                 HStack{
                     Picker("", selection: $myMenu) {
@@ -41,14 +39,25 @@ struct HotQuestionListView: View {
                     .offset(x: -23)
                     ButtonToAsk()
                 }
-                ForEach(postContentList) {
-                    answer in
-                    VStack(alignment:.leading) {
-                        HStack {
-                            Text(answer.title)
+                ScrollView(.vertical) {
+                    ForEach(postContentList) {
+                        answer in
+                        VStack(alignment:.leading) {
+                            HStack(spacing: 3) {
+                                Text("[\(answer.name)]\t" + answer.title)
+                                Spacer()
+                                Image(systemName: "bubble.right")
+                                Text(answer.answerCount) //댓글 개수
+                            }
+                            Divider()
                         }
-                    }
-                }.searchable(text: /*@PLACEHOLDER=$text@*/.constant("")/*@END_MENU_TOKEN@*/, placement: /*@START_MENU_TOKEN@*/.automatic)
+                    }.searchable(text: /*@PLACEHOLDER=$text@*/.constant("")/*@END_MENU_TOKEN@*/, placement: /*@START_MENU_TOKEN@*/.automatic)
+                        .padding(.all, 15)
+                        
+                }
+                // border
+                .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
+                .padding([.leading, .bottom, .trailing], 15)
             }
         }
     }
