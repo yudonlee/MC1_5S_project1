@@ -51,8 +51,8 @@ struct CompletAnswerListView: View {
     var body: some View {
         VStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 19)
-                .stroke(appMainColor, lineWidth: 4)
-                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.25, alignment: .center)
+                .stroke(appMainColor, lineWidth: 1)
+                .frame(width: UIScreen.screenWidth * 0.95, height: UIScreen.screenHeight * 0.25, alignment: .center)
                 .overlay(
                     HStack(alignment: .top){
                         Text("Q.")

@@ -24,6 +24,10 @@ struct PostContent: Codable, Identifiable {
     var answerCountToInt: Int {
         return Int(answerCount) ?? 0
     }
+//    마지막 이름을 통해서 divider 하지 않도록 하기
+    var lastAnswerName: String {
+        return answer[answerCountToInt - 1].name
+    }
     
     let answer: [Answer]
     var id: String { name }
