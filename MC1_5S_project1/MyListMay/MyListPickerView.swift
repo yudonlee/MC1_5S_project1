@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MyListPickerView: View {
+    
+    @State var searchText = ""
+    
     @State private var selectedSide: SideOfMenu = .myQues
     var body: some View {
         NavigationView {

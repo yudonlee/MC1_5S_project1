@@ -8,52 +8,55 @@
 import SwiftUI
 
 struct MyProfileView: View {
-    @State private var showModal = false
+    @State private var showNoti = false
     
     var body: some View {
-        HStack { //프로필 아이콘, 레벨, 닉네임
-            Image("apple")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
-                .clipShape(Circle())
-            VStack (alignment: .leading, spacing: 10){
-                Text("LV.1")
-                Text("오감이")
-            }
-            Spacer()
-
-            HStack (alignment: .top) { //검색,알림 버튼
-                Button(action: { //검색 버튼
-                    print("검색")
-                }){
-                    Image(systemName: "magnifyingglass")
+        VStack {
+            HStack { //프로필 아이콘, 레벨, 닉네임
+                Image("apple")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
+                VStack (alignment: .leading, spacing: 10){
+                    Text("LV.1")
+                    Text("오감이")
                 }
-                .font(.system(size: 20))
-                .foregroundColor(.black)
+                Spacer()
 
-                Button(action: { //알림 버튼
-                    print("알림")
-                    self.showModal = true
-                }){
-                    Image(systemName: "bell.fill")
+                HStack (alignment: .top) { //검색,알림 버튼
+    //                Button(action: { //검색 버튼
+    //                    print("검색")
+    //                }){
+    //                    Image(systemName: "magnifyingglass")
+    //                }
+    //                .font(.system(size: 20))
+    //                .foregroundColor(.black)
+
+                    Button(action: { //알림 버튼
+                        print("알림")
+                        self.showNoti = true
+                    }){
+                        Image(systemName: "bell.fill")
+                    }
+                    .sheet(isPresented: self.$showNoti) {
+                        NotiView()
+                    }
+                    .font(.system(size: 20))
+                    .foregroundColor(.black)
+                    .padding(.trailing)
                 }
-                .sheet(isPresented: self.$showModal) {
-                    NotiView()
-                }
-                .font(.system(size: 20))
-                .foregroundColor(.black)
-                .padding(.leading)
-            }
-
-
-        }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
-            .background(Color.mint)
+            }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
+                .background(Color.mint)
+            
+            Searching()
+        }
+        
         
     }
 }
 
-struct NotiView: View {
+struct NotiView: View { //알림 버튼 클릭 시 보이는 modal view
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
@@ -68,7 +71,24 @@ struct NotiView: View {
     }
 }
 
-
+struct Searching: View { //마이페이지 검색창
+    @State var searchText = ""
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(Color("LightGray"))
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("내질문/내답변/스크랩 검색", text: $searchText)
+            }
+            .foregroundColor(.gray)
+            .padding()
+        }
+        .frame(height: 40)
+        .cornerRadius(13)
+    }
+}
 
 struct MyProfileView_Previews: PreviewProvider {
     static var previews: some View {
