@@ -2,7 +2,7 @@
 //  MyScrapListView.swift
 //  MC1_5S_project1
 //
-//  Created by yudonlee on 2022/04/06.
+//  Created by 김원희 on 2022/04/10.
 //
 
 import SwiftUI
@@ -45,3 +45,4 @@ struct MyScrapListView_Previews: PreviewProvider {
         MyScrapListView(postContents: postContentList)
     }
 }
+
