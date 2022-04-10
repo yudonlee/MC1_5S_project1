@@ -18,10 +18,10 @@ struct MyListPickerView: View {
                     }
                 }.pickerStyle(.segmented)
                     .padding()
-                    .background(Color.brown)
                 
                 ChosenView(selectedSide: selectedSide)
             }
+            .navigationBarTitle("") .navigationBarHidden(true)
         }
     }
 }
