@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyProfileView: View {
+    @State private var showModal = false
+    
     var body: some View {
         HStack { //프로필 아이콘, 레벨, 닉네임
             Image("apple")
@@ -32,8 +34,12 @@ struct MyProfileView: View {
 
                 Button(action: { //알림 버튼
                     print("알림")
+                    self.showModal = true
                 }){
                     Image(systemName: "bell.fill")
+                }
+                .sheet(isPresented: self.$showModal) {
+                    NotiView()
                 }
                 .font(.system(size: 20))
                 .foregroundColor(.black)
@@ -46,6 +52,23 @@ struct MyProfileView: View {
         
     }
 }
+
+struct NotiView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var body: some View {
+        Group {
+            Text("알림 화면")
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "clear")
+            }
+        }
+    }
+}
+
+
 
 struct MyProfileView_Previews: PreviewProvider {
     static var previews: some View {
