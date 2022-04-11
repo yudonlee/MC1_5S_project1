@@ -18,13 +18,14 @@ struct SearchViewDivView: View {
                 SearchResultSectionAnswerView()
                 
                 NavigationLink(destination: SearchAnswerDetailView(), label: {
-                    AnyButton(buttonText: "더보기")})
+                    AnyButton(buttonText: "더보기")}
+                )
                 
                 SearchResultSectionNoAnswerView()
                 
                 NavigationLink(destination: SearchNoAnswerDetailView(), label: {
                     AnyButton(buttonText: "더보기")})
-                
+                .navigationBarTitleDisplayMode(.inline)
             } // VStack
             .navigationBarTitle("")
             .navigationBarHidden(true) // 네비게이션 상단 바 없애기
@@ -157,11 +158,21 @@ struct QuestionContentText : View {
     @State var post: PostContent
     var body: some View {
         HStack {
-            Text("#\(post.name) \n \(post.title) (\(post.answerCount))")
-                .foregroundColor(.black)
-                .multilineTextAlignment(.leading)
+            VStack(alignment: .leading, spacing: 10) {
+                Text(post.name) //작성자 닉네임
+                    .bold()
+                Text(post.title) //게시글 내용
+            }
             Spacer()
-        }
+            HStack(spacing: 3) {
+                Image(systemName: "bubble.right")
+                Text(post.answerCount) //댓글 개수
+            }
+
+        } // HStack
+        .foregroundColor(.black)
+        .multilineTextAlignment(.leading)
+    Spacer()
     }
 }
 
@@ -186,7 +197,13 @@ struct SearchViewDivView_Previews: PreviewProvider {
     }
 }
 
+extension UINavigationController: ObservableObject, UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
 
-
-
-
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
+    }
+}

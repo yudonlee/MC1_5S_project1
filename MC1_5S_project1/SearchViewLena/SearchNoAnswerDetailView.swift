@@ -9,11 +9,15 @@ import SwiftUI
 
 struct SearchNoAnswerDetailView: View {
     @State var text : String = ""
-
+    
     var body: some View {
-        VStack {
-            SearchBar(text: self.$text)
-            SearchResultNoAnswerDetailView(postContents: postContentList)
+        NavigationView {
+            VStack {
+                SearchBar(text: self.$text)
+                SearchResultNoAnswerDetailView(postContents: postContentList)
+            }
+            .navigationTitle("")
+            .navigationBarHidden(true)
         }
     }
 }
@@ -37,12 +41,14 @@ struct SearchResultNoAnswerDetailView: View {
             ScrollView(.vertical) {
                 VStack {
                     ForEach(postContents) { post in
-                        HStack {
-                            Text("#\(post.name) \n \(post.title) (0)")
-                            Spacer()
-                        }
+                        let post_index = Int(post.index) ?? 0
+                        NavigationLink(destination: QuestionDetailView(index: post_index-1)) {QuestionContentText(post: post)
+                        }.navigationBarTitleDisplayMode(.inline)
+                        
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.leading)
                         Divider()
-                    }
+                    } // Loop
                     .padding(.horizontal, 15)
                     .padding(.vertical, 5)
                 } // VStack
@@ -59,3 +65,4 @@ struct SearchNoAnswerDetailView_Previews: PreviewProvider {
         SearchNoAnswerDetailView()
     }
 }
+
