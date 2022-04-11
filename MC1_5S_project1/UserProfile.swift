@@ -27,7 +27,11 @@ class UserInformation {
     static let loginUser: UserInformation = UserInformation()
     var name: String?
     var password: String?
+<<<<<<< HEAD
     var data: UserProfile?
+=======
+    var level: Int?
+>>>>>>> 7c23cdf231ae1ba1bba61f0b7ca25c4f941c5a40
     
     func isPasswordRight(id: String, inputPassword: String) -> Bool {
         for user in userProfileList {
@@ -41,3 +45,6 @@ class UserInformation {
         return false
     }
 }
+
+
+

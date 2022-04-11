@@ -13,7 +13,10 @@ struct ButtonToAsk : View {
         Button(action: {
         }){
             Image(systemName: "square.and.pencil")
+                .frame(width: 50.0)
                 .tint(.gray)
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
                 
         }
     }
@@ -39,10 +42,14 @@ struct QuestionListView: View {
                     
                     ButtonToAsk()
                         .padding(.trailing)
+                        
                     
                 }
                 
                 ChosenHotOrNew(selectedSide: selectedSide)
+//                NavigationLink(destination: SearchNoAnswerDetailView(), label: {
+//                    AnyButton(buttonText: "더보기")})
+//                .navigationBarTitleDisplayMode(.inline)
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
