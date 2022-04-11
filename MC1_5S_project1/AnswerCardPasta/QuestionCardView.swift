@@ -22,7 +22,7 @@ struct QuestionCardView: View {
                     .padding(15)
                 
                 TextEditor(text: $comment)
-                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                    .padding(EdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 25))
                     .multilineTextAlignment(.leading)
                     .overlay(
                         RoundedRectangle(cornerRadius: 19)
@@ -31,7 +31,12 @@ struct QuestionCardView: View {
                     )
             }
             Button(action: {
-                print("버튼 누름!")
+                // certified user 인지 아닌 지 checkbox로 받기
+                // anonymous인지 아닌지 checkbox로 받기
+                let comment_input = String(comment)
+                let name = UserInformation.loginUser.name ?? ""
+                let created_at = Date()
+                addNewContent(title: comment_input, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: false, answerCount: "0")
             }){
                 Text("완료")
                     .fontWeight(.bold)

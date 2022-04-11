@@ -35,16 +35,13 @@ func load<T: Decodable>(_ filename: String) -> T {
     
 }
 
-func addNewContent(comment: String,
-                   name: String, certifiedUser: Bool, isAnonymous: Bool) {
-    let index = String(postContentList.count)
-    var new_post:PostContent = PostContent(
-        answer: [Answer]()
-        title: comment,
-        name: "미정",
-        index: index,
-        certifiedUser: certifiedUser,
-        isAnonymous: isAnonymous,
-        answerCount: "0")
+func addNewContent(title: String, name: String,
+                   created_at: Date, updated_at: Date, certifiedUser: Bool,
+                   isAnonymous: Bool, answerCount:String) {
+    let index: String = String(postContentList.count)
+    let new_post:PostContent = PostContent(
+        title: title, name: name, index:index,
+        created_at: created_at, updated_at: updated_at, certifiedUser: certifiedUser,
+        isAnonymous: isAnonymous, answerCount: "0", answer: [])
     postContentList.append(new_post)
 }
