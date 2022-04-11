@@ -15,7 +15,7 @@ struct PostContent: Codable, Identifiable {
         let updated_at: Date
         let isAnonymous: Bool
         let contents: String
-        var id: String { name }
+        let id = UUID()
     }
     let title: String
     let name: String
@@ -24,7 +24,7 @@ struct PostContent: Codable, Identifiable {
     let updated_at: Date
     let certifiedUser: Bool
     let isAnonymous: Bool
-    let answerCount: String
+    var answerCount: String
     
     var answerCountToInt: Int {
         return Int(answerCount) ?? 0
@@ -34,7 +34,9 @@ struct PostContent: Codable, Identifiable {
         return answer[answerCountToInt - 1].name
     }
     
-    let answer: [Answer]
+    var answer: [Answer]
+// change let to var
+//    let answer: [Answer]
     let id = UUID()
     
     enum CodingKeys: CodingKey {

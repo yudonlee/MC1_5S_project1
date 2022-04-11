@@ -35,6 +35,7 @@ class UserInformation {
             if id == user.name, inputPassword == user.password {
                 self.name = id
                 self.password = inputPassword
+                self.level = user.level
                 self.data = user
                 return true
             }

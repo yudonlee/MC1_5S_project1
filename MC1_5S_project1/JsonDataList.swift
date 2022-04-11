@@ -45,3 +45,13 @@ func addNewContent(title: String, name: String,
         isAnonymous: isAnonymous, answerCount: "0", answer: [])
     postContentList.append(new_post)
 }
+
+
+//func addNewAnswer(name: String, created_at: Date, updated_at: Date, certifiedUser: Bool,
+func addNewAnswer(answerComment: String, name: String, created_at: Date, updated_at: Date, isAnonymous: Bool, index: Int) {
+    let newAnswerComment: PostContent.Answer = PostContent.Answer(name: name, created_at: created_at, updated_at: updated_at, isAnonymous: isAnonymous, contents: answerComment)
+    postContentList[index].answer.append(newAnswerComment)
+    postContentList[index].answerCount = "\(postContentList[index].answer.count)"
+    
+    
+}

@@ -22,10 +22,12 @@ struct QuestionDetailView: View {
     @State private var userReplyText: String?
     
     
+//    익명만들기 
+    @State var isAnswerAnonymous: Bool = false
+    
 //    what is Focus State?
 //    property wrappers의 도입배경
     @FocusState var isInputActive: Bool
-    
     //    @Binding private var bindingTest: String = "Placeholder"
     //    Binding keyword가 되지 않는 이유는?
     
@@ -143,10 +145,19 @@ struct QuestionDetailView: View {
                 Text("답변하기")
                     .font(.title)
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0))
+                
                 Spacer()
+                Toggle(isOn: $isAnswerAnonymous)
+                {
+                    Label("익명", systemImage: "checkmark.square")
+                }
+                .toggleStyle(.button)
                 Button("완료") {
                     print("complete")
-                    print(userReplyText ?? "")
+                    if let name = UserInformation.loginUser.name {
+                        print("newAnswer")
+                        addNewAnswer(answerComment: answerTextField, name: name ,created_at: Date(), updated_at: Date(), isAnonymous: isAnswerAnonymous, index: index)
+                    }
                 }
                 .padding(7)
                 .foregroundColor(.white)
