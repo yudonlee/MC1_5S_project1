@@ -74,7 +74,7 @@ struct ChosenView: View {
     var body: some View {
         switch selectedSide {
         case .myQues:
-            MyQuestionListView(postContents: postContentList)
+            MyQuestionListView()
         case .myAns:
             MyAnswerListView(postContents: postContentList)
         case .myScr:

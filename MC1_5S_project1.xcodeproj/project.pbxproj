@@ -33,6 +33,7 @@
 		A7447D7A27FD29050012BBB3 /* QuestionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D7927FD29050012BBB3 /* QuestionDetailView.swift */; };
 		BFFC6BF42803AD49001AD406 /* SearchAnswerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC6BF32803AD49001AD406 /* SearchAnswerDetailView.swift */; };
 		BFFC6BF62803AD57001AD406 /* SearchNoAnswerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC6BF52803AD57001AD406 /* SearchNoAnswerDetailView.swift */; };
+		BFFC6BF8280407BE001AD406 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC6BF7280407BE001AD406 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		A7447D7927FD29050012BBB3 /* QuestionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailView.swift; sourceTree = "<group>"; };
 		BFFC6BF32803AD49001AD406 /* SearchAnswerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAnswerDetailView.swift; sourceTree = "<group>"; };
 		BFFC6BF52803AD57001AD406 /* SearchNoAnswerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNoAnswerDetailView.swift; sourceTree = "<group>"; };
+		BFFC6BF7280407BE001AD406 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				76AC7E3327FD19D1003BC5A4 /* MC1_5S_project1App.swift */,
+				BFFC6BF7280407BE001AD406 /* MainTabView.swift */,
 				7659646727FFC471003CD4B8 /* MainQuestionKeily */,
 				7659646827FFC48D003CD4B8 /* AnswerCardPasta */,
 				7659646927FFC4D1003CD4B8 /* AnswerDetailNeal */,
@@ -256,6 +259,7 @@
 				76AC7E3627FD19D1003BC5A4 /* ContentView.swift in Sources */,
 				76AC7E3427FD19D1003BC5A4 /* MC1_5S_project1App.swift in Sources */,
 				7659645B27FE7338003CD4B8 /* PostContent.swift in Sources */,
+				BFFC6BF8280407BE001AD406 /* MainTabView.swift in Sources */,
 				A7198E1C2802647C00AF823A /* MyQuestionListView.swift in Sources */,
 				1500D8922803F540003D2F8D /* allQuestionView.swift in Sources */,
 				A7198E20280264B700AF823A /* MyPageView.swift in Sources */,
