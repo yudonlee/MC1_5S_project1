@@ -11,7 +11,6 @@ struct MyProfileView: View {
     @State private var showNoti = false
     
     var body: some View {
-//        NavigationView {
             VStack {
                 HStack { //프로필 아이콘, 레벨, 닉네임
                     Image("apple")
@@ -25,15 +24,7 @@ struct MyProfileView: View {
                     }
                     Spacer()
 
-                    HStack (alignment: .top) { //검색,알림 버튼
-        //                Button(action: { //검색 버튼
-        //                    print("검색")
-        //                }){
-        //                    Image(systemName: "magnifyingglass")
-        //                }
-        //                .font(.system(size: 20))
-        //                .foregroundColor(.black)
-
+                    HStack (alignment: .top) {
                         Button(action: { //알림 버튼
                             print("알림")
                             self.showNoti = true
@@ -50,19 +41,6 @@ struct MyProfileView: View {
                 }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
                     .background(Color.mint)
             }
-//            .navigationBarTitle("") .navigationBarHidden(true)
-//        }
-//        .toolbar {
-//            if searching {
-//                Button("Cancel") {
-//                    searchText = ""
-//                    withAnimation {
-//                        searching = false
-//                        UIApplication.shared.dismissKeyboard()
-//                    }
-//                }
-//            }
-//        }
     }
 }
 
