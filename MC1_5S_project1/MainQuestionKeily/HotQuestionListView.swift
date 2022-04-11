@@ -12,8 +12,7 @@ struct ButtonToAsk : View {
     var body : some View {
         Button(action: {
         }){
-            Text("icon")
-                .fontWeight(.bold)
+            Image(systemName: "square.and.pencil")
         }
     }
 }
@@ -52,13 +51,15 @@ struct HotQuestionListView: View {
                             Divider()
                         }
                     }.searchable(text: /*@PLACEHOLDER=$text@*/.constant("")/*@END_MENU_TOKEN@*/, placement: /*@START_MENU_TOKEN@*/.automatic)
-                        .padding(.all, 15)
+                    .padding(.all, 15)
                         
                 }
                 // border
                 .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
                 .padding([.leading, .bottom, .trailing], 15)
             }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
     }
 }
