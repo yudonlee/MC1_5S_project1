@@ -34,8 +34,8 @@ struct AnswerCardView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("질문 카드")
-                    .font(.system(size: 15, design: .default))
+//                Text("질문 카드")
+//                    .font(.system(size: 15, design: .default))
                 ScrollView(.horizontal){
                     HStack{
                         ForEach(postContentList){
@@ -47,13 +47,17 @@ struct AnswerCardView: View {
                         }
                     }
                 }
-                ZStack{
-                    RoundedRectangle(cornerRadius: 19)
-                        .stroke(MINTCOLOR, lineWidth: 2)
-                        .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/2, alignment: .center)
-                    TextField( "답변을 입력하세요", text: $comment)
-                }
-            }
+//                ZStack{
+                    TextEditor(text: $comment)
+                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                        .multilineTextAlignment(.leading)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 19)
+                                .stroke(MINTCOLOR, lineWidth: 2)
+                                .frame(width: UIScreen.screenWidth*0.95, height: UIScreen.screenHeight/2, alignment: .center)
+                        )
+//                }
+            }.navigationBarTitle("질문 카드").navigationBarHidden(true)
         }
     }
 }
@@ -61,7 +65,7 @@ struct AnswerCardView: View {
 struct AnswerCardView_Previews: PreviewProvider {
     static var previews: some View {
         AnswerCardView()
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.portrait)
         QuestionCard(post: postContentList[0])
     }
 }
