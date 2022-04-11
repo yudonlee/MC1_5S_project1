@@ -13,10 +13,14 @@ struct MyListPickerView: View {
     @State var searching = false
     
     @State private var selectedSide: SideOfMenu = .myQues
+    @State var text : String = ""
+    
     var body: some View {
         NavigationView {
             VStack {
-                Searching(searchText: $searchText, searching: $searching)
+                Searching(text: $searchText)
+                    .padding(.top, -10)
+                    .padding(15)
                 
                 Picker("Choose a menu", selection: $selectedSide) {
                     ForEach(SideOfMenu.allCases, id: \.self) {
@@ -27,40 +31,52 @@ struct MyListPickerView: View {
                 
                 ChosenView(selectedSide: selectedSide)
             }
-            .navigationBarTitle("") .navigationBarHidden(true)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
     }
 }
 
-struct Searching: View { //마이페이지 검색창
-    @Binding var searchText: String
-    @Binding var searching: Bool
+struct Searching: View {
+    @Binding var text: String
+    @State private var isEditing = false
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(Color("LightGray"))
+        
+        HStack {
+            TextField("내질문/내답변/스크랩 검색", text: $text)
+                .padding(7)
+                .padding(.horizontal, 25)
+                .background(.white)
+                .cornerRadius(8)
+                .padding(.horizontal, 10)
+                .onTapGesture {
+                    self.isEditing = true
+                }
+            
+        } // Hstack
+        .overlay(
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("내질문/내답변/스크랩 검색", text: $searchText) { startEditing in
-                    if startEditing {
-                        withAnimation {
-                            searching = true
-                        }
-                    }
-                } onCommit: {
-                    withAnimation {
-                        searching = false
+                    .foregroundColor(.gray)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 8)
+                
+                if isEditing {
+                    Button(action: {
+                        self.text = ""
+                    }) {
+                        Image(systemName: "multiply.circle.fill")
+                            .foregroundColor(.gray)
+                            .padding(.trailing, 8)
                     }
                 }
-            }
-            .foregroundColor(.gray)
-            .padding()
-        }
-        .frame(height: 40)
-        .cornerRadius(13)
+            } // HStack
+        ) //overlay
     }
 }
+    
+        
 
 enum SideOfMenu: String, CaseIterable {
     case myQues = "내 질문"
@@ -80,6 +96,17 @@ struct ChosenView: View {
         case .myScr:
             MyScrapListView(postContents: postContentList)
         }
+    }
+}
+
+struct SearchFiltering : View {
+    var body: some View {
+        
+
+        MyQuestionListView()
+        MyAnswerListView(postContents: postContentList)
+        MyScrapListView(postContents: postContentList)
+        
     }
 }
 

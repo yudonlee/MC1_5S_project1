@@ -31,7 +31,6 @@ struct MainTabView : View {
                 }
         } //TabView
         .accentColor(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
-//        .tint(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
     }
 }
 
