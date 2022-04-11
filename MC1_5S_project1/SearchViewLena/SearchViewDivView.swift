@@ -15,16 +15,16 @@ struct SearchViewDivView: View {
             VStack {
                 SearchBar(text: self.$text)
                 
-                SearchResultSectionAnsxwerView(postContents: postContentList)
+                SearchResultSectionAnswerView()
                 
                 NavigationLink(destination: SearchAnswerDetailView(), label: {
                     AnyButton(buttonText: "더보기")})
                 
-                SearchResultSectionNoAnswerView(postContents: postContentList)
+                SearchResultSectionNoAnswerView()
                 
                 NavigationLink(destination: SearchNoAnswerDetailView(), label: {
                     AnyButton(buttonText: "더보기")})
-
+                
             } // VStack
             .navigationBarTitle("")
             .navigationBarHidden(true) // 네비게이션 상단 바 없애기
@@ -44,7 +44,7 @@ struct SearchBar: View {
                 .background(Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255)) //배경색상 비활성화 배경 색상
                 .cornerRadius(8)
             
-                // 돋보기 추가
+            // 돋보기 추가
                 .overlay(
                     HStack() { // 가로로 view를 쌓을 수 있게
                         Spacer() // 오른쪽 가장자리에 오도록
@@ -76,8 +76,8 @@ struct SearchBar: View {
 }
 
 // ScrollView + VStack으로 구현
-struct SearchResultSectionAnsxwerView: View {
-    var postContents: [PostContent]
+struct SearchResultSectionAnswerView: View {
+    // @State var post: PostContent
     var body: some View {
         // title
         HStack {
@@ -93,7 +93,7 @@ struct SearchResultSectionAnsxwerView: View {
         // content section
         VStack {
             ScrollView(.vertical) {
-                ForEach(postContents) { post in
+                ForEach(postContentList) { post in
                     let post_index = Int(post.index) ?? 0
                     NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                     }
@@ -112,8 +112,9 @@ struct SearchResultSectionAnsxwerView: View {
         
     }
 }
+
 struct SearchResultSectionNoAnswerView: View {
-    var postContents: [PostContent]
+    // var postContents: [PostContent]
     var body: some View {
         HStack {
             Text("답변이 없는 질문")
@@ -129,30 +130,28 @@ struct SearchResultSectionNoAnswerView: View {
         VStack {
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(postContents) { post in
-                        HStack {
-                            Text("#\(post.name) \n \(post.title) (0)")
-                            Spacer()
+                    ForEach(postContentList) { post in
+                        let post_index = Int(post.index) ?? 0
+                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
+                            Divider()
                         }
-                        Divider()
-                    }
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 5)
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 5)
+                    } // Loop
                 } // VStack
             } // ScrollView
-            
-            
         }
-        // border
-        .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
-        .padding(.horizontal, 15)
-        
-//        // 더보기 버튼
-//        MoreButton()
-//            .padding(.bottom, 5)
+            // border
+            .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
+            .padding(.horizontal, 15)
+            
+            //        // 더보기 버튼
+            //        MoreButton()
+            //            .padding(.bottom, 5)
     }
 }
-
+    
+    
 // 내용을 누르면 NavigationLink를 연결하기 위한 뷰
 struct QuestionContentText : View {
     @State var post: PostContent
