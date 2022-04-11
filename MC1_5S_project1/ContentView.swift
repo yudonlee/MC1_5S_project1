@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var postContents: [PostContent]
+    var userProfiles: [UserProfile]
+        
     var body: some View {
         List {
-            ForEach(postContents) { post in
-                Text(post.title)
+            ForEach(userProfiles) { user in
+                Text(user.name)
+//                Text(user.password)
+                
             }
         }
 
@@ -21,6 +25,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(postContents: postContentList)
+        ContentView(postContents: postContentList, userProfiles: userProfileList)
+        
     }
 }
