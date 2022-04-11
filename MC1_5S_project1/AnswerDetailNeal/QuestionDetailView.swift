@@ -16,28 +16,36 @@ struct QuestionDetailView: View {
     @State private var alsoQuestionable: Bool = false
     
     @State private var answerTextField: String = ""
-    
+    @State private var anonymousCount:Int = 1
     
     private let placeholder = "답변을 입력하시오."
     @State private var userReplyText: String?
+    
+    
+//    what is Focus State?
+//    property wrappers의 도입배경
+    @FocusState var isInputActive: Bool
     
     //    @Binding private var bindingTest: String = "Placeholder"
     //    Binding keyword가 되지 않는 이유는?
     
     
     var body: some View {
+        
         VStack(alignment: .center) {
             
             //            문제1 스크롤할때 도형내부에서만 움직여야 하는데 도형밖으로 흩뿌려짐.
             //            padding EdgeInsets을 통해 해결함.
             
-            
             ScrollView() {
                 VStack{
                     HStack(alignment: .top) {
-                        
                         Image(systemName: "applelogo")
-                        Text(postContentList[index].name)
+                        if postContentList[index].isAnonymous {
+                            Text("익명\(anonymousCount)")
+                        } else {
+                           Text(postContentList[index].name)
+                        }
                         Spacer()
                         Button("수정"){
                             print("s")
@@ -89,6 +97,7 @@ struct QuestionDetailView: View {
             
             Spacer()
             
+            
             VStack {
                 ScrollView(.vertical) {
                     VStack {
@@ -96,7 +105,11 @@ struct QuestionDetailView: View {
                             VStack(alignment:.leading) {
                                 HStack{
                                     Image(systemName: "applelogo")
-                                    Text(answer.name)
+                                    if answer.isAnonymous {
+                                        Text("익명")
+                                    } else {
+                                        Text(answer.name)
+                                    }
                                     
                                     Spacer()
                                     Button("수정") {
@@ -131,6 +144,7 @@ struct QuestionDetailView: View {
             // horizontal을 적용한 이유를 모름.
             .padding(.horizontal, 15)
             
+             
             HStack {
                 Text("답변하기")
                     .font(.title)
@@ -155,7 +169,6 @@ struct QuestionDetailView: View {
                     .stroke(appMainColor, lineWidth: 4)
                     .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
                 
-                
                 RoundedRectangle(cornerRadius: 7)
                     .stroke(appMainColor, lineWidth: 4)
                     .frame(width: UIScreen.screenWidth * (2.5 / 3), height: UIScreen.screenHeight * 0.25 * mul, alignment: .center)
@@ -168,6 +181,17 @@ struct QuestionDetailView: View {
                             TextEditor(text: $answerTextField)
                                 .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                                 .multilineTextAlignment(.leading)
+//                           keyboard dimiss하기 위한 방법
+                                .focused($isInputActive)
+                                .toolbar {
+                                    ToolbarItem(placement: .keyboard) {
+                                        Button("Done") {
+                                            isInputActive = false
+                                        }
+                                        Spacer()
+                                    }
+                                    
+                                }
                             
                             Button(action: {
                                 print("scaling")
@@ -194,6 +218,7 @@ struct QuestionDetailView: View {
             }
             
         }
+
     }
 }
 

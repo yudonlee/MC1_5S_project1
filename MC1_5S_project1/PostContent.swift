@@ -11,6 +11,7 @@ import SwiftUI
 struct PostContent: Codable, Identifiable {
     struct Answer: Codable, Identifiable {
         let name: String
+        let isAnonymous: Bool
         let contents: String
         var id: String { name }
     }
@@ -19,6 +20,7 @@ struct PostContent: Codable, Identifiable {
     let name: String
     let index: String
     let certifiedUser: Bool
+    let isAnonymous: Bool
     let answerCount: String
     
     var answerCountToInt: Int {
@@ -35,7 +37,8 @@ struct PostContent: Codable, Identifiable {
     enum CodingKeys: CodingKey {
         case title, name
         case index, certifiedUser
-        case answerCount, answer
+        case isAnonymous, answerCount
+        case answer
     }
     
 }
