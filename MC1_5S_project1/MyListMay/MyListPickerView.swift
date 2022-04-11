@@ -102,15 +102,6 @@ struct ChosenView: View {
     }
 }
 
-struct SearchFiltering : View {
-    var body: some View {
-        MyQuestionListView()
-        MyAnswerListView()
-        MyScrapListView()
-        
-    }
-}
-
 struct MyListPickerView_Previews: PreviewProvider {
     static var previews: some View {
         MyListPickerView()
