@@ -14,6 +14,7 @@ struct SearchViewDivView: View {
         NavigationView {
             VStack {
                 SearchBar(text: self.$text)
+                
                 SearchResultSectionAnsxwerView(postContents: postContentList)
                 
                 NavigationLink(destination: SearchAnswerDetailView(), label: {
@@ -92,27 +93,23 @@ struct SearchResultSectionAnsxwerView: View {
         // content section
         VStack {
             ScrollView(.vertical) {
-                VStack {
-                    ForEach(postContents) { post in
-                        HStack {
-                            Text("#\(post.name) \n \(post.title) (\(post.answerCount))")
-                            Spacer()
-                        }
-                        Divider()
+                ForEach(postContents) { post in
+                    let post_index = Int(post.index) ?? 0
+                    NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                     }
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 5)
-                } // VStack
+                    
+                    Divider()
+                } // Loop
+                .padding(.horizontal, 15)
+                .padding(.vertical, 5)
             } // ScrollView
-        }
+            
+        } // VStack
+        
         // border
         .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
         .padding(.horizontal, 15)
         
-//        // 더보기 버튼
-//        MoreButton().padding(.bottom, 5)
-//
-//        Divider()
     }
 }
 struct SearchResultSectionNoAnswerView: View {
@@ -153,6 +150,19 @@ struct SearchResultSectionNoAnswerView: View {
 //        // 더보기 버튼
 //        MoreButton()
 //            .padding(.bottom, 5)
+    }
+}
+
+// 내용을 누르면 NavigationLink를 연결하기 위한 뷰
+struct QuestionContentText : View {
+    @State var post: PostContent
+    var body: some View {
+        HStack {
+            Text("#\(post.name) \n \(post.title) (\(post.answerCount))")
+                .foregroundColor(.black)
+                .multilineTextAlignment(.leading)
+            Spacer()
+        }
     }
 }
 

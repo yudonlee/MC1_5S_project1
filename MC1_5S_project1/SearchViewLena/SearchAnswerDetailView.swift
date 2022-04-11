@@ -52,6 +52,7 @@ struct SearchResultAnswerDetailView: View {
         // border
         .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
         .padding(.horizontal, 15)
+        .padding(.bottom, 15)
     }
 }
         
