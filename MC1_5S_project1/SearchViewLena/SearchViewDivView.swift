@@ -195,8 +195,3 @@ struct SearchViewDivView_Previews: PreviewProvider {
         SearchViewDivView()
     }
 }
-
-
-
-
-
