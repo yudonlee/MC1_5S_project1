@@ -14,7 +14,6 @@ struct SearchAnswerDetailView: View {
         VStack {
             SearchBar(text: self.$text)
             SearchResultAnswerDetailView(postContents: postContentList)
-
         }
     }
 }
@@ -39,11 +38,21 @@ struct SearchResultAnswerDetailView: View {
                 VStack {
                     ForEach(postContents) { post in
                         HStack {
-                            Text("#\(post.name) \n \(post.title) (\(post.answerCount))")
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(post.name) //작성자 닉네임
+                                    .bold()
+                                Text(post.title) //게시글 내용
+                            }
                             Spacer()
-                        }
+                            HStack(spacing: 3) {
+                                Image(systemName: "bubble.right")
+                                Text(post.answerCount) //댓글 개수
+                            }
+                        } // HStack
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.leading)
                         Divider()
-                    }
+                    } // Loop
                     .padding(.horizontal, 15)
                     .padding(.vertical, 5)
                 } // VStack

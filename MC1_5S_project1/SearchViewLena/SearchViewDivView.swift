@@ -157,11 +157,21 @@ struct QuestionContentText : View {
     @State var post: PostContent
     var body: some View {
         HStack {
-            Text("#\(post.name) \n \(post.title) (\(post.answerCount))")
-                .foregroundColor(.black)
-                .multilineTextAlignment(.leading)
+            VStack(alignment: .leading, spacing: 10) {
+                Text(post.name) //작성자 닉네임
+                    .bold()
+                Text(post.title) //게시글 내용
+            }
             Spacer()
-        }
+            HStack(spacing: 3) {
+                Image(systemName: "bubble.right")
+                Text(post.answerCount) //댓글 개수
+            }
+
+        } // HStack
+        .foregroundColor(.black)
+        .multilineTextAlignment(.leading)
+    Spacer()
     }
 }
 
