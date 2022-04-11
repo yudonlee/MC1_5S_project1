@@ -11,8 +11,23 @@ struct SearchViewDivView: View {
     @State var text : String = "" // searchBar에서 텍스트 입력을 받기 위한 변수
     
     var body: some View {
-        SearchBar(text: self.$text)
-        SearchResultSectionView(postContents: postContentList)
+        NavigationView {
+            VStack {
+                SearchBar(text: self.$text)
+                SearchResultSectionAnsxwerView(postContents: postContentList)
+                
+                NavigationLink(destination: SearchAnswerDetailView(), label: {
+                    AnyButton(buttonText: "더보기")})
+                
+                SearchResultSectionNoAnswerView(postContents: postContentList)
+                
+                NavigationLink(destination: SearchNoAnswerDetailView(), label: {
+                    AnyButton(buttonText: "더보기")})
+
+            } // VStack
+            .navigationBarTitle("")
+            .navigationBarHidden(true) // 네비게이션 상단 바 없애기
+        } // NavigationView
     }
 }
 
@@ -60,7 +75,7 @@ struct SearchBar: View {
 }
 
 // ScrollView + VStack으로 구현
-struct SearchResultSectionView: View {
+struct SearchResultSectionAnsxwerView: View {
     var postContents: [PostContent]
     var body: some View {
         // title
@@ -89,20 +104,20 @@ struct SearchResultSectionView: View {
                     .padding(.vertical, 5)
                 } // VStack
             } // ScrollView
-            
-        // 더보기 버튼
-
         }
         // border
         .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
         .padding(.horizontal, 15)
         
-        
-        MoreButton()
-            .padding(.bottom, 5)
-        
-        Divider()
-        
+//        // 더보기 버튼
+//        MoreButton().padding(.bottom, 5)
+//
+//        Divider()
+    }
+}
+struct SearchResultSectionNoAnswerView: View {
+    var postContents: [PostContent]
+    var body: some View {
         HStack {
             Text("답변이 없는 질문")
                 .font(.title)
@@ -129,30 +144,30 @@ struct SearchResultSectionView: View {
                 } // VStack
             } // ScrollView
             
-
+            
         }
         // border
         .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
         .padding(.horizontal, 15)
         
-        MoreButton()
-            .padding(.bottom, 5)
+//        // 더보기 버튼
+//        MoreButton()
+//            .padding(.bottom, 5)
     }
 }
 
-// 더보기 버튼
-struct MoreButton : View {
+// 범용 버튼
+struct AnyButton : View {
+    @State var buttonText: String
     var body : some View {
-        Button(action: {
-        }){
-            Text("더보기")
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .padding(7)
-                .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
-        }
-        .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
-        .cornerRadius(8)
+        Text(buttonText)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .padding(7)
+            .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
+            .padding(5)
+            .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
+            .cornerRadius(8)
     }
 }
 
