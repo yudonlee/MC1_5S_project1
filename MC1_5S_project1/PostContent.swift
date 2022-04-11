@@ -32,7 +32,7 @@ struct PostContent: Codable, Identifiable {
     }
     
     let answer: [Answer]
-    var id: String { name }
+    let id = UUID()
     
     enum CodingKeys: CodingKey {
         case title, name
