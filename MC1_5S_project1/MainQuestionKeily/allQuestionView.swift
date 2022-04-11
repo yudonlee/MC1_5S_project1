@@ -15,9 +15,6 @@ struct ButtonToAsk : View {
             Image(systemName: "square.and.pencil")
                 .frame(width: 50.0)
                 .tint(.gray)
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-                
         }
     }
 }
@@ -26,7 +23,7 @@ struct QuestionListView: View {
     @State var searchText = ""
     @State var searching = false
     @State private var selectedSide: itemOfMenu = .myHot
-    // items in RoundedRectangle...
+
     var body: some View {
         NavigationView {
             VStack {
@@ -47,9 +44,7 @@ struct QuestionListView: View {
                 }
                 
                 ChosenHotOrNew(selectedSide: selectedSide)
-//                NavigationLink(destination: SearchNoAnswerDetailView(), label: {
-//                    AnyButton(buttonText: "더보기")})
-//                .navigationBarTitleDisplayMode(.inline)
+                //글쓰기 버튼 링크 걸기
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)

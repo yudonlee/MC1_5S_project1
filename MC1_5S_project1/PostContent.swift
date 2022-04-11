@@ -17,7 +17,6 @@ struct PostContent: Codable, Identifiable {
         let contents: String
         var id: String { name }
     }
-    
     let title: String
     let name: String
     let index: String

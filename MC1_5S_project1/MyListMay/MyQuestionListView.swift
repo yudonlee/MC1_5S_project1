@@ -11,13 +11,17 @@
 import SwiftUI
 
 struct MyQuestionListView: View {
+    
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    ForEach(postContentList) { post in
+                    ForEach(postContentList.filter{
+                        $0.name == "오감이"
+                    }) { post in
                         let post_index = Int(post.index) ?? 0
-                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){MyQuestionContentView(post: post)
+                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){
+                            MyQuestionContentView(post: post)
                         }.navigationBarTitleDisplayMode(.inline)
                         Divider()
                     }
@@ -29,6 +33,7 @@ struct MyQuestionListView: View {
 }
 
 struct MyQuestionContentView: View { //질문 게시글 리스트
+
     @State var post: PostContent
     
     var body: some View {

@@ -36,7 +36,6 @@ struct QuestionDetailView: View {
             
             //            문제1 스크롤할때 도형내부에서만 움직여야 하는데 도형밖으로 흩뿌려짐.
             //            padding EdgeInsets을 통해 해결함.
-            
             ScrollView() {
                 VStack{
                     HStack(alignment: .top) {
@@ -81,7 +80,6 @@ struct QuestionDetailView: View {
                         
                     }
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 10, trailing: 10))
-                    
                 }
             }
             .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
@@ -90,14 +88,7 @@ struct QuestionDetailView: View {
                 RoundedRectangle(cornerRadius: 19)
                     .stroke(appMainColor, lineWidth: 1)
             )
-            
-            
-            
-            
-            
             Spacer()
-            
-            
             VStack {
                 ScrollView(.vertical) {
                     VStack {

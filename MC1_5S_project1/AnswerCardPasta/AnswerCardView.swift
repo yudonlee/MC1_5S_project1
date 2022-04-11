@@ -17,10 +17,15 @@ struct QuestionCard: View {
             RoundedRectangle(cornerRadius: 19)
                 .stroke(MINTCOLOR, lineWidth: 2)
             
-            Text(post.title)
-                .font(.system(size: 15))
-                    .foregroundColor(.gray)
-                    .padding()
+            HStack(spacing:3){
+                Text(post.title)
+                    .font(.system(size: 15))
+                        .foregroundColor(.gray)
+                        .padding()
+                Image(systemName: "bubble.right")
+                    .padding(1)
+                Text(post.answerCount) //댓글 개수
+            }
         }
         .frame(width: UIScreen.screenWidth/1.4, height: UIScreen.screenHeight/2.5, alignment: .center)
     }
@@ -34,8 +39,9 @@ struct AnswerCardView: View {
     var body: some View {
         NavigationView{
             VStack{
-//                Text("질문 카드")
-//                    .font(.system(size: 15, design: .default))
+                Text("질문카드")
+                    .font(.system(size: 15, design: .default))
+                    .position(x: 30, y: +10)
                 ScrollView(.horizontal){
                     HStack{
                         ForEach(postContentList){
@@ -47,17 +53,14 @@ struct AnswerCardView: View {
                         }
                     }
                 }
-//                ZStack{
-                TextEditor(text: $comment)
-                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                    .multilineTextAlignment(.leading)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 19)
-                            .stroke(MINTCOLOR, lineWidth: 2)
-                            .frame(width: UIScreen.screenWidth*0.95, height: UIScreen.screenHeight/2, alignment: .center)
-                    )
-//                }
-            }.navigationBarTitle("질문 카드").navigationBarHidden(true)
+                ZStack{
+                    RoundedRectangle(cornerRadius: 19)
+                        .stroke(MINTCOLOR, lineWidth: 2)
+                    TextField( "답변을 입력하세요", text: $comment)
+                        .padding(5)
+                }.frame(width: UIScreen.screenWidth * 0.95, height: UIScreen.screenHeight/2.1, alignment: .center)
+            }.navigationTitle("질문 카드")
+                .navigationBarHidden(true)
         }
     }
 }
