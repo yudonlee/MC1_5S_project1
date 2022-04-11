@@ -27,9 +27,7 @@ struct MyAnswerListView: View {
                             }
                             
                         }
-                        Rectangle() //구분선
-                            .frame(height: 0.5)
-                            .foregroundColor(.gray)
+                        Divider()
                     }
                 }.padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
             }.background(Color.green)
