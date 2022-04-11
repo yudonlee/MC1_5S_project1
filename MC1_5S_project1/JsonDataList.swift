@@ -11,6 +11,7 @@ var postContentList: [PostContent] = load("posts.json")
 var userProfileList: [UserProfile] = load("users.json")
 
 
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     

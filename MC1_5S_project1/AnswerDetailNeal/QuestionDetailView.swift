@@ -170,7 +170,7 @@ struct QuestionDetailView: View {
                     .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
                 
                 RoundedRectangle(cornerRadius: 7)
-                    .stroke(appMainColor, lineWidth: 4)
+                    .stroke(appMainColor, lineWidth: 1)
                     .frame(width: UIScreen.screenWidth * (2.5 / 3), height: UIScreen.screenHeight * 0.25 * mul, alignment: .center)
                     .overlay(
                         
