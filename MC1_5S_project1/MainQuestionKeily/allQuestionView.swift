@@ -43,6 +43,9 @@ struct QuestionListView: View {
                 }
                 
                 ChosenHotOrNew(selectedSide: selectedSide)
+//                NavigationLink(destination: SearchNoAnswerDetailView(), label: {
+//                    AnyButton(buttonText: "더보기")})
+//                .navigationBarTitleDisplayMode(.inline)
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)

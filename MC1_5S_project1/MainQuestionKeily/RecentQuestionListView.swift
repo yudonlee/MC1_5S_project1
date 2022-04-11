@@ -32,6 +32,7 @@ struct RecentQuestionListView: View {
                         }
                     }
                     .padding(.all, 15)
+                    .background(Color.yellow) // 구분색 (삭제예정)
                 }
                 // border
                 .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
