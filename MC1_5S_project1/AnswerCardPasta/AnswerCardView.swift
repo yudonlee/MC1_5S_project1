@@ -48,14 +48,14 @@ struct AnswerCardView: View {
                     }
                 }
 //                ZStack{
-                    TextEditor(text: $comment)
-                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                        .multilineTextAlignment(.leading)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 19)
-                                .stroke(MINTCOLOR, lineWidth: 2)
-                                .frame(width: UIScreen.screenWidth*0.95, height: UIScreen.screenHeight/2, alignment: .center)
-                        )
+                TextEditor(text: $comment)
+                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                    .multilineTextAlignment(.leading)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 19)
+                            .stroke(MINTCOLOR, lineWidth: 2)
+                            .frame(width: UIScreen.screenWidth*0.95, height: UIScreen.screenHeight/2, alignment: .center)
+                    )
 //                }
             }.navigationBarTitle("질문 카드").navigationBarHidden(true)
         }

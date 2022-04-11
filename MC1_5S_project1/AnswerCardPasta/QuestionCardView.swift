@@ -21,16 +21,14 @@ struct QuestionCardView: View {
                     .frame(width: UIScreen.screenWidth, height: 50,alignment: .center)
                     .padding(15)
                 
-                ZStack
-                {
-                    RoundedRectangle(cornerRadius: 19)
-                        .stroke(Color.gray, lineWidth: 2)
-                    
-                    TextField("답변 작성", text: $comment)
-                        .font(.system(size: 15))
-                            .foregroundColor(.gray)
-                            .padding()
-                }
+                TextEditor(text: $comment)
+                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                    .multilineTextAlignment(.leading)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 19)
+                            .stroke(MINTCOLOR, lineWidth: 2)
+                            .frame(width: UIScreen.screenWidth*0.95, alignment: .center)
+                    )
             }
             Button(action: {
                 print("버튼 누름!")
