@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyProfileView: View {
     @State private var showNoti = false
+//    @State var user: UserProfile
     
     var body: some View {
             VStack {
@@ -21,6 +22,8 @@ struct MyProfileView: View {
                     VStack (alignment: .leading, spacing: 10){
                         Text("LV.1")
                         Text("오감이")
+//                        Text(user.level)
+//                        Text(user.name)
                     }
                     Spacer()
 

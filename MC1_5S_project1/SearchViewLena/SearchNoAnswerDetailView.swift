@@ -13,7 +13,7 @@ struct SearchNoAnswerDetailView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: self.$text)
+                Searching(text: $text)
                 SearchResultNoAnswerDetailView(postContents: postContentList)
             }
             .navigationTitle("")

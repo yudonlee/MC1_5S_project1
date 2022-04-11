@@ -10,8 +10,7 @@ import SwiftUI
 struct MyListPickerView: View {
     
     @State var searchText = ""
-    @State var searching = false
-    
+
     @State private var selectedSide: SideOfMenu = .myQues
     @State var text : String = ""
     
@@ -37,14 +36,18 @@ struct MyListPickerView: View {
     }
 }
 
+
+
+
 struct Searching: View {
     @Binding var text: String
     @State private var isEditing = false
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         
         HStack {
-            TextField("내질문/내답변/스크랩 검색", text: $text)
+            TextField("검색", text: $text)
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(.white)
@@ -62,9 +65,10 @@ struct Searching: View {
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 8)
                 
-                if isEditing {
+                if isEditing { // x를 누르면 내용을 지우고 키보드를 숨긴다
                     Button(action: {
                         self.text = ""
+                        hideKeyboard()
                     }) {
                         Image(systemName: "multiply.circle.fill")
                             .foregroundColor(.gray)
@@ -77,7 +81,6 @@ struct Searching: View {
 }
     
         
-
 enum SideOfMenu: String, CaseIterable {
     case myQues = "내 질문"
     case myAns = "내 답변"
@@ -92,21 +95,10 @@ struct ChosenView: View {
         case .myQues:
             MyQuestionListView()
         case .myAns:
-            MyAnswerListView(postContents: postContentList)
+            MyAnswerListView()
         case .myScr:
-            MyScrapListView(postContents: postContentList)
+            MyScrapListView()
         }
-    }
-}
-
-struct SearchFiltering : View {
-    var body: some View {
-        
-
-        MyQuestionListView()
-        MyAnswerListView(postContents: postContentList)
-        MyScrapListView(postContents: postContentList)
-        
     }
 }
 
@@ -115,3 +107,14 @@ struct MyListPickerView_Previews: PreviewProvider {
         MyListPickerView()
     }
 }
+
+
+// 키보드를 닫기 위해 UIKit에서 불러온다
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
+

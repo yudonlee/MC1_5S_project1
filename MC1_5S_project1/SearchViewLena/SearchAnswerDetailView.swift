@@ -12,7 +12,7 @@ struct SearchAnswerDetailView: View {
     
     var body: some View {
         VStack {
-            SearchBar(text: self.$text)
+            Searching(text: $text)
             SearchResultAnswerDetailView(postContents: postContentList)
         }
         .navigationBarTitle("")
