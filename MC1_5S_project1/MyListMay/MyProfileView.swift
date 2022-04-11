@@ -11,48 +11,58 @@ struct MyProfileView: View {
     @State private var showNoti = false
     
     var body: some View {
-        VStack {
-            HStack { //프로필 아이콘, 레벨, 닉네임
-                Image("apple")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100)
-                    .clipShape(Circle())
-                VStack (alignment: .leading, spacing: 10){
-                    Text("LV.1")
-                    Text("오감이")
-                }
-                Spacer()
-
-                HStack (alignment: .top) { //검색,알림 버튼
-    //                Button(action: { //검색 버튼
-    //                    print("검색")
-    //                }){
-    //                    Image(systemName: "magnifyingglass")
-    //                }
-    //                .font(.system(size: 20))
-    //                .foregroundColor(.black)
-
-                    Button(action: { //알림 버튼
-                        print("알림")
-                        self.showNoti = true
-                    }){
-                        Image(systemName: "bell.fill")
+//        NavigationView {
+            VStack {
+                HStack { //프로필 아이콘, 레벨, 닉네임
+                    Image("apple")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                    VStack (alignment: .leading, spacing: 10){
+                        Text("LV.1")
+                        Text("오감이")
                     }
-                    .sheet(isPresented: self.$showNoti) {
-                        NotiView()
+                    Spacer()
+
+                    HStack (alignment: .top) { //검색,알림 버튼
+        //                Button(action: { //검색 버튼
+        //                    print("검색")
+        //                }){
+        //                    Image(systemName: "magnifyingglass")
+        //                }
+        //                .font(.system(size: 20))
+        //                .foregroundColor(.black)
+
+                        Button(action: { //알림 버튼
+                            print("알림")
+                            self.showNoti = true
+                        }){
+                            Image(systemName: "bell.fill")
+                        }
+                        .sheet(isPresented: self.$showNoti) {
+                            NotiView()
+                        }
+                        .font(.system(size: 20))
+                        .foregroundColor(.black)
+                        .padding(.trailing)
                     }
-                    .font(.system(size: 20))
-                    .foregroundColor(.black)
-                    .padding(.trailing)
-                }
-            }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
-                .background(Color.mint)
-            
-            Searching()
-        }
-        
-        
+                }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
+                    .background(Color.mint)
+            }
+//            .navigationBarTitle("") .navigationBarHidden(true)
+//        }
+//        .toolbar {
+//            if searching {
+//                Button("Cancel") {
+//                    searchText = ""
+//                    withAnimation {
+//                        searching = false
+//                        UIApplication.shared.dismissKeyboard()
+//                    }
+//                }
+//            }
+//        }
     }
 }
 
@@ -68,25 +78,6 @@ struct NotiView: View { //알림 버튼 클릭 시 보이는 modal view
                 Image(systemName: "clear")
             }
         }
-    }
-}
-
-struct Searching: View { //마이페이지 검색창
-    @State var searchText = ""
-    
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(Color("LightGray"))
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("내질문/내답변/스크랩 검색", text: $searchText)
-            }
-            .foregroundColor(.gray)
-            .padding()
-        }
-        .frame(height: 40)
-        .cornerRadius(13)
     }
 }
 

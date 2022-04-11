@@ -10,11 +10,14 @@ import SwiftUI
 struct MyListPickerView: View {
     
     @State var searchText = ""
+    @State var searching = false
     
     @State private var selectedSide: SideOfMenu = .myQues
     var body: some View {
         NavigationView {
             VStack {
+                Searching(searchText: $searchText, searching: $searching)
+                
                 Picker("Choose a menu", selection: $selectedSide) {
                     ForEach(SideOfMenu.allCases, id: \.self) {
                         Text($0.rawValue)
@@ -26,6 +29,36 @@ struct MyListPickerView: View {
             }
             .navigationBarTitle("") .navigationBarHidden(true)
         }
+    }
+}
+
+struct Searching: View { //마이페이지 검색창
+    @Binding var searchText: String
+    @Binding var searching: Bool
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(Color("LightGray"))
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("내질문/내답변/스크랩 검색", text: $searchText) { startEditing in
+                    if startEditing {
+                        withAnimation {
+                            searching = true
+                        }
+                    }
+                } onCommit: {
+                    withAnimation {
+                        searching = false
+                    }
+                }
+            }
+            .foregroundColor(.gray)
+            .padding()
+        }
+        .frame(height: 40)
+        .cornerRadius(13)
     }
 }
 
@@ -49,7 +82,6 @@ struct ChosenView: View {
         }
     }
 }
-
 
 struct MyListPickerView_Previews: PreviewProvider {
     static var previews: some View {
