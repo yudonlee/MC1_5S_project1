@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct UserProfile: Codable, Identifiable {
-//    private 채워야 하나?
+    //    private 채워야 하나?
     var name: String
     var password: String
     var level: Int
@@ -27,20 +27,17 @@ class UserInformation {
     static let loginUser: UserInformation = UserInformation()
     var name: String?
     var password: String?
-<<<<<<< HEAD
     var data: UserProfile?
-=======
     var level: Int?
->>>>>>> 7c23cdf231ae1ba1bba61f0b7ca25c4f941c5a40
     
     func isPasswordRight(id: String, inputPassword: String) -> Bool {
         for user in userProfileList {
             if id == user.name, inputPassword == user.password {
-                    name = id
-                    password = inputPassword
-                    data = user
-                    return true
-                }
+                self.name = id
+                self.password = inputPassword
+                self.data = user
+                return true
+            }
         }
         return false
     }
