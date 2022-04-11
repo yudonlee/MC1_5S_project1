@@ -3,17 +3,23 @@
         "name": "민준",
         "title": "이병찬 국민가수 나오는 방송 무슨요일 마다 해요?",
         "index": "1",
+        "created_at" : 1647326965,
+        "updated_at" : 1647326965,
         "certifiedUser": true,
         "isAnonymous": false,
         "answerCount": "2",
         "answer": [
             {
                 "name": "서준",
+                "created_at" : 1647334165,
+                "updated_at" : 1647334170,
                 "isAnonymous": true,
                 "contents": "국가수하는 요일은 매주 목요일입니다. 예능력증진 프로그램입니다. 쇼프로라고 보시면됩니다.시간은 22시입니다."
             },
             {
                 "name": "예준",
+                "created_at" : 1647341365,
+                "updated_at" : 1647341365,
                 "isAnonymous": false,
                 "contents": "목요일 저녁 10시 국민가수로 선발된 가수 6명이 출연하고 이병찬 이 출연해요 게임도하고 노래도 부르고 예능프로그램입니다."
             }
@@ -23,12 +29,16 @@
         "name": "예준",
         "title": "mbti 성격유형 테스트 이거 어디서 하나요 ㅠㅠ?",
         "index": "2",
+        "created_at" : 1647334165,
+        "updated_at" : 1647334165,
         "certifiedUser": false,
         "isAnonymous": true,
         "answerCount": "1",
         "answer": [
             {
                 "name": "시우",
+                "created_at" : 1647432625,
+                "updated_at" : 1647432625,
                 "isAnonymous": true,
                 "contents": "IDRLabs에서 진행하는 MBTI 테스트입니다. ​"
             }
@@ -38,17 +48,23 @@
         "title": "인스타 dm 답장 이거 어떻게 해요?",
         "name": "하준",
         "index": "3",
+        "created_at" : 1647428125,
+        "updated_at" : 1647428125,
         "certifiedUser": false,
         "isAnonymous": false,
         "answerCount": "2",
         "answer": [
             {
                 "name": "선우",
+                "created_at" : 1647444325,
+                "updated_at" : 1647444325,
                 "isAnonymous": false,
                 "contents": "페북페메랑 인스타 디엠이랑 업데이트 해야할수있습니다"
             },
             {
                 "name": "현수",
+                "created_at" : 1647487525,
+                "updated_at" : 1647488725,
                 "isAnonymous": false,
                 "contents": "사람들 스토리 보면 우측 하단에 비행기 표시 있어요. 그거 눌러서 답장하시거나 스토리에 답장기능 안 막아놓았다면 스토리 하단에 바같은 거 있는데 그거 클릭해서 거기다 타자 치고 전송 누르면 돼요."
             }
@@ -58,17 +74,23 @@
         "title": "컴터 부팅후 cpu 온도 상승 이유??? cpu는 5800x입니다!",
         "name": "준우",
         "index": "4",
+        "created_at" : 1647747925,
+        "updated_at" : 1647791125,
         "certifiedUser": false,
         "isAnonymous": false,
         "answerCount": "2",
         "answer": [
             {
                 "name": "오감이",
+                "created_at" : 1647806725,
+                "updated_at" : 1647807180,
                 "isAnonymous": false,
                 "contents": "보드쪽 문제일 가능성이 높네요. 부품 하나하나 바꿔서 테스트 해보는 방법 이외에 눈으로 볼수 있는건  콘덴서 가 부풀었는지 정도 확인 이외 안될것 같네요 사용 가능한 부품 있으면 교체해보는게 좋을것 같고 오래된 보드가 아닐것 같으니 as 보내보는 방법도 있을것 같네요."
             },
             {
                 "name": "승우",
+                "created_at" : 1647944400,
+                "updated_at" : 1647944400,
                 "isAnonymous": false,
                 "contents": "5800x는 타 cpu보다 발열이 심합니다. 그만큼 쿨러의 성능이 중요하니 해당부분 고려해 보시면 좋겠네요."
             }
@@ -78,17 +100,23 @@
         "title": "달력 요일 순서가 일월화수목금토 순서인 이유?",
         "name": "유준",
         "index": "5",
+        "created_at" : 1647791125,
+        "updated_at" : 1647877800,
         "certifiedUser": false,
         "isAnonymous": false,
         "answerCount": "2",
         "answer": [
             {
                 "name": "승현",
+                "created_at" : 1647892800,
+                "updated_at" : 1647892800,
                 "isAnonymous": true,
                 "contents": "달력의 요일이 일요일부터 시작하는 이유는 유대교에서 '일요일을 일주일에 시작'으로 히브리어에 기록이 되어 있었다더군요(욤 리숀) 그것이 기독교로 넘어와 기독교에서도 일요일을 시작으로 보게 되었죠"
             },
             {
                 "name": "오감이",
+                "created_at" : 1648065600,
+                "updated_at" : 1648065600,
                 "isAnonymous": false,
                 "contents": "달력 처음 만든 사람이 천주교의 사제였기 때문에 그렇게 되었습니다."
             }
@@ -98,12 +126,16 @@
         "title": "긴급재난문자전송서비스로 문자를 받을 때 항상 제가 있던 지역에 대해서 보내주더라고요 그러면 긴급재난문자전송서비스는 어떻게 제가 그 지역에 있는지 알수있나요?",
         "name": "준서",
         "index": "6",
+        "created_at" : 1648116900,
+        "updated_at" : 1648117800,
         "certifiedUser": true,
         "isAnonymous": false,
         "answerCount": "1",
         "answer": [
             {
                 "name": "지연",
+                "created_at" : 1648122240,
+                "updated_at" : 1648122480,
                 "isAnonymous": true,
                 "contents": "행정안전부는 휴대폰의 CBS(Cell Broadcasting Service)기능을 이용해 재난재해 상황 발생이 예상되거나 발생한 지역에 관련 내용을 CBS가 가능한 휴대폰에 실시간으로 전달한다."
             }
@@ -113,12 +145,16 @@
         "title": "5g 인터넷이 뭔가요? 유선 인터네도 5g인가요?",
         "name": "연우",
         "index": "7",
+        "created_at" : 1648213980,
+        "updated_at" : 1648213980,
         "certifiedUser": true,
         "isAnonymous": false,
         "answerCount": "1",
         "answer": [
             {
                 "name": "예서",
+                "created_at" : 1648215000,
+                "updated_at" : 1648215000,
                 "isAnonymous": true,
                 "contents": "WiFi에서의 5G는 5GHz 주파수 대역을 말하는 것이구요, 유선에서의 5G는 5Gbps 대역폭을 말하는 것이고, 이동통신에서의 5G는 5세대(Generation)을 말하는 것으로 차이가 아주 큽니다."
             }
@@ -128,12 +164,16 @@
         "title": "방송에서 상표를 가리는 이유가 궁금해요",
         "name": "오감이",
         "index": "8",
+        "created_at" : 1648377000,
+        "updated_at" : 1648377000,
         "certifiedUser": true,
         "isAnonymous": true,
         "answerCount": "1",
         "answer": [
             {
                 "name": "연우",
+                "created_at" : 1648393200,
+                "updated_at" : 1648393200,
                 "isAnonymous": true,
                 "contents": "제59조의3 방송법 시행령에 써있는 법 때문에 간접광고를 막기 위해서이고,협찬을 받지 않았는데도 간접적으로 홍보가 되면 알고보니 문제가 있던 (부실설계, 과대포장 등 이미지가 안좋은)브랜드였다면 그 간접광고로 인해 궁금해서 사게 된 사람들에게 피해가 가기 때문에 간접광고,홍보를 막기 위해서입니다."
             }
@@ -143,17 +183,23 @@
         "title": "조개 해감할 때 빛을 차단해야 하는 이유가 뭔가요? 바닷속에 있다는 느낌을 주는 건가요..ㅋㅋ ",
         "name": "오감이",
         "index": "9",
+        "created_at" : 1648465200,
+        "updated_at" : 1648465800,
         "certifiedUser": true,
         "isAnonymous": true,
         "answerCount": "2",
         "answer": [
             {
                 "name": "중식",
+                "created_at" : 1648473600,
+                "updated_at" : 1648473900,
                 "isAnonymous": true,
                 "contents": "조개를 해감할대 빛을 차단하는 이유는 조개가 살고있었던 비슷한 환경(뻘구멍속이나 바닷속과 같은 환경)을 만들어 조개를 이완시키기 위함이고 빛을 차단하면 조개들이 뻘을 잘뱉어내기때문입니다"
             },
             {
                 "name": "현수",
+                "created_at" : 1648477500,
+                "updated_at" : 1648477800,
                 "isAnonymous": false,
                 "contents": "네 맞습니다. 빛을 차단해야 조개가 활발히 해감작용이 되기때문입니다."
             }
@@ -163,32 +209,42 @@
         "title": "팽이버섯은 왜 팽이버섯이죠??",
         "name": "오감이",
         "index": "10",
+        "created_at" : 1648473300,
+        "updated_at" : 1648473300,
         "certifiedUser": true,
         "isAnonymous": false,
         "answerCount": "1",
         "answer": [
             {
                 "name": "현수",
+                "created_at" : 1648473600,
+                "updated_at" : 1648473600,
                 "isAnonymous": true,
                 "contents": "팽이버섯의 이름은 말라죽은 팽나무에서 자란다고 하여 이름붙여진 것입니다. 10~15도씨의 온도에서 잘 자라는 특징이 있습니다. 팽이버섯은 다른 버섯에 비하여 기온이 낮은 곳에서 잘 자라기 때문에 겨울버섯이라고도 합니다."
             }
         ]
     },
     {
-        "title": "어제부터 밤만 되면 방에서 기계 돌아가는?듯한 소리가 계속 나는데 이건 어디에 말씀드려야하나요,,?",
+        "title": "밤만 되면 방에서 기계 돌아가는?듯한 소리가 계속 나는데 이건 어디에 말씀드려야하나요?",
         "name": "로미",
         "index": "11",
+        "created_at" : 1648548000,
+        "updated_at" : 1648548000,
         "certifiedUser": true,
         "isAnonymous": false,
         "answerCount": "2",
         "answer": [
             {
                 "name": "오중",
+                "created_at" : 1648550400,
+                "updated_at" : 1648550400,
                 "isAnonymous": true,
                 "contents": "저도 드릴돌아가는 소리가 계속 났는데 소리가 세탁기에서 나는것 같아요!"
             },
             {
                 "name": "헤일리",
+                "created_at" : 1648563000,
+                "updated_at" : 1648563000,
                 "isAnonymous": true,
                 "contents": "소리로 인해 너무 힘든 상황이면 생활관 13동 1층 생활관운영팀 당직실(054-279-3791)로 전화해 보시겠어요? 현장 확인 해주실 거에요!"
             }
@@ -199,17 +255,23 @@
         "title": "인스타 dm 답장 이거 어떻게 해요? 누구는 이거 업데이트 하라고 하고.. vpn 깔아서 하라고 하고.. 누구는 그냥 이거 인스타 들어가면 뜬다 그러고 심지어 베타버전도 해봤는데 안돼요",
         "name": "수정",
         "index": "12",
+        "created_at" : 1648563000,
+        "updated_at" : 1648566000,
         "certifiedUser": true,
         "isAnonymous": false,
         "answerCount": "2",
         "answer": [
             {
                 "name": "정은",
+                "created_at" : 1648566700,
+                "updated_at" : 1648566700,
                 "isAnonymous": true,
                 "contents": "페북페메랑 인스타 디엠이랑 업데이트 해야할수있습니다"
             },
             {
                 "name": "영웅",
+                "created_at" : 1648567700,
+                "updated_at" : 1648567700,
                 "isAnonymous": true,
                 "contents": "사람들 스토리 보면 우측 하단에 비행기 표시 있어요. 그거 눌러서 답장하시거나, 스토리에 답장기능 안 막아놓았다면 스토리 하단에 바같은 거 있는데 그거 클릭해서 거기다 타자 치고 전송 누르면 돼요"
             }

@@ -123,7 +123,10 @@ struct QuestionDetailView: View {
                                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
                                     .fixedSize(horizontal: false, vertical: true)
                                 //                                .frame(height: 180)
-                                Text(dateFormatter.string(from: Date()))
+//                                Text(dateFormatter.string(from: Date()))
+//                                    .frame(alignment: .leading)
+//                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
+                                Text(dateFormatter.string(from: answer.created_at))
                                     .frame(alignment: .leading)
                                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
                             }

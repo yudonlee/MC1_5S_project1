@@ -13,7 +13,10 @@ struct ButtonToAsk : View {
         Button(action: {
         }){
             Image(systemName: "square.and.pencil")
+                .frame(width: 50.0)
                 .tint(.gray)
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
                 
         }
     }
@@ -39,6 +42,7 @@ struct QuestionListView: View {
                     
                     ButtonToAsk()
                         .padding(.trailing)
+                        
                     
                 }
                 
