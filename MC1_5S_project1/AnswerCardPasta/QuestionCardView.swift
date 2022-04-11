@@ -50,7 +50,7 @@ struct QuestionCardView: View {
 struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionCardView()
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.portrait)
     }
 }
 let MINTCOLOR = Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255)
