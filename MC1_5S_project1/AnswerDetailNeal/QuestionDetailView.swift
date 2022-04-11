@@ -189,6 +189,10 @@ struct QuestionDetailView: View {
                                             isInputActive = false
                                         }
                                         Spacer()
+                                        Button(action: { print("image Button") } ) {
+                                            Image("camera.circle")
+                                                .imageScale(.medium)
+                                        }
                                     }
                                     
                                 }

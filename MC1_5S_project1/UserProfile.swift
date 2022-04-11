@@ -21,3 +21,18 @@ struct UserProfile: Codable, Identifiable {
         case name, password, level, scrapList
     }
 }
+
+class UserInformation {
+    static let loginUser: UserInformation = UserInformation()
+    var name: String?
+    var password: String?
+    
+    func isPasswordRight(id: String, inputPassword: String) -> Bool {
+        for user in userProfileList {
+            if user.name == id && user.password == inputPassword {
+                return true
+            }
+        }
+        return false
+    }
+}
