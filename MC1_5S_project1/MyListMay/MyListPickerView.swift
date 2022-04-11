@@ -95,10 +95,19 @@ struct ChosenView: View {
         case .myQues:
             MyQuestionListView()
         case .myAns:
-            MyAnswerListView(postContents: postContentList)
+            MyAnswerListView()
         case .myScr:
-            MyScrapListView(postContents: postContentList)
+            MyScrapListView()
         }
+    }
+}
+
+struct SearchFiltering : View {
+    var body: some View {
+        MyQuestionListView()
+        MyAnswerListView()
+        MyScrapListView()
+        
     }
 }
 

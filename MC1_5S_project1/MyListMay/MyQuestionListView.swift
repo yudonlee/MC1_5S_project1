@@ -11,15 +11,16 @@
 import SwiftUI
 
 struct MyQuestionListView: View {
-    
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    ForEach(postContentList.filter{
+                    ForEach(postContentList.filter{ //연구 대상
                         $0.name == "오감이"
                     }) { post in
                         let post_index = Int(post.index) ?? 0
+                        
+                        //게시글 상세 이동
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){
                             MyQuestionContentView(post: post)
                         }.navigationBarTitleDisplayMode(.inline)

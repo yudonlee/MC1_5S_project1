@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+func obj() {
+    print("3")
+}
 struct SignInView: View {
     @State var id: String = ""
     @State var password: String = ""
+    @State var isSignInSuccess: Bool = false
     
     var body: some View {
         NavigationView {
@@ -30,21 +34,39 @@ struct SignInView: View {
                     .cornerRadius(19)
                 
                 HStack(alignment: .center) {
-                    Button(action: {
-                        if  UserInformation.loginUser.isPasswordRight(id: id, inputPassword: password) {
-//                            Lena가 할 부분
-//                            NavigationLink(<#T##title: StringProtocol##StringProtocol#>, destination: <#T##() -> _#>)
-                        }
-                    }) {
+                    NavigationLink(destination: MainTabView().navigationBarBackButtonHidden(true)
+                    ) {
+
                         Text("로그인")
                             .padding(7)
                             .foregroundColor(.white)
                             .background(appMainColor)
                             .cornerRadius(7)
+
                     }
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle("")
+                    .disabled(!UserInformation.loginUser.isPasswordRight(id: id, inputPassword: password))
+
+                    
+//                    파스타 참고 버튼
+//                    Button("로그인"){
+//                        if  UserInformation.loginUser.isPasswordRight(id: id, inputPassword: password) {
+//                            isSignInSuccess = true
+//                        } else {
+//                            isSignInSuccess = false
+//                        }
+//                        obj()
+//                    }
+//                    .sheet(isPresented: $isSignInSuccess) {
+//                        MainTabView()
+//                    }
+                    
+                    
+                    
                     //                Spacer()
                     Button(action: {
-                        print("login")
+                        print("SignUp")
                     }) {
                         Text("회원가입")
                             .padding(7)

@@ -34,7 +34,7 @@ struct PostContent: Codable, Identifiable {
         return answer[answerCountToInt - 1].name
     }
     
-    let answer: [Answer]
+    var answer: [Answer]
     let id = UUID()
     
     enum CodingKeys: CodingKey {

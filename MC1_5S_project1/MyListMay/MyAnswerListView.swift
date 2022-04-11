@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct MyAnswerListView: View {
-    var postContents: [PostContent]
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    ForEach(postContents) { post in
+                    ForEach(postContentList) { post in
                         HStack {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text(post.name) //작성자 닉네임
@@ -38,7 +37,7 @@ struct MyAnswerListView: View {
 
 struct MyAnswerListView_Previews: PreviewProvider {
     static var previews: some View {
-        MyAnswerListView(postContents: postContentList)
+        MyAnswerListView()
     }
 }
 
