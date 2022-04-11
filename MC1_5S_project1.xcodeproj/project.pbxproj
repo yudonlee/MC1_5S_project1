@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1500D8922803F540003D2F8D /* allQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1500D8912803F540003D2F8D /* allQuestionView.swift */; };
 		7659645B27FE7338003CD4B8 /* PostContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7659645A27FE7338003CD4B8 /* PostContent.swift */; };
 		7659645F27FE79A9003CD4B8 /* JsonDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7659645E27FE79A9003CD4B8 /* JsonDataList.swift */; };
 		7659646F27FFD0B0003CD4B8 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 7659646E27FFD0B0003CD4B8 /* posts.json */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1500D8912803F540003D2F8D /* allQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allQuestionView.swift; sourceTree = "<group>"; };
 		7659645A27FE7338003CD4B8 /* PostContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContent.swift; sourceTree = "<group>"; };
 		7659645E27FE79A9003CD4B8 /* JsonDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataList.swift; sourceTree = "<group>"; };
 		7659646E27FFD0B0003CD4B8 /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */,
 				76AC7E4327FD2177003BC5A4 /* RecentQuestionListView.swift */,
+				1500D8912803F540003D2F8D /* allQuestionView.swift */,
 			);
 			path = MainQuestionKeily;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				76AC7E3427FD19D1003BC5A4 /* MC1_5S_project1App.swift in Sources */,
 				7659645B27FE7338003CD4B8 /* PostContent.swift in Sources */,
 				A7198E1C2802647C00AF823A /* MyQuestionListView.swift in Sources */,
+				1500D8922803F540003D2F8D /* allQuestionView.swift in Sources */,
 				A7198E20280264B700AF823A /* MyPageView.swift in Sources */,
 				A7198E1E280264A300AF823A /* MyListPickerView.swift in Sources */,
 				7659645F27FE79A9003CD4B8 /* JsonDataList.swift in Sources */,
