@@ -43,7 +43,7 @@ struct SearchResultNoAnswerDetailView: View {
                     ForEach(postContents) { post in
                         let post_index = Int(post.index) ?? 0
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)) {QuestionContentText(post: post)
-                        }
+                        }.navigationBarTitleDisplayMode(.inline)
                         
                         .foregroundColor(.black)
                         .multilineTextAlignment(.leading)

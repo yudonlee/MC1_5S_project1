@@ -25,7 +25,7 @@ struct SearchViewDivView: View {
                 
                 NavigationLink(destination: SearchNoAnswerDetailView(), label: {
                     AnyButton(buttonText: "더보기")})
-                
+                .navigationBarTitleDisplayMode(.inline)
             } // VStack
             .navigationBarTitle("")
             .navigationBarHidden(true) // 네비게이션 상단 바 없애기
