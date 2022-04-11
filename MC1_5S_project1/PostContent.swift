@@ -40,7 +40,6 @@ struct PostContent: Codable, Identifiable {
         case isAnonymous, answerCount
         case answer
     }
-    
 }
 
 
