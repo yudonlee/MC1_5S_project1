@@ -34,3 +34,7 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
     
 }
+
+func add_new_content(comment) {
+    
+}
