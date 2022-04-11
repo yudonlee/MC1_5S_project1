@@ -34,6 +34,8 @@ struct AnswerCardView: View {
     var body: some View {
         NavigationView{
             VStack{
+                Text("질문 카드")
+                    .font(.system(size: 15, design: .default))
                 ScrollView(.horizontal){
                     HStack{
                         ForEach(postContentList){
@@ -51,7 +53,7 @@ struct AnswerCardView: View {
                         .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/2, alignment: .center)
                     TextField( "답변을 입력하세요", text: $comment)
                 }
-            }.navigationTitle("질문 카드")
+            }
         }
     }
 }
