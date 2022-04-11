@@ -49,6 +49,7 @@ struct SignInView: View {
                     .disabled(!UserInformation.loginUser.isPasswordRight(id: id, inputPassword: password))
 
                     
+//                    파스타 참고 버튼
 //                    Button("로그인"){
 //                        if  UserInformation.loginUser.isPasswordRight(id: id, inputPassword: password) {
 //                            isSignInSuccess = true
