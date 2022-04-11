@@ -175,26 +175,21 @@
         ]
     },
     {
-        "title": "잘 모르고 백업 때문에 아이폰을 초기화 해서 IT Support에서 조치를 받아야 하는데 IT Support는 어디로 가면 될까요?",
-        "name": “비한”,
-        "index": “11”,
-        "certifiedUser": true,
-        "answerCount": “0”,
-        "answer": [ ]
-    },
-    {
         "title": "어제부터 밤만 되면 방에서 기계 돌아가는?듯한 소리가 계속 나는데 이건 어디에 말씀드려야하나요,,?",
-        "name": “로미”,
-        "index": “12”,
+        "name": "로미",
+        "index": "11",
         "certifiedUser": true,
+        "isAnonymous": false,
         "answerCount": “2”,
         "answer": [
             {
-                "name": “오션”,
+                "name": "오중",
+                "isAnonymous": true,
                 "contents": "저도 드릴돌아가는 소리가 계속 났는데 소리가 세탁기에서 나는것 같아요!"
             },
             {
-                "name": “헤일리”,
+                "name": "헤일리",
+                "isAnonymous": true,
                 "contents": "소리로 인해 너무 힘든 상황이면 생활관 13동 1층 생활관운영팀 당직실(054-279-3791)로 전화해 보시겠어요? 현장 확인 해주실 거에요!"
             }
             
@@ -202,20 +197,24 @@
     },
     {
         "title": "인스타 dm 답장 이거 어떻게 해요? 누구는 이거 업데이트 하라고 하고.. vpn 깔아서 하라고 하고.. 누구는 그냥 이거 인스타 들어가면 뜬다 그러고 심지어 베타버전도 해봤는데 안돼요",
-        "name": “냐이버”,
-        "index": “13”,
+        "name": "수정",
+        "index": "12",
         "certifiedUser": true,
+        "isAnonymous": false,
         "answerCount": “2”,
         "answer": [
             {
-                "name": “고잉인스타”,
+                "name": "정은",
+                "isAnonymous": true,
                 "contents": "페북페메랑 인스타 디엠이랑 업데이트 해야할수있습니다"
             },
             {
-                "name": “영웅”,
+                "name": "영웅",
+                "isAnonymous": true,
                 "contents": "사람들 스토리 보면 우측 하단에 비행기 표시 있어요. 그거 눌러서 답장하시거나, 스토리에 답장기능 안 막아놓았다면 스토리 하단에 바같은 거 있는데 그거 클릭해서 거기다 타자 치고 전송 누르면 돼요"
             }
             
         ]
     }
+
 ]
