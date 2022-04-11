@@ -47,8 +47,10 @@ struct CompletAnswerListView: View {
     @State private var answerLists = ["아닙니다", "맞아요 같이 서명해서 제출하면 돼요", "좋아요!", "고마워요!"]
     @State private var nameLists = ["익명1", "익명2", "닐", "파스타"]
     @State private var anonymousCount: Int = 1
+        
     
     var body: some View {
+       
         VStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 19)
                 .stroke(appMainColor, lineWidth: 1)
@@ -133,6 +135,8 @@ struct CompletAnswerListView: View {
             }
             
         }
+        
+        
     }
 }
 
