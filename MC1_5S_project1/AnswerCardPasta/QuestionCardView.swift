@@ -10,7 +10,8 @@ import SwiftUI
 struct QuestionCardView: View {
     
     @State var comment:String = ""
-    
+    @State var certified:Bool = true
+    @State var anonymous:Bool = false
     var body: some View {
         
         ZStack{
@@ -20,7 +21,13 @@ struct QuestionCardView: View {
                     .font(.system(size: 15, design: .default))
                     .frame(width: UIScreen.screenWidth, height: 50,alignment: .center)
                     .padding(15)
-                
+                Toggle(isOn: $anonymous)
+                {
+                    Label("익명으로 질문하기", systemImage: "checkmark.square")
+                }
+                .toggleStyle(.button)
+                .frame(width: UIScreen.screenWidth*0.95, height: 15, alignment: .trailing)
+                .padding()
                 TextEditor(text: $comment)
                     .padding(EdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 25))
                     .multilineTextAlignment(.leading)
@@ -36,13 +43,16 @@ struct QuestionCardView: View {
                 let comment_input = String(comment)
                 let name = UserInformation.loginUser.name ?? ""
                 let created_at = Date()
-                addNewContent(title: comment_input, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: false, answerCount: "0")
+                addNewContent(title: comment_input, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
             }){
-                Text("완료")
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(7)
-                    .border(MINTCOLOR, width: 1)
+                let idx:Int = postContentList.count-1
+                NavigationLink(destination: QuestionDetailView(index: idx)) {
+                    Text("완료")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(7)
+                        .border(MINTCOLOR, width: 1)
+                }
             }
             .background(MINTCOLOR)
             .cornerRadius(8)
