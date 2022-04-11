@@ -65,3 +65,4 @@ struct SearchNoAnswerDetailView_Previews: PreviewProvider {
         SearchNoAnswerDetailView()
     }
 }
+

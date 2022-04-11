@@ -11,14 +11,13 @@ struct SearchAnswerDetailView: View {
     @State var text : String = ""
     
     var body: some View {
-        NavigationView{
-            VStack {
-                SearchBar(text: self.$text)
-                SearchResultAnswerDetailView(postContents: postContentList)
-            }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
-        } // NavigationView
+        VStack {
+            SearchBar(text: self.$text)
+            SearchResultAnswerDetailView(postContents: postContentList)
+        }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        
     }
 }
 
@@ -66,3 +65,6 @@ struct SearchAnswerDetailView_Previews: PreviewProvider {
         SearchAnswerDetailView()
     }
 }
+
+
+

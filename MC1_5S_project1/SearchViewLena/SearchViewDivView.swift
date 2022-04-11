@@ -18,7 +18,8 @@ struct SearchViewDivView: View {
                 SearchResultSectionAnswerView()
                 
                 NavigationLink(destination: SearchAnswerDetailView(), label: {
-                    AnyButton(buttonText: "더보기")})
+                    AnyButton(buttonText: "더보기")}
+                )
                 
                 SearchResultSectionNoAnswerView()
                 
@@ -193,5 +194,16 @@ struct AnyButton : View {
 struct SearchViewDivView_Previews: PreviewProvider {
     static var previews: some View {
         SearchViewDivView()
+    }
+}
+
+extension UINavigationController: ObservableObject, UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
     }
 }
