@@ -121,14 +121,13 @@ struct SearchResultSectionAnswerView: View {
 }
 
 struct SearchResultSectionNoAnswerView: View {
-    // var postContents: [PostContent]
     var body: some View {
         HStack {
             Text("답변이 없는 질문")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color(red: 0.333, green: 0.358, blue: 0.362))
-                .padding(.bottom, 1)
+                .padding(.vertical, 5)
                 .padding(.leading, 15)
             Spacer()
         } // HStack
@@ -137,7 +136,9 @@ struct SearchResultSectionNoAnswerView: View {
         VStack {
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(postContentList) { post in
+                    ForEach(postContentList.filter{
+                        $0.answerCount == "0"
+                    }) { post in
                         let post_index = Int(post.index) ?? 0
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                             Divider()
@@ -152,9 +153,6 @@ struct SearchResultSectionNoAnswerView: View {
             .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             .padding(.horizontal, 15)
             
-            //        // 더보기 버튼
-            //        MoreButton()
-            //            .padding(.bottom, 5)
     }
 }
     
