@@ -40,7 +40,9 @@ struct SearchResultNoAnswerDetailView: View {
         VStack {
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(postContents) { post in
+                    ForEach(postContents.filter{
+                        $0.answerCount == "0"
+                    }) { post in
                         let post_index = Int(post.index) ?? 0
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)) {QuestionContentText(post: post)
                         }.navigationBarTitleDisplayMode(.inline)
