@@ -25,7 +25,7 @@ struct QuestionListView: View {
                             .foregroundColor(Color.gray)
                             .padding(.trailing, 30.0)
                     }
-                    .navigationBarTitle("")
+                    .navigationBarTitle("돌아가기")
                     .navigationBarHidden(true)
                 }
                 //SelectHotOrNew
@@ -36,8 +36,7 @@ struct QuestionListView: View {
                         }
                     }.pickerStyle(.segmented)
                         .padding()
-                    NavigationLink(destination:QuestionCardView()
-                        .navigationBarBackButtonHidden(true)){
+                    NavigationLink(destination:QuestionCardView()){
                             Text("질문하기")
                                 .fontWeight(.bold)
                                 .foregroundColor(MINTCOLOR)
