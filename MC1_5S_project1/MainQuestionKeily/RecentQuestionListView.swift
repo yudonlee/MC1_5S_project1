@@ -33,7 +33,7 @@ struct RecentQuestionListView: View {
                 VStack{
                     ForEach(viewModel.postContents) {
                         post in
-                        let post_index = Int(post.index) ?? 0
+                        let post_index = Int(post.index) ?? 0 //string to int
                         //내용과 링크 한 화면에 두기
                         ZStack{
                             HStack {
