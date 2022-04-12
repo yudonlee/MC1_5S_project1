@@ -19,6 +19,7 @@ struct HotQuestionListView: View {
                         let post_index = Int(post.index) ?? 0
                         //내용과 링크 한 화면에 두기
                         ZStack{
+                            /*
                             HStack {
                                 VStack(alignment:.leading, spacing: 10) {
                                     Text(post.name) //작성자 닉네임
@@ -30,8 +31,11 @@ struct HotQuestionListView: View {
                                     Image(systemName: "bubble.right")
                                     Text(post.answerCount) //댓글 개수
                                 }
-                            }
-                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){MyContentView(post: post)
+                            }*/
+                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){
+//                                케일리한테 물어볼 부분
+//                                MyContentView(post: post)
+                                MyQuestionContentView(postIdx: post_index - 1)
                             }.navigationBarTitleDisplayMode(.inline)
                         }
                         Divider()
