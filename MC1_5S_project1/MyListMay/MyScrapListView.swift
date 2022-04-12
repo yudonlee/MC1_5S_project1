@@ -24,7 +24,7 @@ struct MyScrapListView: View {
                                 let post_index = Int(post.index) ?? 0
                                 
                                 NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                                    MyScrapContentView(post: post)
+                                    MyContentView(post: post)
                                 }.navigationBarTitleDisplayMode(.inline)
                                 Divider()
                             }
@@ -73,26 +73,31 @@ struct MyScrapListView: View {
     }
 }
 
-struct MyScrapContentView: View {
-    @State var post: PostContent
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(post.name) //작성자 닉네임
-                    .bold()
-                Text(post.title) //게시글 내용
-            }
-            Spacer()
-            HStack(spacing: 3) {
-                Image(systemName: "bubble.right")
-                Text(post.answerCount) //댓글 개수
-            }
-        }
-        .foregroundColor(.black)
-        .multilineTextAlignment(.leading)
-    }
-}
+//struct MyScrapContentView: View {
+//    @State var post: PostContent
+//
+//    var body: some View {
+//        HStack {
+//            VStack(alignment: .leading, spacing: 10) {
+//                if(post.isAnonymous){
+//                    Text("익명")
+//                        .bold()
+//                } else {
+//                    Text(post.name) //작성자 닉네임
+//                        .bold()
+//                }
+//                Text(post.title) //게시글 내용
+//            }
+//            Spacer()
+//            HStack(spacing: 3) {
+//                Image(systemName: "bubble.right")
+//                Text(post.answerCount) //댓글 개수
+//            }
+//        }
+//        .foregroundColor(.black)
+//        .multilineTextAlignment(.leading)
+//    }
+//}
 
 struct MyScrapListView_Previews: PreviewProvider {
     static var previews: some View {

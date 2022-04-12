@@ -31,7 +31,7 @@ struct HotQuestionListView: View {
                                     Text(post.answerCount) //댓글 개수
                                 }
                             }
-                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){MyQuestionContentView(post: post)
+                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){MyContentView(post: post)
                             }.navigationBarTitleDisplayMode(.inline)
                         }
                         Divider()

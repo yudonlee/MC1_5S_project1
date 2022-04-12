@@ -26,7 +26,7 @@ struct MyQuestionListView: View {
                         
                         //게시글 상세 이동
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                            MyQuestionContentView(post: post)
+                            MyContentView(post: post)
                         }.navigationBarTitleDisplayMode(.inline)
                         Divider()
                     }
@@ -38,7 +38,7 @@ struct MyQuestionListView: View {
     }
 }
 
-struct MyQuestionContentView: View { //질문 게시글 리스트
+struct MyContentView: View { //질문 게시글 리스트
     @EnvironmentObject var viewModel: postViewModel
 
     @State var post: PostContent
@@ -46,8 +46,13 @@ struct MyQuestionContentView: View { //질문 게시글 리스트
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text(post.name) //작성자 닉네임
-                    .bold()
+                if(post.isAnonymous){
+                    Text("익명")
+                        .bold()
+                } else {
+                    Text(post.name) //작성자 닉네임
+                        .bold()
+                }
                 Text(post.title) //게시글 내용
             }
             Spacer()
