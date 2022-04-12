@@ -100,11 +100,12 @@ struct SearchResultSectionAnswerView: View {
         // content section
         VStack {
             ScrollView(.vertical) {
-                ForEach(postContentList) { post in
+                ForEach(postContentList.filter{
+                    $0.answerCount != "0" // 0이 아닌 것만
+                }) { post in
                     let post_index = Int(post.index) ?? 0
                     NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                     }
-                    
                     Divider()
                 } // Loop
                 .padding(.horizontal, 15)
@@ -137,7 +138,7 @@ struct SearchResultSectionNoAnswerView: View {
             ScrollView(.vertical) {
                 VStack {
                     ForEach(postContentList.filter{
-                        $0.answerCount == "0"
+                        $0.answerCount == "0" // answerCount가 0인 답변이 없는 것을 보여준다
                     }) { post in
                         let post_index = Int(post.index) ?? 0
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
