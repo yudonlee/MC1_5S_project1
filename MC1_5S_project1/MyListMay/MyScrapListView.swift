@@ -9,11 +9,7 @@ import SwiftUI
 
 struct MyScrapListView: View {
     
-    @State var userName = UserInformation.loginUser.name ?? ""
-    @State var userScrapCnt: Int = UserInformation.loginUser.data?.scrapList.count ?? 0
     @EnvironmentObject var viewModel: postViewModel
-
-    
     
     var body: some View {
         VStack {
