@@ -6,10 +6,23 @@
 //
 
 import Foundation
+import SwiftUI
+
+
+public class postViewModel: ObservableObject {
+    @Published var testContents: [PostContent] = load("posts.json")
+}
 
 var postContentList: [PostContent] = load("posts.json")
 var userProfileList: [UserProfile] = load("users.json")
 
+
+//class ShuffleView: ObservableObject {
+//    @Published var postC: [PostContent] = load("posts.json")
+//    func shuffle() {
+//        postContentList.shuffle()
+//    }
+//}
 
 
 func load<T: Decodable>(_ filename: String) -> T {
@@ -52,6 +65,5 @@ func addNewAnswer(answerComment: String, name: String, created_at: Date, updated
     let newAnswerComment: PostContent.Answer = PostContent.Answer(name: name, created_at: created_at, updated_at: updated_at, isAnonymous: isAnonymous, contents: answerComment)
     postContentList[index].answer.append(newAnswerComment)
     postContentList[index].answerCount = "\(postContentList[index].answer.count)"
-    
     
 }

@@ -151,7 +151,6 @@ struct CompletAnswerListView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CompletAnswerListView()
-            CompletAnswerListView()
         }
     }
 }

@@ -7,32 +7,40 @@
 
 import SwiftUI
 
-func obj() {
-    print("3")
-}
+let lightgray = Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255)
+
 struct SignInView: View {
     @State var id: String = ""
     @State var password: String = ""
     @State var isSignInSuccess: Bool = false
     
+    
+    @StateObject var viewModel = postViewModel()
+    
     var body: some View {
         NavigationView {
             VStack{
-                Image("apple")
+                Image("Logo")
                     .resizable()
+                    .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
                     .aspectRatio(contentMode: .fit)
+                
                 //                .frame(width: 100, height: 100)
                 //                .clipShape(Circle())
                 
-                TextField("username", text: $id)
-                    .padding()
-                    .background(.gray)
-                    .cornerRadius(19)
-                SecureField("password", text: $password)
-                    .padding()
-                    .background(.gray)
-                    .cornerRadius(19)
-                
+                VStack(alignment: .leading, spacing: 24){
+                    TextField("username", text: $id)
+                        .padding(15)
+                        .background(lightgray)
+                        .cornerRadius(19)
+                        .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
+                    SecureField("password", text: $password)
+                        .padding(15)
+                        .background(lightgray)
+                        .cornerRadius(19)
+                        .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
+                    
+                }
                 HStack(alignment: .center) {
                     NavigationLink(destination: MainTabView().navigationBarBackButtonHidden(true)
                     ) {
@@ -75,8 +83,11 @@ struct SignInView: View {
                             .cornerRadius(7)
                     }
                 }
+                
+        
             }
-        }
+            
+        }.environmentObject(viewModel)
     }
 }
 
