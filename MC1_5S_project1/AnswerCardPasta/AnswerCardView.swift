@@ -48,9 +48,9 @@ struct QuestionCard: View {
             }
             
             Image(systemName: "arrow.up.backward.and.arrow.down.forward")
-            .position(x: UIScreen.screenWidth/1.4-20 , y:20)
+            .position(x: UIScreen.screenWidth/1.4-5 , y:20)
         }
-        .frame(width: UIScreen.screenWidth/1.4, height: UIScreen.screenHeight/1.8, alignment: .center)
+        .frame(width: UIScreen.screenWidth/1.3, height: UIScreen.screenHeight/1.4, alignment: .center)
     }
 }
 
@@ -64,7 +64,8 @@ struct AnswerCardView: View {
         NavigationView{
             VStack{
                 Text("질문카드")
-                    .bold()
+                    .font(.title)
+                    .fontWeight(.bold)
                     .frame(width: UIScreen.screenWidth * 0.9, height: 10, alignment: .center)
                     .padding(10)
                 ScrollView(.horizontal){
