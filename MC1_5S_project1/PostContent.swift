@@ -46,6 +46,14 @@ struct PostContent: Codable, Identifiable {
         case isAnonymous, answerCount
         case answer
     }
+    
+//    mutating keyword
+//    https://hyerios.tistory.com/190
+    
+    mutating func addTestAnswer(answerComment: String, name: String, created_at: Date, updated_at: Date, isAnonymous: Bool) {
+            let newAnswerComment: PostContent.Answer = PostContent.Answer(name: name, created_at: created_at, updated_at: updated_at, isAnonymous: isAnonymous, contents: answerComment)
+            self.answer.append(newAnswerComment)
+            self.answerCount = "\(self.answer.count)"
+            
+    }
 }
-
-

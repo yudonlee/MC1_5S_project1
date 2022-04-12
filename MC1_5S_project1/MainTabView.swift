@@ -10,10 +10,6 @@ import SwiftUI
 
 
 struct MainTabView : View {
-
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor(Color(red: 240 / 255, green: 240 / 255, blue: 240 / 255))
-    }
     var body: some View {
         TabView {
             QuestionListView()
