@@ -17,10 +17,40 @@ struct MyScrapListView: View {
                 VStack(spacing: 15) {
                     
                     if let data = UserInformation.loginUser.data {
-                        ForEach(data.scrapList, id: \.self) { item in
-                            MyScrapContentView(post: viewModel.postContents[item]) //샘플
+                        ForEach(data.scrapList, id: \.self){ item in
+                            ForEach(viewModel.postContents.filter {
+                                Int($0.index) == item
+                            }) { post in
+                                let post_index = Int(post.index) ?? 0
+                                
+                                NavigationLink(destination: QuestionDetailView(index: post_index-1)){
+                                    MyScrapContentView(post: post)
+                                }.navigationBarTitleDisplayMode(.inline)
+                                Divider()
+                            }
                         }
+                        .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
                     }
+                    
+//                    ForEach(viewModel.postContents){ post in
+//                        ForEach(post.answer.filter{
+//                            $0.name == UserInformation.loginUser.name
+//                        }) { item in
+//                            let post_index = Int(post.index) ?? 0
+//
+//                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){
+//                                MyAnswerContentView(post: post)
+//                            }.navigationBarTitleDisplayMode(.inline)
+//                            Divider()
+//                        }
+//                    }
+//                    .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+                    
+//                    if let data = UserInformation.loginUser.data {
+//                        ForEach(data.scrapList, id: \.self) { item in
+//                            MyScrapContentView(post: viewModel.postContents[item]) //샘플
+//                        }
+//                    }
                     
 //                    ForEach(postContentList.filter {
 //                        for sc in 0...userScrapCnt {
