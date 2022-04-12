@@ -11,7 +11,9 @@ struct QuestionListView: View {
     @State var text = ""
     @State var searching = false
     @State private var selectedSide: itemOfMenu = .myHot
-    
+
+    @EnvironmentObject var viewModel: postViewModel
+
     var body: some View {
         NavigationView {
             VStack {

@@ -10,6 +10,9 @@ import SwiftUI
 struct MyProfileView: View {
     @State private var showNoti = false
     
+    @EnvironmentObject var viewModel: postViewModel
+
+    
     var body: some View {
             VStack {
                 HStack { //프로필 아이콘, 레벨, 닉네임

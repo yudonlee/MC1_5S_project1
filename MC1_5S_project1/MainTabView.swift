@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainTabView : View {
+    @EnvironmentObject var viewModel: postViewModel
       
     var body: some View {
         TabView {
