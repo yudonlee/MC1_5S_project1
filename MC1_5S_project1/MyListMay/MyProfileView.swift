@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MyProfileView: View {
     @State private var showNoti = false
-//    @State var user: UserProfile
     
     var body: some View {
             VStack {
@@ -20,8 +19,8 @@ struct MyProfileView: View {
                         .frame(width: 100, height: 100)
                         .clipShape(Circle())
                     VStack (alignment: .leading, spacing: 10){
-                        Text("LV.1")
-                        Text("오감이")
+                        Text("LV." + String(UserInformation.loginUser.level ?? 0))
+                        Text(UserInformation.loginUser.name ?? "")
 //                        Text(user.level)
 //                        Text(user.name)
                     }

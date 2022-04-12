@@ -16,28 +16,6 @@ struct QuestionCardView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                VStack{
-                    Spacer()
-                    Text("질문 작성")
-                        .font(.system(size: 15, design: .default))
-                        .frame(width: UIScreen.screenWidth, height: 50,alignment: .center)
-                        .padding(15)
-                    Toggle(isOn: $anonymous)
-                    {
-                        Label("익명으로 질문하기", systemImage: "checkmark.square")
-                    }
-                    .toggleStyle(.button)
-                    .frame(width: UIScreen.screenWidth*0.95, height: 15, alignment: .trailing)
-                    .padding()
-                    TextEditor(text: $comment)
-                        .padding(EdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 25))
-                        .multilineTextAlignment(.leading)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 19)
-                                .stroke(MINTCOLOR, lineWidth: 2)
-                                .frame(width: UIScreen.screenWidth*0.95, alignment: .center)
-                        )
-                }
                 NavigationLink(destination: QuestionDetailView(index: postContentList.count), isActive: $isLinkAlive) {
                     Button(action: {
                         // certified user 인지 아닌 지 checkbox로 받기
@@ -59,6 +37,28 @@ struct QuestionCardView: View {
                 .cornerRadius(8)
                 .frame(width: 100, height: 100)
                 .position(x: UIScreen.screenWidth-10, y: 17)
+                VStack{
+                    Spacer()
+                    Text("질문 작성")
+                        .font(.system(size: 19, design: .default))
+                        .frame(width: UIScreen.screenWidth, height: 50,alignment: .center)
+                        .padding(15)
+                    Toggle(isOn: $anonymous)
+                    {
+                        Label("익명으로 질문하기", systemImage: "checkmark.square")
+                    }
+                    .toggleStyle(.button)
+                    .frame(width: UIScreen.screenWidth*0.95, height: 15, alignment: .trailing)
+                    .padding()
+                    TextEditor(text: $comment)
+                        .padding(EdgeInsets(top: 5, leading: 25, bottom: 5, trailing: 25))
+                        .multilineTextAlignment(.leading)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 19)
+                                .stroke(MINTCOLOR, lineWidth: 2)
+                                .frame(width: UIScreen.screenWidth*0.95, alignment: .center)
+                        )
+                }
             }
             .navigationBarHidden(true)
         }

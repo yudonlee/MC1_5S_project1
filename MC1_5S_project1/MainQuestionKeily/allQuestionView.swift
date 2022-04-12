@@ -7,23 +7,11 @@
 
 import SwiftUI
 
-// SwitchOnBest
-struct ButtonToAsk : View {
-    var body : some View {
-        Button(action: {
-        }){
-            Image(systemName: "square.and.pencil")
-                .frame(width: 50.0)
-                .tint(.gray)
-        }
-    }
-}
-
 struct QuestionListView: View {
     @State var searchText = ""
     @State var searching = false
     @State private var selectedSide: itemOfMenu = .myHot
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -36,15 +24,16 @@ struct QuestionListView: View {
                         }
                     }.pickerStyle(.segmented)
                         .padding()
-                    
-                    ButtonToAsk()
-                        .padding(.trailing)
-                        
-                    
+                    NavigationLink(destination:QuestionCardView()){
+                        Text("질문하기")
+                            .fontWeight(.semibold)
+                            .padding(.trailing, 30.0)
+                            .foregroundColor(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
+                    }
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
                 }
-                
                 ChosenHotOrNew(selectedSide: selectedSide)
-                //글쓰기 버튼 링크 걸기
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)

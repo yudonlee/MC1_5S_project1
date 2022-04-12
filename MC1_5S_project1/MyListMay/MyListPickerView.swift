@@ -36,9 +36,6 @@ struct MyListPickerView: View {
     }
 }
 
-
-
-
 struct Searching: View {
     @Binding var text: String
     @State private var isEditing = false

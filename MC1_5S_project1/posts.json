@@ -246,37 +246,43 @@
                 "created_at" : 1648563000,
                 "updated_at" : 1648563000,
                 "isAnonymous": true,
-                "contents": "소리로 인해 너무 힘든 상황이면 생활관 13동 1층 생활관운영팀 당직실(054-279-3791)로 전화해 보시겠어요? 현장 확인 해주실 거에요!"
+                "contents": "소리로 인해 너무 힘든 상황이면 생활관 13동 1층 생활관운영팀 당직실로 전화해 보시겠어요? 현장 확인 해주실 거에요!"
             }
             
         ]
     },
     {
-        "title": "인스타 dm 답장 이거 어떻게 해요? 누구는 이거 업데이트 하라고 하고.. vpn 깔아서 하라고 하고.. 누구는 그냥 이거 인스타 들어가면 뜬다 그러고 심지어 베타버전도 해봤는데 안돼요",
-        "name": "수정",
+        "title": "포스빌 도어락 어떻게 변경하나요?",
+        "name": "민정",
         "index": "12",
         "created_at" : 1648563000,
         "updated_at" : 1648566000,
         "certifiedUser": true,
         "isAnonymous": false,
-        "answerCount": "2",
-        "answer": [
-            {
-                "name": "정은",
-                "created_at" : 1648566700,
-                "updated_at" : 1648566700,
-                "isAnonymous": true,
-                "contents": "페북페메랑 인스타 디엠이랑 업데이트 해야할수있습니다"
-            },
-            {
-                "name": "영웅",
-                "created_at" : 1648567700,
-                "updated_at" : 1648567700,
-                "isAnonymous": true,
-                "contents": "사람들 스토리 보면 우측 하단에 비행기 표시 있어요. 그거 눌러서 답장하시거나, 스토리에 답장기능 안 막아놓았다면 스토리 하단에 바같은 거 있는데 그거 클릭해서 거기다 타자 치고 전송 누르면 돼요"
-            }
-            
-        ]
+        "answerCount": "0",
+        "answer": []
+    },
+    {
+        "title": "학습지원장학금 다들 받으셨나요?",
+        "name": "미나",
+        "index": "13",
+        "created_at" : 1648563000,
+        "updated_at" : 1648566000,
+        "certifiedUser": true,
+        "isAnonymous": false,
+        "answerCount": "0",
+        "answer": []
+    },
+    {
+        "title": "외부 숙소 사용하는 멘티들은 출입증 어디서 수령한다고 했나요? 공지글을 못찾겠어요ㅠㅠ",
+        "name": "예감",
+        "index": "14",
+        "created_at" : 1648563000,
+        "updated_at" : 1648566000,
+        "certifiedUser": true,
+        "isAnonymous": true,
+        "answerCount": "0",
+        "answer": []
     }
 
 ]
