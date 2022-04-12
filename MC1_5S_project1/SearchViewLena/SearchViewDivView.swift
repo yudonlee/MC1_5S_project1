@@ -44,7 +44,7 @@ struct SearchBar: View {
     var body: some View {
         HStack{
             TextField("Search" , text : self.$text)  // 검색창을 받을 수 있는 택스트필드
-                .padding(10)
+                .padding(30)
                 .frame(height:40)
                 .background(Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255))
                 .cornerRadius(8)
@@ -52,25 +52,22 @@ struct SearchBar: View {
             // 돋보기 추가
                 .overlay(
                     HStack() {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(Color(.black))
                         Spacer()
-                        
                         if self.editText{
                             // x 터치하면 입력한 값 취소하고 키 입력 종료
                             Button(action : {
                                 self.editText = false
-                                self.text = ""
+                                self.text = "   "
                                 // 키보드에서 입력을 끝내게하는 코드
                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                             }){
                                 Image(systemName: "multiply.circle.fill")
                                     .foregroundColor(Color(.black))
                             }
-                        } else {
-                            //magnifyingglass 사용
-                            Image(systemName: "magnifyingglass")
-                                .foregroundColor(Color(.black))
                         }
-                    }
+                    } //HStack
                         .padding(5)
                 ).onTapGesture {
                     self.editText = true
