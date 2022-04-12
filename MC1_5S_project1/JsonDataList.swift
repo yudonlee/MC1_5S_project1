@@ -10,7 +10,17 @@ import SwiftUI
 
 
 public class postViewModel: ObservableObject {
-    @Published var testContents: [PostContent] = load("posts.json")
+    @Published var postContents: [PostContent] = load("posts.json")
+    func addNewContent(title: String, name: String,
+                       created_at: Date, updated_at: Date, certifiedUser: Bool,
+                       isAnonymous: Bool, answerCount:String) {
+        let index: String = String(postContentList.count)
+        let new_post:PostContent = PostContent(
+            title: title, name: name, index:index,
+            created_at: created_at, updated_at: updated_at, certifiedUser: certifiedUser,
+            isAnonymous: isAnonymous, answerCount: "0", answer: [])
+        postContents.append(new_post)
+    }
 }
 
 var postContentList: [PostContent] = load("posts.json")

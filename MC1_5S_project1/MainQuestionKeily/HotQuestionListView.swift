@@ -14,7 +14,7 @@ struct HotQuestionListView: View {
         VStack {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack{
-                    ForEach(viewModel.testContents) {
+                    ForEach(viewModel.postContents) {
                         post in
                         let post_index = Int(post.index) ?? 0
                         //내용과 링크 한 화면에 두기

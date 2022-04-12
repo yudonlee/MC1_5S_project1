@@ -19,7 +19,7 @@ struct MyQuestionListView: View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    ForEach(viewModel.testContents.filter{ //연구 대상
+                    ForEach(viewModel.postContents.filter{ //연구 대상
                         $0.name == userName
                     }) { post in
                         let post_index = Int(post.index) ?? 0

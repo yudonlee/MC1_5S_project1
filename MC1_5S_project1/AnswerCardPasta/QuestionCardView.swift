@@ -9,6 +9,8 @@ import SwiftUI
 
 struct QuestionCardView: View {
     
+    @EnvironmentObject var viewModel: postViewModel
+
     @State var comment:String = ""
     @State var certified:Bool = true
     @State var anonymous:Bool = false
@@ -23,7 +25,9 @@ struct QuestionCardView: View {
                         let comment_input = String(comment)
                         let name = UserInformation.loginUser.name ?? ""
                         let created_at = Date()
-                        addNewContent(title: comment_input, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
+                        
+                        viewModel.addNewContent(title: comment_input, name: name, created_at: Date(), updated_at: Date(), certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
+//                        addNewContent(title: comment_input, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
                         self.isLinkAlive = true
                     }){
                             Text("완료")

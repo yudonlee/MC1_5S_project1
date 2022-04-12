@@ -22,7 +22,7 @@ struct MyScrapListView: View {
                     
                     if let data = UserInformation.loginUser.data {
                         ForEach(data.scrapList, id: \.self) { item in
-                            MyScrapContentView(post: viewModel.testContents[item]) //샘플
+                            MyScrapContentView(post: viewModel.postContents[item]) //샘플
                         }
                     }
                     

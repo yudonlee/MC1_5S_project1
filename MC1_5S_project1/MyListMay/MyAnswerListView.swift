@@ -14,7 +14,7 @@ struct MyAnswerListView: View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    ForEach(viewModel.testContents) { post in
+                    ForEach(viewModel.postContents) { post in
                         HStack {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text(post.name) //작성자 닉네임

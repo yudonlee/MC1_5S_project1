@@ -45,10 +45,10 @@ struct QuestionDetailView: View {
                 VStack{
                     HStack(alignment: .top) {
                         Image(systemName: "applelogo")
-                        if viewModel.testContents[index].isAnonymous {
+                        if viewModel.postContents[index].isAnonymous {
                             Text("익명\(anonymousCount)")
                         } else {
-                            Text(viewModel.testContents[index].name)
+                            Text(viewModel.postContents[index].name)
                         }
                         Spacer()
                         Button("수정"){
@@ -65,7 +65,7 @@ struct QuestionDetailView: View {
                             .foregroundColor(appMainColor)
                             .fontWeight(.bold)
                             .multilineTextAlignment(.leading)
-                        Text("\(viewModel.testContents[index].title) ")
+                        Text("\(viewModel.postContents[index].title) ")
                             .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
@@ -81,7 +81,7 @@ struct QuestionDetailView: View {
                         .toggleStyle(.button)
                         Spacer()
                         Image(systemName: "bubble.right")
-                        Text(viewModel.testContents[index].answerCount)
+                        Text(viewModel.postContents[index].answerCount)
                         
                     }
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 10, trailing: 10))
@@ -97,7 +97,7 @@ struct QuestionDetailView: View {
             VStack {
                 ScrollView(.vertical) {
                     VStack {
-                        ForEach(viewModel.testContents[index].answer){ answer in
+                        ForEach(viewModel.postContents[index].answer){ answer in
                             VStack(alignment:.leading) {
                                 HStack{
                                     Image(systemName: "applelogo")
@@ -127,7 +127,7 @@ struct QuestionDetailView: View {
                             }
                             
                             //                           Divider가 List elements들 사이에만 존재하도록 코드 수정
-                            if(answer.name != viewModel.testContents[index].lastAnswerName) {
+                            if(answer.name != viewModel.postContents[index].lastAnswerName) {
                                 Divider()
                             }
                         }
@@ -159,7 +159,7 @@ struct QuestionDetailView: View {
 //                    print("complete")
                     if let name = UserInformation.loginUser.name {
 //                        print("newAnswer")
-                        viewModel.testContents[index].addTestAnswer(answerComment: answerTextField, name: name, created_at: Date(), updated_at: Date(), isAnonymous: isAnswerAnonymous
+                        viewModel.postContents[index].addTestAnswer(answerComment: answerTextField, name: name, created_at: Date(), updated_at: Date(), isAnonymous: isAnswerAnonymous
                         )
 //                        viewModel.testContents[index].addNewAnswer(answerComment: answerTextField, name: name ,created_at: Date(), updated_at: Date(), isAnonymous: isAnswerAnonymous, index: index)
 //                        postContentList.shuffle()
