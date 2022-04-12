@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct SearchViewDivView: View {
-    @State var text: String = ""
+    @State var text: String
     
     var body: some View {
         NavigationView {
             VStack {
                 SearchBar(text: $text)
                 
-                SearchResultSectionAnswerView()
+                SearchResultSectionAnswerView(text: $text)
                 
                 NavigationLink(destination: SearchAnswerDetailView(), label: {
                     AnyButton(buttonText: "더보기")}
@@ -24,7 +24,7 @@ struct SearchViewDivView: View {
                 Divider()
                     .background(.gray)
                 
-                SearchResultSectionNoAnswerView()
+                SearchResultSectionNoAnswerView(text: $text)
                 
                 NavigationLink(destination: SearchNoAnswerDetailView(), label: {
                     AnyButton(buttonText: "더보기")})
@@ -82,7 +82,7 @@ struct SearchBar: View {
 
 // ScrollView + VStack으로 구현
 struct SearchResultSectionAnswerView: View {
-    // @State var post: PostContent
+    @Binding var text: String
     var body: some View {
         // title
         HStack {
@@ -98,9 +98,9 @@ struct SearchResultSectionAnswerView: View {
         // content section
         VStack {
             ScrollView(.vertical) {
-                ForEach(postContentList.filter{
-                    $0.answerCount != "0"  // 0이 아닌 것만
-                }) { post in
+                ForEach(postContentList.filter {
+                    $0.title.contains(text) && $0.answerCount != "0"}) { post in
+                        // 검색어가 포함되어 있고, 답글 개수가 0이 아닌 것을 보여준다
                     let post_index = Int(post.index) ?? 0
                     NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                     }
@@ -117,6 +117,7 @@ struct SearchResultSectionAnswerView: View {
 }
 
 struct SearchResultSectionNoAnswerView: View {
+    @Binding var text: String
     var body: some View {
         HStack {
             Text("답변이 없는 질문")
@@ -132,8 +133,8 @@ struct SearchResultSectionNoAnswerView: View {
         VStack {
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(postContentList.filter{
-                        $0.answerCount == "0" // answerCount가 0인 답변이 없는 것을 보여준다
+                    ForEach(postContentList.filter {
+                        $0.title.contains(text) && $0.answerCount == "0" // 검색어가 포함되어 있고, 답글 개수가 0인 것만 보여준다
                     }) { post in
                         let post_index = Int(post.index) ?? 0
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
@@ -191,7 +192,7 @@ struct AnyButton : View {
 
 struct SearchViewDivView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchViewDivView()
+        SearchViewDivView(text: "")
     }
 }
 

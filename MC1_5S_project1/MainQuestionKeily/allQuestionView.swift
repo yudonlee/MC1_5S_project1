@@ -19,7 +19,7 @@ struct QuestionListView: View {
             VStack {
                 HStack{
                     SearchBar(text: $text)
-                    NavigationLink(destination:SearchViewDivView()){
+                    NavigationLink(destination:SearchViewDivView(text: text)){
                         Text("검색")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.gray)
