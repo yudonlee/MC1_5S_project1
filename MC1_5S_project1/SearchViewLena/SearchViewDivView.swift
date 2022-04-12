@@ -98,21 +98,23 @@ struct SearchResultSectionAnswerView: View {
         // content section
         VStack {
             ScrollView(.vertical) {
-                ForEach(postContentList.filter {
-                    $0.title.contains(text) && $0.answerCount != "0"}) { post in
-                        // 검색어가 포함되어 있고, 답글 개수가 0이 아닌 것을 보여준다
-                    let post_index = Int(post.index) ?? 0
-                    NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
-                    }
-                    Divider()
-                } // Loop
-                .padding(.horizontal, 15)
-                .padding(.vertical, 5)
+                VStack {
+                    ForEach(postContentList.filter {
+                        $0.title.contains(text) && $0.answerCount != "0"}) { post in
+                            // 검색어가 포함되어 있고, 답글 개수가 0이 아닌 것을 보여준다
+                        let post_index = Int(post.index) ?? 0
+                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
+                            Divider()
+                        }
+                    } // Loop
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 5)
+                }
             } // ScrollView
         } // VStack
         // border
-        .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
-        .padding(.horizontal, 15)
+            .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
+            .padding(.horizontal, 15)
     }
 }
 
@@ -192,7 +194,7 @@ struct AnyButton : View {
 
 struct SearchViewDivView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchViewDivView(text: "")
+        SearchViewDivView(text: " ")
     }
 }
 
