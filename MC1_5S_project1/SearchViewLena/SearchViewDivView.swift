@@ -13,17 +13,20 @@ struct SearchViewDivView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Searching(text: $text)
-                    .padding(.vertical, -10)
-                    .padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(.gray))
-                    .padding(15)
+                SearchBar(text: $text)
+//                    .padding(.vertical, -15)
+//                    .padding(15)
+//                    .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(.gray))
+//                    .padding(15)
                 
                 SearchResultSectionAnswerView()
                 
                 NavigationLink(destination: SearchAnswerDetailView(), label: {
                     AnyButton(buttonText: "더보기")}
                 )
+                
+                Divider()
+                    .background(.gray)
                 
                 SearchResultSectionNoAnswerView()
                 
@@ -37,7 +40,7 @@ struct SearchViewDivView: View {
     }
 }
 
-/*
+
 // 상단 searchBar
 struct SearchBar: View {
     @Binding var text : String // Binding은 외부에서 값을 바인딩 시킬 수 있음
@@ -45,15 +48,16 @@ struct SearchBar: View {
     
     var body: some View {
         HStack{
-            TextField("궁금한 것을 물어보세요" , text : self.$text)  // 검색창을 받을 수 있는 택스트필드
+            TextField("Search" , text : self.$text)  // 검색창을 받을 수 있는 택스트필드
                 .padding(10)
-                .background(Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255)) //배경색상 비활성화 배경 색상
+                .frame(height:40)
+                .background(Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255))
                 .cornerRadius(8)
-            
+                            
             // 돋보기 추가
                 .overlay(
-                    HStack() { // 가로로 view를 쌓을 수 있게
-                        Spacer() // 오른쪽 가장자리에 오도록
+                    HStack() {
+                        Spacer()
                         
                         if self.editText{
                             // x 터치하면 입력한 값 취소하고 키 입력 종료
@@ -80,7 +84,7 @@ struct SearchBar: View {
         .padding(.horizontal, 15)
     }
 }
- */
+
 
 // ScrollView + VStack으로 구현
 struct SearchResultSectionAnswerView: View {
