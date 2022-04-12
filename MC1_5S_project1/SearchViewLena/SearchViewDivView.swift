@@ -14,10 +14,6 @@ struct SearchViewDivView: View {
         NavigationView {
             VStack {
                 SearchBar(text: $text)
-//                    .padding(.vertical, -15)
-//                    .padding(15)
-//                    .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(.gray))
-//                    .padding(15)
                 
                 SearchResultSectionAnswerView()
                 
