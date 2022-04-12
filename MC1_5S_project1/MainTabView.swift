@@ -8,14 +8,20 @@
 import Foundation
 import SwiftUI
 
+
 struct MainTabView : View {
-    
+
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(Color(red: 240 / 255, green: 240 / 255, blue: 240 / 255))
+    }
     var body: some View {
         TabView {
             QuestionListView()
                 .tabItem {
                     Label("질문", systemImage: "pencil")
+                        .padding(5)
                         .foregroundColor(.gray)
+                        
                 }
             
             AnswerCardView()
@@ -29,8 +35,13 @@ struct MainTabView : View {
                     Label("My", systemImage: "star")
                         .foregroundColor(.gray)
                 }
+            
         } //TabView
+        
         .accentColor(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
+        
+
+//        .background(Color(red: 212 / 255, green: 230 / 255, blue: 234 / 255))
     }
 }
 

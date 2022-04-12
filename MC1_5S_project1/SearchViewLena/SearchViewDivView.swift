@@ -36,7 +36,6 @@ struct SearchViewDivView: View {
     }
 }
 
-
 // 상단 searchBar
 struct SearchBar: View {
     @Binding var text : String // Binding은 외부에서 값을 바인딩 시킬 수 있음
@@ -81,7 +80,6 @@ struct SearchBar: View {
     }
 }
 
-
 // ScrollView + VStack으로 구현
 struct SearchResultSectionAnswerView: View {
     // @State var post: PostContent
@@ -101,7 +99,7 @@ struct SearchResultSectionAnswerView: View {
         VStack {
             ScrollView(.vertical) {
                 ForEach(postContentList.filter{
-                    $0.answerCount != "0" // 0이 아닌 것만
+                    $0.answerCount != "0"  // 0이 아닌 것만
                 }) { post in
                     let post_index = Int(post.index) ?? 0
                     NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
@@ -111,13 +109,10 @@ struct SearchResultSectionAnswerView: View {
                 .padding(.horizontal, 15)
                 .padding(.vertical, 5)
             } // ScrollView
-            
         } // VStack
-        
         // border
         .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
         .padding(.horizontal, 15)
-                                            
     }
 }
 
@@ -153,10 +148,8 @@ struct SearchResultSectionNoAnswerView: View {
             // border
             .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             .padding(.horizontal, 15)
-            
     }
 }
-    
     
 // 내용을 누르면 NavigationLink를 연결하기 위한 뷰
 struct QuestionContentText : View {

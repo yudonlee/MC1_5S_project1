@@ -17,7 +17,6 @@ struct SearchAnswerDetailView: View {
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        
     }
 }
 
