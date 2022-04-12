@@ -19,6 +19,7 @@ struct MyListPickerView: View {
     var body: some View {
         NavigationView {
             VStack {
+                MyProfileView()
                 Searching(text: $searchText)
                     .padding(.top, -10)
                     .padding(15)

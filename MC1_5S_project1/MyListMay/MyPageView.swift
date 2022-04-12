@@ -12,7 +12,7 @@ struct MyPageView: View {
 
     var body: some View {
         VStack {
-            MyProfileView()
+            
             MyListPickerView()
         }
     }
