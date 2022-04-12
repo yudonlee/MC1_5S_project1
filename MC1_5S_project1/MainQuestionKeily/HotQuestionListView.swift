@@ -17,7 +17,6 @@ struct HotQuestionListView: View {
                     ForEach(viewModel.postContents) {
                         post in
                         let post_index = Int(post.index) ?? 0
-                        //내용과 링크 한 화면에 두기
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){
 //                                케일리한테 물어볼 부분
 //                                MyContentView(post: post)

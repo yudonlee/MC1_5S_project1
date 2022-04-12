@@ -30,7 +30,7 @@ struct RecentQuestionListView: View {
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true) {
-                VStack{
+                VStack {
                     ForEach(viewModel.postContents.reversed()) {
                         //새로 올라온 게시글부터 보여준다. reversed()
                         post in
