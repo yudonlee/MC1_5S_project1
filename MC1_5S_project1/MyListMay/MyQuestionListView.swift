@@ -30,7 +30,8 @@ struct MyQuestionListView: View {
                         }.navigationBarTitleDisplayMode(.inline)
                         Divider()
                     }
-                }.padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+                } //Vstack
+                .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
             }
         }.overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             .padding()
