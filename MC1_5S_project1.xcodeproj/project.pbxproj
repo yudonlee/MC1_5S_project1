@@ -22,8 +22,7 @@
 		76C4B0B82803B905000A299B /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 76C4B0B62803B905000A299B /* users.json */; };
 		A7198E1A2802644000AF823A /* MyAnswerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7198E192802644000AF823A /* MyAnswerListView.swift */; };
 		A7198E1C2802647C00AF823A /* MyQuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7198E1B2802647C00AF823A /* MyQuestionListView.swift */; };
-		A7198E1E280264A300AF823A /* MyListPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7198E1D280264A300AF823A /* MyListPickerView.swift */; };
-		A7198E20280264B700AF823A /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7198E1F280264B700AF823A /* MyPageView.swift */; };
+		A7198E1E280264A300AF823A /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7198E1D280264A300AF823A /* MyPageView.swift */; };
 		A7198E22280264CE00AF823A /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7198E21280264CE00AF823A /* MyProfileView.swift */; };
 		A7198E24280264E700AF823A /* MyScrapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7198E23280264E700AF823A /* MyScrapListView.swift */; };
 		A7447D6E27FD24DB0012BBB3 /* HotQuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */; };
@@ -54,8 +53,7 @@
 		76C4B0B62803B905000A299B /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		A7198E192802644000AF823A /* MyAnswerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnswerListView.swift; sourceTree = "<group>"; };
 		A7198E1B2802647C00AF823A /* MyQuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionListView.swift; sourceTree = "<group>"; };
-		A7198E1D280264A300AF823A /* MyListPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListPickerView.swift; sourceTree = "<group>"; };
-		A7198E1F280264B700AF823A /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		A7198E1D280264A300AF823A /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		A7198E21280264CE00AF823A /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		A7198E23280264E700AF823A /* MyScrapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrapListView.swift; sourceTree = "<group>"; };
 		A7447D6D27FD24DB0012BBB3 /* HotQuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotQuestionListView.swift; sourceTree = "<group>"; };
@@ -122,8 +120,7 @@
 			children = (
 				A7198E192802644000AF823A /* MyAnswerListView.swift */,
 				A7198E1B2802647C00AF823A /* MyQuestionListView.swift */,
-				A7198E1D280264A300AF823A /* MyListPickerView.swift */,
-				A7198E1F280264B700AF823A /* MyPageView.swift */,
+				A7198E1D280264A300AF823A /* MyPageView.swift */,
 				A7198E21280264CE00AF823A /* MyProfileView.swift */,
 				A7198E23280264E700AF823A /* MyScrapListView.swift */,
 			);
@@ -262,8 +259,7 @@
 				BFFC6BF8280407BE001AD406 /* MainTabView.swift in Sources */,
 				A7198E1C2802647C00AF823A /* MyQuestionListView.swift in Sources */,
 				1500D8922803F540003D2F8D /* allQuestionView.swift in Sources */,
-				A7198E20280264B700AF823A /* MyPageView.swift in Sources */,
-				A7198E1E280264A300AF823A /* MyListPickerView.swift in Sources */,
+				A7198E1E280264A300AF823A /* MyPageView.swift in Sources */,
 				7659645F27FE79A9003CD4B8 /* JsonDataList.swift in Sources */,
 				A7447D7027FD24EA0012BBB3 /* QuestionCardView.swift in Sources */,
 				76AC7E4227FD213B003BC5A4 /* AnswerCardView.swift in Sources */,

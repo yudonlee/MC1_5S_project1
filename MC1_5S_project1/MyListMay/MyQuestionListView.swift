@@ -47,19 +47,21 @@ struct MyQuestionContentView: View { //질문 게시글 리스트
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                if(postContentList[postIdx].isAnonymous){
+                if(viewModel.postContents[postIdx].isAnonymous){
                     Text("익명")
                         .bold()
                 } else {
-                    Text(postContentList[postIdx].name) //작성자 닉네임
+                    Text(viewModel.postContents[postIdx].name) //작성자 닉네임
                         .bold()
                 }
-                Text(postContentList[postIdx].title) //게시글 내용
+                Text(viewModel.postContents[postIdx].title) // 게시글 내용
+//                Text(postContentList[postIdx].title) //게시글 내용
             }
             Spacer()
             HStack(spacing: 3) {
                 Image(systemName: "bubble.right")
-                Text(postContentList[postIdx].answerCount) //댓글 개수
+                Text(viewModel.postContents[postIdx].answerCount)
+//                Text(postContentList[postIdx].answerCount) //댓글 개수
             }
         }.foregroundColor(.black)
             .multilineTextAlignment(.leading)
