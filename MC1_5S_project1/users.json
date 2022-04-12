@@ -101,6 +101,12 @@
         "password": "1097",
         "level": 1,
         "scrapList": [3, 5]
+    },
+    {
+        "name": "자쿠",
+        "password": "1357",
+        "level": 4,
+        "scrapList": [3, 5]
     }
 ]
 
