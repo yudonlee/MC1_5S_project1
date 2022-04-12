@@ -14,7 +14,6 @@ struct MyAnswerListView: View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    
                     ForEach(viewModel.postContents){ post in
                         ForEach(post.answer.filter{
                             $0.name == UserInformation.loginUser.name
@@ -27,6 +26,7 @@ struct MyAnswerListView: View {
                             Divider()
                         }
                     }
+                    .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
                     
 //                    ForEach(viewModel.postContents.filter{ //연구 대상
 //                        $0.name == UserInformation.loginUser.name
@@ -40,7 +40,7 @@ struct MyAnswerListView: View {
 //                        Divider()
 //                    }
                 } //Vstack
-                .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+                
             } //ScrollView
         }.overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             .padding()
