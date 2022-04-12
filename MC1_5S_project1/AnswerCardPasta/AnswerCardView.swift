@@ -12,6 +12,7 @@ struct QuestionCard: View {
     var post: PostContent
     let maxLength:Int
     let questionTitle:String
+    let imgIndex:Int
     
     init(post:PostContent, maxLength:Int = 200) {
         self.maxLength = maxLength
@@ -23,6 +24,7 @@ struct QuestionCard: View {
             self.questionTitle = String(post.title[start...end]+"\n...")
         }
         self.post = post
+        self.imgIndex = Int.random(in: 1..<12)
     //        self.post = post
     }
     
@@ -30,17 +32,34 @@ struct QuestionCard: View {
     var body: some View{
         ZStack
         {
-            RoundedRectangle(cornerRadius: 19)
-                .stroke(MINTCOLOR, lineWidth: 2)
+            Image("bg"+String(self.imgIndex))
+                .resizable()
+//                .frame(width: 100, height: 100)
+                .clipShape(
+                    RoundedRectangle(cornerRadius: 19)
+                )
+                .shadow(color: .white, radius: 3)
+                .opacity(0.4)
+                
+//            RoundedRectangle(cornerRadius: 19)
+//                .stroke(MINTCOLOR, lineWidth: 2)
+//                .overlay( /// overlay does not get affected
+//                    Image(systemName: "bg1")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .padding(10)
+//                )
             VStack(spacing:3){
                 // Question 길이에 따라 카드 표시 형식 변경
                 Text(self.questionTitle)
                     .bold()
-                    .foregroundColor(.gray)
+                    .foregroundColor(.black)
                     .padding()
                 HStack(spacing: 3){
                     Image(systemName: "bubble.right")
+                        .foregroundColor(Color.black)
                     Text(post.answerCount)
+                        .foregroundColor(.black)
                 }
                 .padding(1)
 //                .position(x:UIScreen.screenWidth/1.4-30,y:UIScreen.screenHeight/1.8-100)
