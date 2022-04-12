@@ -161,6 +161,8 @@ struct QuestionDetailView: View {
 //                        print("newAnswer")
                         viewModel.postContents[index].addTestAnswer(answerComment: answerTextField, name: name, created_at: Date(), updated_at: Date(), isAnonymous: isAnswerAnonymous
                         )
+                        isAnswerAnonymous = false
+                        answerTextField = ""
 //                        viewModel.testContents[index].addNewAnswer(answerComment: answerTextField, name: name ,created_at: Date(), updated_at: Date(), isAnonymous: isAnswerAnonymous, index: index)
 //                        postContentList.shuffle()
                         
