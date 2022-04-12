@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct QuestionListView: View {
-    @State var searchText = ""
+    @State var text = ""
     @State var searching = false
     @State private var selectedSide: itemOfMenu = .myHot
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchingInMain(searchText: $searchText, searching: $searching)
+                HStack{
+                    SearchBar(text: $text)
+                    NavigationLink(destination:SearchViewDivView()){
+                        Text("검색")
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.gray)
+                            .padding(.trailing, 30.0)
+                    }
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                }
                 //SelectHotOrNew
                 HStack{
                     Picker("", selection: $selectedSide) {
@@ -24,11 +34,18 @@ struct QuestionListView: View {
                         }
                     }.pickerStyle(.segmented)
                         .padding()
-                    NavigationLink(destination:QuestionCardView()){
-                        Text("질문하기")
-                            .fontWeight(.semibold)
-                            .padding(.trailing, 30.0)
-                            .foregroundColor(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
+                    NavigationLink(destination:QuestionCardView()
+                        .navigationBarBackButtonHidden(true)){
+                            Text("질문하기")
+                                .fontWeight(.bold)
+                                .foregroundColor(MINTCOLOR)
+                                .padding(7)
+                                .padding(.trailing, 15)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(MINTCOLOR, lineWidth: 1)
+                                        .padding(.trailing, 15)
+                                )
                     }
                     .navigationBarTitle("")
                     .navigationBarHidden(true)
@@ -41,35 +58,35 @@ struct QuestionListView: View {
     }
 }
 
-struct SearchingInMain: View { //검색창
-    @Binding var searchText: String
-    @Binding var searching: Bool
-    
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(Color("LightGray"))
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("질문 검색", text: $searchText) { startEditing in
-                    if startEditing {
-                        withAnimation {
-                            searching = true
-                        }
-                    }
-                } onCommit: {
-                    withAnimation {
-                        searching = false
-                    }
-                }
-            }
-            .foregroundColor(.gray)
-            .padding()
-        }
-        .frame(height: 40)
-        .cornerRadius(13)
-    }
-}
+//struct SearchingInMain: View { //검색창
+//    @Binding var searchText: String
+//    @Binding var searching: Bool
+//
+//    var body: some View {
+//        ZStack {
+//            Rectangle()
+//                .foregroundColor(Color("LightGray"))
+//            HStack {
+//                Image(systemName: "magnifyingglass")
+//                TextField("질문 검색", text: $searchText) { startEditing in
+//                    if startEditing {
+//                        withAnimation {
+//                            searching = true
+//                        }
+//                    }
+//                } onCommit: {
+//                    withAnimation {
+//                        searching = false
+//                    }
+//                }
+//            }
+//            .foregroundColor(.gray)
+//            .padding()
+//        }
+//        .frame(height: 40)
+//        .cornerRadius(13)
+//    }
+//}
 
 enum itemOfMenu: String, CaseIterable {
     case myHot = "Hot"
