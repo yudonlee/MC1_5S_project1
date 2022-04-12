@@ -24,7 +24,7 @@ struct QuestionCard: View {
             self.questionTitle = String(post.title[start...end]+"\n...")
         }
         self.post = post
-        self.imgIndex = Int.random(in: 1..<12)
+        self.imgIndex = Int.random(in: 1...12)
     //        self.post = post
     }
     
@@ -40,15 +40,7 @@ struct QuestionCard: View {
                 )
                 .shadow(color: .white, radius: 3)
                 .opacity(0.4)
-                
-//            RoundedRectangle(cornerRadius: 19)
-//                .stroke(MINTCOLOR, lineWidth: 2)
-//                .overlay( /// overlay does not get affected
-//                    Image(systemName: "bg1")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .padding(10)
-//                )
+            
             VStack(spacing:3){
                 // Question 길이에 따라 카드 표시 형식 변경
                 Text(self.questionTitle)
@@ -82,7 +74,7 @@ struct AnswerCardView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("질문카드")
+                Text("오늘의 질문")
                     .font(.title)
                     .fontWeight(.bold)
                     .frame(width: UIScreen.screenWidth * 0.9, height: 10, alignment: .center)
