@@ -9,11 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainTabView : View {
-    
-//    init() {
-//        UITableView.appearance().backgroundColor = UIColor(Color(red: 240 / 255, green: 230 / 255, blue: 240 / 255))
-//    } // TabView 배경화면 변경
-    
+      
     var body: some View {
         TabView {
             QuestionListView()
