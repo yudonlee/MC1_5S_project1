@@ -11,8 +11,12 @@ import SwiftUI
 struct MC1_5S_project1App: App {
     var body: some Scene {
         WindowGroup {
+<<<<<<< Updated upstream
             AnswerCardView()
 //            QuestionCardView()
+=======
+            SignInView()
+>>>>>>> Stashed changes
         }
     }
 }

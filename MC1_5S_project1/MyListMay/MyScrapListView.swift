@@ -8,25 +8,39 @@
 import SwiftUI
 
 struct MyScrapListView: View {
+    
+    @State var userName = UserInformation.loginUser.name ?? ""
+    @State var userScrapCnt: Int = UserInformation.loginUser.data?.scrapList.count ?? 0
+    
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    ForEach(postContentList) { post in
-                        let post_index = Int(post.index) ?? 0
-                        
-                        //게시글 상세 이동
-                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                            MyScrapContentView(post: post)
-                        }.navigationBarTitleDisplayMode(.inline)
-                        Divider()
+                    
+                    if let data = UserInformation.loginUser.data {
+                        ForEach(data.scrapList, id: \.self) { item in
+                        MyScrapContentView(post: postContentList[item]) //샘플
+                        }
                     }
-                }.padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
-            }.background(Color.yellow)
+                    
+//                    ForEach(postContentList.filter {
+//                        for sc in 0...userScrapCnt {
+//                            Int($0.index) == sc
+//                        }
+//                    }) { post in
+//                        let post_index = Int(post.index) ?? 0
+//
+//                        //게시글 상세 이동
+//                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){
+//                            MyScrapContentView(post: post)
+//                        }.navigationBarTitleDisplayMode(.inline)
+//                        Divider()
+//                    }
+//                }.padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+                }
+            }
         }.overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             .padding()
-        
-        
     }
 }
 
