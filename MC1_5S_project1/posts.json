@@ -216,7 +216,7 @@
         "answerCount": "1",
         "answer": [
             {
-                "name": "현수",
+                "name": "자쿠",
                 "created_at" : 1648473600,
                 "updated_at" : 1648473600,
                 "isAnonymous": true,
@@ -277,6 +277,17 @@
         "title": "외부 숙소 사용하는 멘티들은 출입증 어디서 수령한다고 했나요? 공지글을 못찾겠어요ㅠㅠ",
         "name": "예감",
         "index": "14",
+        "created_at" : 1648563000,
+        "updated_at" : 1648566000,
+        "certifiedUser": true,
+        "isAnonymous": true,
+        "answerCount": "0",
+        "answer": []
+    },
+    {
+        "title": "국민취업지원제도 측에서 출석증빙서류를 원하는데, 그동안 출석했다는 증빙서류를 받을 수 있을까요?",
+        "name": "자쿠",
+        "index": "15",
         "created_at" : 1648563000,
         "updated_at" : 1648566000,
         "certifiedUser": true,

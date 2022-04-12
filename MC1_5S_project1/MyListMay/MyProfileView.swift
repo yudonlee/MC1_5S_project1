@@ -16,13 +16,19 @@ struct MyProfileView: View {
     var body: some View {
             VStack {
                 HStack { //프로필 아이콘, 레벨, 닉네임
-                    Image("apple")
+                    let userLevel = UserInformation.loginUser.level ?? 0
+                    
+                    Image("lev\(userLevel)")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 100, height: 100)
                         .clipShape(Circle())
                     VStack (alignment: .leading, spacing: 10){
-                        Text("LV." + String(UserInformation.loginUser.level ?? 0))
+                        if userLevel == 4 {
+                            Text("Certified")
+                        } else {
+                            Text("LV." + String(userLevel))
+                        }
                         Text(UserInformation.loginUser.name ?? "")
 //                        Text(user.level)
 //                        Text(user.name)

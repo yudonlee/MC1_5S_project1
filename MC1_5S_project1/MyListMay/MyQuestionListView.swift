@@ -26,7 +26,8 @@ struct MyQuestionListView: View {
                         
                         //게시글 상세 이동
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                            MyQuestionContentView(post: post)
+                            MyQuestionContentView(postIdx: post_index-1)
+//                            MyContentView(post: post)
                         }.navigationBarTitleDisplayMode(.inline)
                         Divider()
                     }
@@ -41,13 +42,45 @@ struct MyQuestionListView: View {
 struct MyQuestionContentView: View { //질문 게시글 리스트
     @EnvironmentObject var viewModel: postViewModel
 
+    @State var postIdx: Int
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 10) {
+                if(postContentList[postIdx].isAnonymous){
+                    Text("익명")
+                        .bold()
+                } else {
+                    Text(postContentList[postIdx].name) //작성자 닉네임
+                        .bold()
+                }
+                Text(postContentList[postIdx].title) //게시글 내용
+            }
+            Spacer()
+            HStack(spacing: 3) {
+                Image(systemName: "bubble.right")
+                Text(postContentList[postIdx].answerCount) //댓글 개수
+            }
+        }.foregroundColor(.black)
+            .multilineTextAlignment(.leading)
+    }
+}
+
+struct MyContentView: View { //게시글 리스트
+    @EnvironmentObject var viewModel: postViewModel
+
     @State var post: PostContent
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text(post.name) //작성자 닉네임
-                    .bold()
+                if(post.isAnonymous){
+                    Text("익명")
+                        .bold()
+                } else {
+                    Text(post.name) //작성자 닉네임
+                        .bold()
+                }
                 Text(post.title) //게시글 내용
             }
             Spacer()

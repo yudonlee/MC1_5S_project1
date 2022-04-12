@@ -17,10 +17,40 @@ struct MyScrapListView: View {
                 VStack(spacing: 15) {
                     
                     if let data = UserInformation.loginUser.data {
-                        ForEach(data.scrapList, id: \.self) { item in
-                            MyScrapContentView(post: viewModel.postContents[item]) //샘플
+                        ForEach(data.scrapList, id: \.self){ item in
+                            ForEach(viewModel.postContents.filter {
+                                Int($0.index) == item
+                            }) { post in
+                                let post_index = Int(post.index) ?? 0
+                                
+                                NavigationLink(destination: QuestionDetailView(index: post_index-1)){
+                                    MyContentView(post: post)
+                                }.navigationBarTitleDisplayMode(.inline)
+                                Divider()
+                            }
                         }
+                        .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
                     }
+                    
+//                    ForEach(viewModel.postContents){ post in
+//                        ForEach(post.answer.filter{
+//                            $0.name == UserInformation.loginUser.name
+//                        }) { item in
+//                            let post_index = Int(post.index) ?? 0
+//
+//                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){
+//                                MyAnswerContentView(post: post)
+//                            }.navigationBarTitleDisplayMode(.inline)
+//                            Divider()
+//                        }
+//                    }
+//                    .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+                    
+//                    if let data = UserInformation.loginUser.data {
+//                        ForEach(data.scrapList, id: \.self) { item in
+//                            MyScrapContentView(post: viewModel.postContents[item]) //샘플
+//                        }
+//                    }
                     
 //                    ForEach(postContentList.filter {
 //                        for sc in 0...userScrapCnt {
@@ -43,26 +73,31 @@ struct MyScrapListView: View {
     }
 }
 
-struct MyScrapContentView: View {
-    @State var post: PostContent
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(post.name) //작성자 닉네임
-                    .bold()
-                Text(post.title) //게시글 내용
-            }
-            Spacer()
-            HStack(spacing: 3) {
-                Image(systemName: "bubble.right")
-                Text(post.answerCount) //댓글 개수
-            }
-        }
-        .foregroundColor(.black)
-        .multilineTextAlignment(.leading)
-    }
-}
+//struct MyScrapContentView: View {
+//    @State var post: PostContent
+//
+//    var body: some View {
+//        HStack {
+//            VStack(alignment: .leading, spacing: 10) {
+//                if(post.isAnonymous){
+//                    Text("익명")
+//                        .bold()
+//                } else {
+//                    Text(post.name) //작성자 닉네임
+//                        .bold()
+//                }
+//                Text(post.title) //게시글 내용
+//            }
+//            Spacer()
+//            HStack(spacing: 3) {
+//                Image(systemName: "bubble.right")
+//                Text(post.answerCount) //댓글 개수
+//            }
+//        }
+//        .foregroundColor(.black)
+//        .multilineTextAlignment(.leading)
+//    }
+//}
 
 struct MyScrapListView_Previews: PreviewProvider {
     static var previews: some View {
