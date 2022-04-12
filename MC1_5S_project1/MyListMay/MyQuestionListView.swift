@@ -14,6 +14,7 @@ struct MyQuestionListView: View {
     @EnvironmentObject var viewModel: postViewModel
 
     @State var userName = UserInformation.loginUser.name ?? ""
+    var ansIdxArr: [Int] = [Int]()
     
     var body: some View {
         VStack {
@@ -22,6 +23,7 @@ struct MyQuestionListView: View {
                     ForEach(viewModel.postContents.filter{ //연구 대상
                         $0.name == userName
                     }) { post in
+                        
                         let post_index = Int(post.index) ?? 0
                         
                         //게시글 상세 이동
