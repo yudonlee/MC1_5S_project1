@@ -69,9 +69,6 @@ struct SignInView: View {
 //                    .sheet(isPresented: $isSignInSuccess) {
 //                        MainTabView()
 //                    }
-                    
-                    
-                    
                     //                Spacer()
                     Button(action: {
                         print("SignUp")

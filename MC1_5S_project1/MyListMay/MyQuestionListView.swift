@@ -11,14 +11,15 @@
 import SwiftUI
 
 struct MyQuestionListView: View {
-    
+    @EnvironmentObject var viewModel: postViewModel
+
     @State var userName = UserInformation.loginUser.name ?? ""
     
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
                 VStack(spacing: 15) {
-                    ForEach(postContentList.filter{ //연구 대상
+                    ForEach(viewModel.testContents.filter{ //연구 대상
                         $0.name == userName
                     }) { post in
                         let post_index = Int(post.index) ?? 0
@@ -37,6 +38,7 @@ struct MyQuestionListView: View {
 }
 
 struct MyQuestionContentView: View { //질문 게시글 리스트
+    @EnvironmentObject var viewModel: postViewModel
 
     @State var post: PostContent
     

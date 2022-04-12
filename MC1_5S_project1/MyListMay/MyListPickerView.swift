@@ -14,6 +14,8 @@ struct MyListPickerView: View {
     @State private var selectedSide: SideOfMenu = .myQues
     @State var text : String = ""
     
+    @EnvironmentObject var viewModel: postViewModel
+
     var body: some View {
         NavigationView {
             VStack {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyPageView: View {
+    @EnvironmentObject var viewModel: postViewModel
+
     var body: some View {
         VStack {
             MyProfileView()

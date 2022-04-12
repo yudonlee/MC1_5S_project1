@@ -25,12 +25,13 @@ import SwiftUI
 //}
 
 struct RecentQuestionListView: View {
-    
+    @EnvironmentObject var viewModel: postViewModel
+
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack{
-                    ForEach(postContentList) {
+                    ForEach(viewModel.testContents) {
                         post in
                         let post_index = Int(post.index) ?? 0
                         //내용과 링크 한 화면에 두기

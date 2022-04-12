@@ -11,6 +11,9 @@ struct MyScrapListView: View {
     
     @State var userName = UserInformation.loginUser.name ?? ""
     @State var userScrapCnt: Int = UserInformation.loginUser.data?.scrapList.count ?? 0
+    @EnvironmentObject var viewModel: postViewModel
+
+    
     
     var body: some View {
         VStack {
@@ -19,7 +22,7 @@ struct MyScrapListView: View {
                     
                     if let data = UserInformation.loginUser.data {
                         ForEach(data.scrapList, id: \.self) { item in
-                        MyScrapContentView(post: postContentList[item]) //샘플
+                            MyScrapContentView(post: viewModel.testContents[item]) //샘플
                         }
                     }
                     
