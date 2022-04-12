@@ -17,7 +17,7 @@ struct SearchViewDivView: View {
                 
                 SearchResultSectionAnswerView(text: $text)
                 
-                NavigationLink(destination: SearchAnswerDetailView(), label: {
+                NavigationLink(destination: SearchAnswerDetailView(text:text), label: {
                     AnyButton(buttonText: "더보기")}
                 )
                 
@@ -26,7 +26,7 @@ struct SearchViewDivView: View {
                 
                 SearchResultSectionNoAnswerView(text: $text)
                 
-                NavigationLink(destination: SearchNoAnswerDetailView(), label: {
+                NavigationLink(destination: SearchNoAnswerDetailView(text:text), label: {
                     AnyButton(buttonText: "더보기")})
                 .navigationBarTitleDisplayMode(.inline)
             } // VStack

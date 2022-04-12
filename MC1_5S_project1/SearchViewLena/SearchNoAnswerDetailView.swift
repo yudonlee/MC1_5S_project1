@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SearchNoAnswerDetailView: View {
-    @State var text : String = ""
+    @State var text : String
     
     var body: some View {
         NavigationView {
             VStack {
                 SearchBar(text: $text)
-                SearchResultNoAnswerDetailView(postContents: postContentList)
+                SearchResultNoAnswerDetailView(text: $text, postContents: postContentList)
             }
             .navigationTitle("")
             .navigationBarHidden(true)
@@ -23,6 +23,7 @@ struct SearchNoAnswerDetailView: View {
 }
 
 struct SearchResultNoAnswerDetailView: View {
+    @Binding var text: String
     var postContents: [PostContent]
     var body: some View {
         // title
@@ -40,8 +41,8 @@ struct SearchResultNoAnswerDetailView: View {
         VStack {
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(postContents.filter{
-                        $0.answerCount == "0"
+                    ForEach(postContents.filter {
+                        $0.title.contains(text) && $0.answerCount == "0"
                     }) { post in
                         let post_index = Int(post.index) ?? 0
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)) {QuestionContentText(post: post)
@@ -64,7 +65,7 @@ struct SearchResultNoAnswerDetailView: View {
 
 struct SearchNoAnswerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchNoAnswerDetailView()
+        SearchNoAnswerDetailView(text: "")
     }
 }
 
