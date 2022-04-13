@@ -14,6 +14,7 @@ struct MyQuestionListView: View {
     @EnvironmentObject var viewModel: postViewModel
 
     @State var userName = UserInformation.loginUser.name ?? ""
+    //@State var ansSet: Set<Int>
     
     var body: some View {
         VStack {
@@ -22,11 +23,13 @@ struct MyQuestionListView: View {
                     ForEach(viewModel.postContents.filter{ //연구 대상
                         $0.name == userName
                     }) { post in
-                        let post_index = Int(post.index) ?? 0
+                        
+                        let postIdx = Int(post.index) ?? 0
+                        //ansSet.insert(postIndex)
                         
                         //게시글 상세 이동
-                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                            MyQuestionContentView(postIdx: post_index-1)
+                        NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
+                            MyContentView(postIdx: postIdx-1)
 //                            MyContentView(post: post)
                         }.navigationBarTitleDisplayMode(.inline)
                         Divider()
@@ -39,7 +42,7 @@ struct MyQuestionListView: View {
     }
 }
 
-struct MyQuestionContentView: View { //질문 게시글 리스트
+struct MyContentView: View { //질문 게시글 리스트
     @EnvironmentObject var viewModel: postViewModel
 
     @State var postIdx: Int
@@ -68,32 +71,32 @@ struct MyQuestionContentView: View { //질문 게시글 리스트
     }
 }
 
-struct MyContentView: View { //게시글 리스트
-    @EnvironmentObject var viewModel: postViewModel
-
-    @State var post: PostContent
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 10) {
-                if(post.isAnonymous){
-                    Text("익명")
-                        .bold()
-                } else {
-                    Text(post.name) //작성자 닉네임
-                        .bold()
-                }
-                Text(post.title) //게시글 내용
-            }
-            Spacer()
-            HStack(spacing: 3) {
-                Image(systemName: "bubble.right")
-                Text(post.answerCount) //댓글 개수
-            }
-        }.foregroundColor(.black)
-            .multilineTextAlignment(.leading)
-    }
-}
+//struct MyContentView: View { //게시글 리스트
+//    @EnvironmentObject var viewModel: postViewModel
+//
+//    @State var post: PostContent
+//
+//    var body: some View {
+//        HStack {
+//            VStack(alignment: .leading, spacing: 10) {
+//                if(post.isAnonymous){
+//                    Text("익명")
+//                        .bold()
+//                } else {
+//                    Text(post.name) //작성자 닉네임
+//                        .bold()
+//                }
+//                Text(post.title) //게시글 내용
+//            }
+//            Spacer()
+//            HStack(spacing: 3) {
+//                Image(systemName: "bubble.right")
+//                Text(post.answerCount) //댓글 개수
+//            }
+//        }.foregroundColor(.black)
+//            .multilineTextAlignment(.leading)
+//    }
+//}
 
 struct MyQuestionListView_Previews: PreviewProvider {
     static var previews: some View {

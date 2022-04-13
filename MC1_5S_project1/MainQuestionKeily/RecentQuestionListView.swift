@@ -34,8 +34,9 @@ struct RecentQuestionListView: View {
                     ForEach(viewModel.postContents.reversed()) {
                         //새로 올라온 게시글부터 보여준다. reversed()
                         post in
-                        let post_index = Int(post.index) ?? 0 //string to int
-                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){MyContentView(post: post)
+                        let postIdx = Int(post.index) ?? 0 //string to int
+                        NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
+                            MyContentView(postIdx: postIdx - 1)
                         }.navigationBarTitleDisplayMode(.inline)
                         Divider()
                     }
