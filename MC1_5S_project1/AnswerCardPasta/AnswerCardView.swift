@@ -86,7 +86,8 @@ struct AnswerCardView: View {
                         ForEach(viewModel.postContents){
                             post in
                             let postIndex = Int(post.index) ?? 0
-                            NavigationLink(destination: QuestionDetailView(index: postIndex-1), isActive: $isLinkAlive){
+                            NavigationLink(destination: QuestionDetailView(index: postIndex-1)){
+//                            NavigationLink(destination: QuestionDetailView(index: postIndex-1), isActive: $isLinkAlive){
                                 QuestionCard(post: post)
                             }
                         }

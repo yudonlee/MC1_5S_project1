@@ -46,9 +46,17 @@ struct QuestionDetailView: View {
                     HStack(alignment: .top) {
                         if viewModel.postContents[index].isAnonymous {
                             Image("lev0")
-                            Text("익명\(anonymousCount)")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                            Text("익명")
                         } else {
-                            Image("lev\(userLevelDic[viewModel.postContents[index].name])")
+                            if let levels = userLevelDic[viewModel.postContents[index].name] {
+                                Image("lev\(levels)")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 24, height: 24)
+                            }
                             Text(viewModel.postContents[index].name)
                         }
                         Spacer()
@@ -194,7 +202,7 @@ struct QuestionDetailView: View {
             
             ZStack {
                 RoundedRectangle(cornerRadius: 19)
-                    .stroke(appMainColor, lineWidth: 4)
+                    .stroke(appMainColor, lineWidth: 1.5)
                     .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
                 
                 RoundedRectangle(cornerRadius: 7)

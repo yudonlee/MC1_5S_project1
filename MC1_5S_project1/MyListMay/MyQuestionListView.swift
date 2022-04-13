@@ -51,11 +51,25 @@ struct MyContentView: View { //질문 게시글 리스트
         HStack {
             VStack(alignment: .leading, spacing: 10) {
                 if(viewModel.postContents[postIdx].isAnonymous){
-                    Text("익명")
-                        .bold()
+                    HStack{
+                        Image("lev0")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                        Text("익명")
+                            .bold()
+                    }
                 } else {
-                    Text(viewModel.postContents[postIdx].name) //작성자 닉네임
-                        .bold()
+                    HStack{
+                        if let level = userLevelDic[viewModel.postContents[postIdx].name] {
+                            Image("lev\(level)")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                        }
+                        Text(viewModel.postContents[postIdx].name) //작성자 닉네임
+                            .bold()
+                    }
                 }
                 Text(viewModel.postContents[postIdx].title) // 게시글 내용
 //                Text(postContentList[postIdx].title) //게시글 내용
