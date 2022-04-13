@@ -25,6 +25,7 @@ public class postViewModel: ObservableObject {
 
 var postContentList: [PostContent] = load("posts.json")
 var userProfileList: [UserProfile] = load("users.json")
+var userLevelDic : [String: Int] = [ : ]
 
 
 //class ShuffleView: ObservableObject {
@@ -34,6 +35,14 @@ var userProfileList: [UserProfile] = load("users.json")
 //    }
 //}
 
+func loadUserLevel() {
+    print("loaduserLevel\n\n\n\n\n\n\n")
+    for user in userProfileList {
+        userLevelDic.updateValue(user.level, forKey: user.name)
+//        print("\(user.level) and \(user.name)")
+    }
+    print("민준아!\(userLevelDic["민준"])")
+}
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -77,3 +86,7 @@ func addNewAnswer(answerComment: String, name: String, created_at: Date, updated
     postContentList[index].answerCount = "\(postContentList[index].answer.count)"
     
 }
+
+
+
+

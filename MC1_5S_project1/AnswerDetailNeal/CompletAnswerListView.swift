@@ -87,6 +87,7 @@ struct CompletAnswerListView: View {
                         VStack(alignment:.leading) {
                             HStack{
                                 Image(systemName: "applelogo")
+//                                Image(systemName: "lev\()")
                                 Text(answer.name)
                                 
                                 Spacer()

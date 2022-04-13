@@ -85,6 +85,7 @@ struct SignInView: View {
             }
             
         }.environmentObject(viewModel)
+            .onAppear(perform: loadUserLevel)
     }
 }
 
