@@ -47,10 +47,14 @@ struct QuestionCard: View {
                     .bold()
                     .foregroundColor(.black)
                     .padding()
+                Text(self.post.index)
+                    .bold()
+                    .foregroundColor(.black)
+                    .padding()
                 HStack(spacing: 3){
                     Image(systemName: "bubble.right")
                         .foregroundColor(Color.black)
-                    Text(post.answerCount)
+                    Text(self.post.answerCount)
                         .foregroundColor(.black)
                 }
                 .padding(1)
@@ -70,7 +74,6 @@ struct AnswerCardView: View {
     @EnvironmentObject var viewModel: postViewModel
     @State var comment:String = ""
     @State var scailing: Bool = true
-    @State var isLinkAlive: Bool = false
     
     var body: some View {
         NavigationView{
