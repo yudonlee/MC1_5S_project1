@@ -14,7 +14,7 @@ struct SearchNoAnswerDetailView: View {
         NavigationView {
             VStack {
                 SearchBar(text: $text)
-                SearchResultNoAnswerDetailView(text: $text, postContents: postContentList)
+                SearchResultNoAnswerDetailView(text: $text)
             }
             .navigationTitle("")
             .navigationBarHidden(true)
@@ -24,7 +24,6 @@ struct SearchNoAnswerDetailView: View {
 
 struct SearchResultNoAnswerDetailView: View {
     @Binding var text: String
-    var postContents: [PostContent]
     var body: some View {
         // title
         HStack {
@@ -41,7 +40,7 @@ struct SearchResultNoAnswerDetailView: View {
         VStack {
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(postContents.filter {
+                    ForEach(postContentList.filter {
                         $0.title.contains(text) && $0.answerCount == "0"
                     }) { post in
                         let post_index = Int(post.index) ?? 0
