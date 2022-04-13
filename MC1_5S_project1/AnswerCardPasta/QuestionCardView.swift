@@ -18,16 +18,16 @@ struct QuestionCardView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                NavigationLink(destination: QuestionDetailView(index: postContentList.count), isActive: $isLinkAlive) {
+                NavigationLink(destination: QuestionDetailView(index: viewModel.postContents.count), isActive: $isLinkAlive) {
                     Button(action: {
                         // certified user 인지 아닌 지 checkbox로 받기
                         // anonymous인지 아닌지 checkbox로 받기
-                        let comment_input = String(comment)
+                        let commentInput = String(comment)
                         let name = UserInformation.loginUser.name ?? ""
-                        let created_at = Date()
+                        let createdAt = Date()
                         
-                        viewModel.addNewContent(title: comment_input, name: name, created_at: Date(), updated_at: Date(), certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
-//                        addNewContent(title: comment_input, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
+                        viewModel.addNewContent(title: commentInput, name: name, created_at: createdAt, updated_at: createdAt, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
+//                        addNewContent(title: commentInput, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
                         self.isLinkAlive = true
                     }){
                             Text("완료")

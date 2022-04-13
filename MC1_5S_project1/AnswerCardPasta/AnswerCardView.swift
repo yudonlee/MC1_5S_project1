@@ -14,7 +14,7 @@ struct QuestionCard: View {
     let questionTitle:String
     let imgIndex:Int
     
-    init(post:PostContent, maxLength:Int = 200) {
+    init(post:PostContent, maxLength:Int = 400) {
         self.maxLength = maxLength
         if post.title.count <= maxLength {
             self.questionTitle = post.title
@@ -67,6 +67,7 @@ struct QuestionCard: View {
 
 struct AnswerCardView: View {
     
+    @EnvironmentObject var viewModel: postViewModel
     @State var comment:String = ""
     @State var scailing: Bool = true
     @State var isLinkAlive: Bool = false
@@ -81,10 +82,11 @@ struct AnswerCardView: View {
                     .padding(10)
                 ScrollView(.horizontal){
                     HStack{
-                        ForEach(postContentList){
+                        // ForEach Envirnoment object 넣어주기
+                        ForEach(viewModel.postContents){
                             post in
-                            let post_index = Int(post.index) ?? 0
-                            NavigationLink(destination: QuestionDetailView(index: post_index-1), isActive: $isLinkAlive){
+                            let postIndex = Int(post.index) ?? 0
+                            NavigationLink(destination: QuestionDetailView(index: postIndex-1), isActive: $isLinkAlive){
                                 QuestionCard(post: post)
                             }
                         }
