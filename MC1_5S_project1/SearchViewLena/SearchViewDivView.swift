@@ -110,10 +110,11 @@ struct SearchResultSectionAnswerView: View {
                         $0.title.contains(text) && $0.answerCount != "0"}) { post in
                             // 검색어가 포함되어 있고, 답글 개수가 0이 아닌 것을 보여준다
 
-                        let post_index = Int(post.index) ?? 0
-                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
-                            Divider()
-                        }
+                            let post_index = Int(post.index) ?? 0
+                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
+                                Divider()
+                                }
+                        
                             
                             
                     } // Loop
