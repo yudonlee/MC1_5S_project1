@@ -67,7 +67,7 @@ struct SearchBar: View {
                             // x 터치하면 입력한 값 취소하고 키 입력 종료
                             Button(action : {
                                 self.editText = false
-                                self.text = "   "
+                                self.text = ""
                                 // 키보드에서 입력을 끝내게하는 코드
                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                             }){
