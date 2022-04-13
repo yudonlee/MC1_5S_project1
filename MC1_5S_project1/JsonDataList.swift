@@ -14,7 +14,7 @@ public class postViewModel: ObservableObject {
     func addNewContent(title: String, name: String,
                        created_at: Date, updated_at: Date, certifiedUser: Bool,
                        isAnonymous: Bool, answerCount:String) {
-        let index: String = String(postContentList.count)
+        let index: String = String(postContents.count)
         let new_post:PostContent = PostContent(
             title: title, name: name, index:index,
             created_at: created_at, updated_at: updated_at, certifiedUser: certifiedUser,
