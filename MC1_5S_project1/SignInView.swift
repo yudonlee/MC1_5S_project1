@@ -22,13 +22,11 @@ struct SignInView: View {
             VStack{
                 Image("Logo")
                     .resizable()
-                    .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
+//                    .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
                     .aspectRatio(contentMode: .fit)
-                
-                //                .frame(width: 100, height: 100)
+                                .frame(width: 300, height: 300)
                 //                .clipShape(Circle())
-                
-                VStack(alignment: .leading, spacing: 24){
+                VStack(alignment: .leading, spacing: 15){
                     TextField("username", text: $id)
                         .padding(15)
                         .background(lightgray)
@@ -41,6 +39,7 @@ struct SignInView: View {
                         .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
                     
                 }
+                .padding((EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0)))
                 HStack(alignment: .center) {
                     NavigationLink(destination: MainTabView().navigationBarBackButtonHidden(true)
                     ) {
@@ -80,6 +79,7 @@ struct SignInView: View {
                             .cornerRadius(7)
                     }
                 }
+                .padding((EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0)))
                 
         
             }

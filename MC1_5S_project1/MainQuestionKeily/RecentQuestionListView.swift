@@ -26,7 +26,7 @@ import SwiftUI
 
 struct RecentQuestionListView: View {
     @EnvironmentObject var viewModel: postViewModel
-
+    
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: true) {
@@ -37,7 +37,7 @@ struct RecentQuestionListView: View {
                         let postIdx = Int(post.index) ?? 0 //string to int
                         NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
                             MyContentView(postIdx: postIdx - 1)
-                        }.navigationBarTitleDisplayMode(.inline)
+                        }
                         Divider()
                     }
                 }

@@ -18,7 +18,7 @@ struct QuestionCardView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                NavigationLink(destination: QuestionDetailView(index: viewModel.postContents.count), isActive: $isLinkAlive) {
+                NavigationLink(destination: QuestionDetailView(index: viewModel.postContents.count - 1), isActive: $isLinkAlive) {
                     Button(action: {
                         // certified user 인지 아닌 지 checkbox로 받기
                         // anonymous인지 아닌지 checkbox로 받기
@@ -26,7 +26,9 @@ struct QuestionCardView: View {
                         let name = UserInformation.loginUser.name ?? ""
                         let createdAt = Date()
                         
-                        viewModel.addNewContent(title: commentInput, name: name, created_at: createdAt, updated_at: createdAt, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
+                        viewModel.postContents.append(PostContent(title: commentInput, name: name, index: "\(viewModel.postContents.count + 1)", created_at: createdAt, updated_at: createdAt, certifiedUser: false, isAnonymous: anonymous, answerCount: "0", answer: []))
+//                        viewModel.postContents.addNewContent(title: commentInput, name: name, created_at: createdAt, updated_at: createdAt, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
+//                        viewModel.postContents.addNewContent(title: commentInput, name: name, created_at: createdAt, updated_at: createdAt, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
 //                        addNewContent(title: commentInput, name: name, created_at: created_at, updated_at: created_at, certifiedUser: true, isAnonymous: anonymous, answerCount: "0")
                         self.isLinkAlive = true
                     }){
