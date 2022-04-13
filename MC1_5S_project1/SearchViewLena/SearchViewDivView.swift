@@ -18,13 +18,13 @@ struct SearchViewDivView: View {
                 SearchResultSectionAnswerView(text: $text)
                 if text.isEmpty == true {
                     VStack {
-                        Text("검색 결과가 없습니다.")
+                        Text("검색어를 입력해주세요.")
                         Spacer()
                     }
                 }
                 NavigationLink(destination: SearchAnswerDetailView(text:text), label: {
-                    AnyButton(buttonText: "더보기")}
-                )
+                    AnyButton(buttonText: "더보기")})
+                .navigationBarTitleDisplayMode(.inline)
                 
                 Divider()
                     .background(.gray)
@@ -32,7 +32,7 @@ struct SearchViewDivView: View {
                 SearchResultSectionNoAnswerView(text: $text)
                 if text.isEmpty == true {
                     VStack {
-                        Text("검색 결과가 없습니다.")
+                        Text("검색어를 입력해주세요.")
                         Spacer()
                     }
                 }
@@ -91,6 +91,7 @@ struct SearchBar: View {
 struct SearchResultSectionAnswerView: View {
     @Binding var text: String
     var body: some View {
+        
         // title
         HStack {
             Text("답변이 있는 질문")
@@ -101,6 +102,7 @@ struct SearchResultSectionAnswerView: View {
                 .padding(.leading, 15)
             Spacer()
         } // HStack
+        
         
         // content section
         VStack {
@@ -114,8 +116,6 @@ struct SearchResultSectionAnswerView: View {
                             NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                                 Divider()
                                 }
-                        
-                            
                             
                     } // Loop
                     .padding(.horizontal, 15)
