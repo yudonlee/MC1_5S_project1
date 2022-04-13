@@ -97,7 +97,7 @@ struct AnswerCardView: View {
                     }
                 }
                 .padding(10)
-            }.navigationTitle("질문 카드")
+            }.navigationTitle("오늘의 질문")
                 .navigationBarHidden(true)
         }
     }

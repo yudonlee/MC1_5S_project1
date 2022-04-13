@@ -11,38 +11,36 @@ struct SearchViewDivView: View {
     @State var text: String
     
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchBar(text: $text)
-                
-                SearchResultSectionAnswerView(text: $text)
-                if text.isEmpty == true {
-                    VStack {
-                        Text("검색 결과가 없습니다.")
-                        Spacer()
-                    }
+        VStack {
+            SearchBar(text: $text)
+            
+            SearchResultSectionAnswerView(text: $text)
+            if text.isEmpty == true {
+                VStack {
+                    Text("검색 결과가 없습니다.")
+                    Spacer()
                 }
-                NavigationLink(destination: SearchAnswerDetailView(text:text), label: {
-                    AnyButton(buttonText: "더보기")}
-                )
-                
-                Divider()
-                    .background(.gray)
-                
-                SearchResultSectionNoAnswerView(text: $text)
-                if text.isEmpty == true {
-                    VStack {
-                        Text("검색 결과가 없습니다.")
-                        Spacer()
-                    }
+            }
+            NavigationLink(destination: SearchAnswerDetailView(text:text), label: {
+                AnyButton(buttonText: "더보기")}
+            )
+            
+            Divider()
+                .background(.gray)
+            
+            SearchResultSectionNoAnswerView(text: $text)
+            if text.isEmpty == true {
+                VStack {
+                    Text("검색 결과가 없습니다.")
+                    Spacer()
                 }
-                NavigationLink(destination: SearchNoAnswerDetailView(text:text), label: {
-                    AnyButton(buttonText: "더보기")})
-                .navigationBarTitleDisplayMode(.inline)
-            } // VStack
-            .navigationBarTitle("")
-            .navigationBarHidden(true) // 네비게이션 상단 바 없애기
-        } // NavigationView
+            }
+            NavigationLink(destination: SearchNoAnswerDetailView(text:text), label: {
+                AnyButton(buttonText: "더보기")})
+            .navigationBarTitleDisplayMode(.inline)
+        } // VStack
+        .navigationBarTitle("")
+//        .navigationBarHidden(true) // 네비게이션 상단 바 없애기
     }
 }
 
