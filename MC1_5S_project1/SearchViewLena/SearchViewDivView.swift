@@ -16,7 +16,12 @@ struct SearchViewDivView: View {
                 SearchBar(text: $text)
                 
                 SearchResultSectionAnswerView(text: $text)
-                
+                if text.isEmpty == true {
+                    VStack {
+                        Text("검색 결과가 없습니다.")
+                        Spacer()
+                    }
+                }
                 NavigationLink(destination: SearchAnswerDetailView(text:text), label: {
                     AnyButton(buttonText: "더보기")}
                 )
@@ -25,7 +30,12 @@ struct SearchViewDivView: View {
                     .background(.gray)
                 
                 SearchResultSectionNoAnswerView(text: $text)
-                
+                if text.isEmpty == true {
+                    VStack {
+                        Text("검색 결과가 없습니다.")
+                        Spacer()
+                    }
+                }
                 NavigationLink(destination: SearchNoAnswerDetailView(text:text), label: {
                     AnyButton(buttonText: "더보기")})
                 .navigationBarTitleDisplayMode(.inline)
@@ -99,10 +109,13 @@ struct SearchResultSectionAnswerView: View {
                     ForEach(postContentList.filter {
                         $0.title.contains(text) && $0.answerCount != "0"}) { post in
                             // 검색어가 포함되어 있고, 답글 개수가 0이 아닌 것을 보여준다
+
                         let post_index = Int(post.index) ?? 0
                         NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                             Divider()
                         }
+                            
+                            
                     } // Loop
                     .padding(.horizontal, 15)
                     .padding(.vertical, 5)
