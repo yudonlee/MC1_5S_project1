@@ -14,7 +14,6 @@ struct MyQuestionListView: View {
     @EnvironmentObject var viewModel: postViewModel
 
     @State var userName = UserInformation.loginUser.name ?? ""
-    //@State var ansSet: Set<Int>
     
     var body: some View {
         VStack {

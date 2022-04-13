@@ -7,8 +7,30 @@
 
 import SwiftUI
 
+//var ansSet: Set<Int> = []
+//
+//func isInAnsArray(value: Int) -> Bool {
+//    ansSet.insert(value)
+//    if ansSet.contains(value){
+//        return true
+//    }
+//    return false
+//}
+
+var ansSet: [Int] = []
+
+func isInAnsArray(value: Int) -> Bool {
+    if ansSet.contains(value) {
+        return true
+    } else {
+        ansSet.append(value)
+        return false
+    }
+}
+
 struct MyAnswerListView: View {
     @EnvironmentObject var viewModel: postViewModel
+//    @State var ansSet: Set<Int> = []
     
     var body: some View {
         VStack {
@@ -18,10 +40,14 @@ struct MyAnswerListView: View {
                         ForEach(post.answer.filter{
                             $0.name == UserInformation.loginUser.name
                         }) { item in
-                            let post_index = Int(post.index) ?? 0
+                            let postIdx = Int(post.index) ?? 0
+//                            $ansSet.insert(postIdx)
+//                            ansSet.insert(postIdx)
                             
-                            NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                                MyContentView(postIdx: post_index-1)
+                            NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
+//                                MyAnswerContentView(postIdx: postIdx-1,
+//                                                    isIn: isInAnsArray(value: postIdx-1))
+                                MyContentView(postIdx: postIdx)
 //                                MyContentView(post: post)
                             }.navigationBarTitleDisplayMode(.inline)
                             Divider()
@@ -45,6 +71,40 @@ struct MyAnswerListView: View {
             } //ScrollView
         }.overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             .padding()
+    }
+}
+
+struct MyAnswerContentView: View { //질문 게시글 리스트
+    @EnvironmentObject var viewModel: postViewModel
+
+    @State var postIdx: Int
+    @State var isIn: Bool
+    
+    var body: some View {
+        if !isIn {
+            HStack {
+                VStack(alignment: .leading, spacing: 10) {
+                    if(viewModel.postContents[postIdx].isAnonymous){
+                        Text("익명")
+                            .bold()
+                    } else {
+                        Text(viewModel.postContents[postIdx].name) //작성자 닉네임
+                            .bold()
+                    }
+                    Text(viewModel.postContents[postIdx].title) // 게시글 내용
+    //                Text(postContentList[postIdx].title) //게시글 내용
+                }
+                Spacer()
+                HStack(spacing: 3) {
+                    Image(systemName: "bubble.right")
+                    Text(viewModel.postContents[postIdx].answerCount)
+    //                Text(postContentList[postIdx].answerCount) //댓글 개수
+                }
+                
+            }//HStack
+            .foregroundColor(.black)
+                .multilineTextAlignment(.leading)
+        }
     }
 }
 
