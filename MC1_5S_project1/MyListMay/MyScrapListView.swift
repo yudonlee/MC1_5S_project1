@@ -21,10 +21,10 @@ struct MyScrapListView: View {
                             ForEach(viewModel.postContents.filter {
                                 Int($0.index) == item
                             }) { post in
-                                let post_index = Int(post.index) ?? 0
+                                let postIdx = Int(post.index) ?? 0
                                 
-                                NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                                    MyContentView(postIdx: post_index-1)
+                                NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
+                                    MyContentView(postIdx: postIdx-1)
 //                                    MyContentView(post: post)
                                 }.navigationBarTitleDisplayMode(.inline)
                                 Divider()

@@ -14,7 +14,7 @@ struct MyQuestionListView: View {
     @EnvironmentObject var viewModel: postViewModel
 
     @State var userName = UserInformation.loginUser.name ?? ""
-    var ansIdxArr: [Int] = [Int]()
+    //@State var ansSet: Set<Int>
     
     var body: some View {
         VStack {
@@ -24,11 +24,12 @@ struct MyQuestionListView: View {
                         $0.name == userName
                     }) { post in
                         
-                        let post_index = Int(post.index) ?? 0
+                        let postIdx = Int(post.index) ?? 0
+                        //ansSet.insert(postIndex)
                         
                         //게시글 상세 이동
-                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-                            MyContentView(postIdx: post_index-1)
+                        NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
+                            MyContentView(postIdx: postIdx-1)
 //                            MyContentView(post: post)
                         }.navigationBarTitleDisplayMode(.inline)
                         Divider()
