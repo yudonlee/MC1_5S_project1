@@ -19,7 +19,7 @@ struct SignInView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
+            VStack {
                 Image("Logo")
                     .resizable()
 //                    .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))

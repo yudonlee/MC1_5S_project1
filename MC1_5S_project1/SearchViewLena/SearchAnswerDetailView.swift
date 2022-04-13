@@ -15,8 +15,8 @@ struct SearchAnswerDetailView: View {
             SearchBar(text: $text)
             SearchResultAnswerDetailView(text: $text)
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+//        .navigationBarTitle("")
+//        .navigationBarHidden(true)
     }
 }
 
