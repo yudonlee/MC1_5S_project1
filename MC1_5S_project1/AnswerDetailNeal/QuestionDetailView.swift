@@ -44,10 +44,19 @@ struct QuestionDetailView: View {
             ScrollView() {
                 VStack{
                     HStack(alignment: .top) {
-                        Image(systemName: "applelogo")
                         if viewModel.postContents[index].isAnonymous {
-                            Text("익명\(anonymousCount)")
+                            Image("lev0")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                            Text("익명")
                         } else {
+                            if let levels = userLevelDic[viewModel.postContents[index].name] {
+                                Image("lev\(levels)")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 24, height: 24)
+                            }
                             Text(viewModel.postContents[index].name)
                         }
                         Spacer()
@@ -100,10 +109,22 @@ struct QuestionDetailView: View {
                         ForEach(viewModel.postContents[index].answer){ answer in
                             VStack(alignment:.leading) {
                                 HStack{
-                                    Image(systemName: "applelogo")
+//                                    Image(systemName: "applelogo")
                                     if answer.isAnonymous {
+                                        Image("lev0")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 24, height: 24)
                                         Text("익명")
                                     } else {
+//                                        Text("lev\(userLevelDic[answer.name])")
+                                        //                                        Text(userLevelDic[answer.name])
+                                        if let levels = userLevelDic[answer.name] {
+                                            Image("lev\(levels)")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 24, height: 24)
+                                        }
                                         Text(answer.name)
                                     }
                                     Spacer()
@@ -181,7 +202,7 @@ struct QuestionDetailView: View {
             
             ZStack {
                 RoundedRectangle(cornerRadius: 19)
-                    .stroke(appMainColor, lineWidth: 4)
+                    .stroke(appMainColor, lineWidth: 1.5)
                     .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
                 
                 RoundedRectangle(cornerRadius: 7)
