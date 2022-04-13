@@ -19,14 +19,9 @@ struct QuestionListView: View {
             VStack {
                 HStack{
                     SearchBar(text: $text)
-                    NavigationLink(destination:SearchViewDivView(text: text)){
-                        Text("검색")
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.gray)
-                            .padding(.trailing, 30.0)
-                    }
-                    .navigationBarTitle("돌아가기")
-                    .navigationBarHidden(true)
+                    NavigationLink(destination:SearchViewDivView(text: text), label: {
+                        FindButton(buttonText: "검색")
+                    })
                 }
                 //SelectHotOrNew
                 HStack{
@@ -36,28 +31,74 @@ struct QuestionListView: View {
                         }
                     }.pickerStyle(.segmented)
                         .padding()
-                    NavigationLink(destination:QuestionCardView()){
-                            Text("질문하기")
-                                .fontWeight(.bold)
-                                .foregroundColor(MINTCOLOR)
-                                .padding(7)
-                                .padding(.trailing, 15)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(MINTCOLOR, lineWidth: 1)
-                                        .padding(.trailing, 15)
-                                )
-                    }
-                    .navigationBarTitle("")
+                    //질문하기(버튼)으로 링크걸기
+                    NavigationLink(destination:QuestionCardView(), label: {
+                        AddQuestionButton(buttonText: "질문하기")
+                    })
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle("돌아가기")
                     .navigationBarHidden(true)
                 }
                 ChosenHotOrNew(selectedSide: selectedSide)
             }
-            .navigationBarTitle("")
+            .navigationBarTitle("돌아가기")
             .navigationBarHidden(true)
         }
     }
 }
+
+//struct QuestionListView: View {
+//    @State var text = ""
+//    @State var searching = false
+//    @State private var selectedSide: itemOfMenu = .myHot
+//
+//    @EnvironmentObject var viewModel: postViewModel
+//
+//    var body: some View {
+//        NavigationView {
+//            VStack {
+//                HStack{
+//                    SearchBar(text: $text)
+//                    NavigationLink(destination:SearchViewDivView(text: text)){
+//                        Text("검색")
+//                            .fontWeight(.semibold)
+//                            .foregroundColor(Color.gray)
+//                            .padding(.trailing, 30.0)
+//                    }
+//                }
+//                //SelectHotOrNew
+//                HStack{
+//                    Picker("", selection: $selectedSide) {
+//                        ForEach(itemOfMenu.allCases, id:\.self){
+//                            Text($0.rawValue)
+//                        }
+//                    }.pickerStyle(.segmented)
+//                        .padding()
+//                    NavigationLink(destination:QuestionCardView()){
+//                            Text("질문하기")
+//                                .fontWeight(.bold)
+//                                .foregroundColor(MINTCOLOR)
+//                                .padding(7)
+//                                .padding(.trailing, 15)
+//                                .overlay(
+//                                    RoundedRectangle(cornerRadius: 8)
+//                                        .stroke(MINTCOLOR, lineWidth: 1)
+//                                        .padding(.trailing, 15)
+//                                )
+//
+//
+//                    }
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .navigationBarTitle("돌아가기")
+//                    .navigationBarHidden(true)
+//                }
+//                ChosenHotOrNew(selectedSide: selectedSide)
+//            }
+////            .navigationBarTitle("돌아가기")
+////            .navigationBarHidden(true)
+//        }
+//    }
+//}
 
 //struct SearchingInMain: View { //검색창
 //    @Binding var searchText: String
@@ -88,6 +129,35 @@ struct QuestionListView: View {
 //        .cornerRadius(13)
 //    }
 //}
+
+//할일 _ 1.버튼 만들어서 쓰기
+// 2.네비게이션 링크 수정
+// 검색 버튼
+struct AddQuestionButton : View {
+    @State var buttonText: String
+    var body : some View {
+        Text(buttonText)
+            .fontWeight(.bold)
+            .foregroundColor(MINTCOLOR)
+            .padding(7)
+            .padding(.trailing, 15)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(MINTCOLOR, lineWidth: 1)
+                    .padding(.trailing, 15)
+            )
+    }
+}
+
+struct FindButton : View {
+    @State var buttonText: String
+    var body : some View {
+        Text(buttonText)
+            .fontWeight(.semibold)
+            .foregroundColor(Color.gray)
+            .padding(.trailing, 30.0)
+    }
+}
 
 enum itemOfMenu: String, CaseIterable {
     case myHot = "Hot"
