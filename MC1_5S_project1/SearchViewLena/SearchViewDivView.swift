@@ -193,7 +193,7 @@ struct AnyButton : View {
         Text(buttonText)
             .fontWeight(.bold)
             .foregroundColor(.white)
-            .padding(7)
+            .padding(4)
             .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
             .padding(5)
             .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
