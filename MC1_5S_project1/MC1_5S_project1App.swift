@@ -12,6 +12,8 @@ struct MC1_5S_project1App: App {
     var body: some Scene {
         WindowGroup {
             SignInView()
+//            QuestionListView()
+
         }
     }
 }

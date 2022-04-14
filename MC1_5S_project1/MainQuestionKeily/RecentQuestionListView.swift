@@ -7,23 +7,6 @@
 
 import SwiftUI
 
-//struct RecentQuestionListLink: View {
-//    var body: some View {
-//        VStack {
-//            ScrollView(.vertical, showsIndicators: true){ //막대바 숨김-false
-//                VStack(spacing: 15) {
-//                    ForEach(postContentList) { post in
-//                        let post_index = Int(post.index) ?? 0
-//                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){MyQuestionContentView(post: post)
-//                        }.navigationBarTitleDisplayMode(.inline)
-//                        Divider()
-//                    }
-//                }.padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
-//            }
-//        }
-//    }
-//}
-
 struct RecentQuestionListView: View {
     @EnvironmentObject var viewModel: postViewModel
     

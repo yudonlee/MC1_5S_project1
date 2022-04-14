@@ -11,38 +11,36 @@ struct SearchViewDivView: View {
     @State var text: String
     
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchBar(text: $text)
-                
-                SearchResultSectionAnswerView(text: $text)
-                if text.isEmpty == true {
-                    VStack {
-                        Text("검색 결과가 없습니다.")
-                        Spacer()
-                    }
+        VStack {
+            SearchBar(text: $text)
+            
+            SearchResultSectionAnswerView(text: $text)
+            if text.isEmpty == true {
+                VStack {
+                    Text("검색 결과가 없습니다.")
+                    Spacer()
                 }
-                NavigationLink(destination: SearchAnswerDetailView(text:text), label: {
-                    AnyButton(buttonText: "더보기")}
-                )
-                
-                Divider()
-                    .background(.gray)
-                
-                SearchResultSectionNoAnswerView(text: $text)
-                if text.isEmpty == true {
-                    VStack {
-                        Text("검색 결과가 없습니다.")
-                        Spacer()
-                    }
+            }
+            NavigationLink(destination: SearchAnswerDetailView(text:text), label: {
+                AnyButton(buttonText: "더보기")}
+            )
+            
+            Divider()
+                .background(.gray)
+            
+            SearchResultSectionNoAnswerView(text: $text)
+            if text.isEmpty == true {
+                VStack {
+                    Text("검색 결과가 없습니다.")
+                    Spacer()
                 }
-                NavigationLink(destination: SearchNoAnswerDetailView(text:text), label: {
-                    AnyButton(buttonText: "더보기")})
-                .navigationBarTitleDisplayMode(.inline)
-            } // VStack
-            .navigationBarTitle("")
-            .navigationBarHidden(true) // 네비게이션 상단 바 없애기
-        } // NavigationView
+            }
+            NavigationLink(destination: SearchNoAnswerDetailView(text:text), label: {
+                AnyButton(buttonText: "더보기")})
+            .navigationBarTitleDisplayMode(.inline)
+        } // VStack
+        .navigationBarTitle("")
+//        .navigationBarHidden(true) // 네비게이션 상단 바 없애기
     }
 }
 
@@ -69,7 +67,7 @@ struct SearchBar: View {
                             // x 터치하면 입력한 값 취소하고 키 입력 종료
                             Button(action : {
                                 self.editText = false
-                                self.text = "   "
+                                self.text = ""
                                 // 키보드에서 입력을 끝내게하는 코드
                                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                             }){
@@ -91,6 +89,7 @@ struct SearchBar: View {
 struct SearchResultSectionAnswerView: View {
     @Binding var text: String
     var body: some View {
+        
         // title
         HStack {
             Text("답변이 있는 질문")
@@ -101,6 +100,7 @@ struct SearchResultSectionAnswerView: View {
                 .padding(.leading, 15)
             Spacer()
         } // HStack
+        
         
         // content section
         VStack {
@@ -114,8 +114,6 @@ struct SearchResultSectionAnswerView: View {
                             NavigationLink(destination: QuestionDetailView(index: post_index-1)){QuestionContentText(post: post)
                                 Divider()
                                 }
-                        
-                            
                             
                     } // Loop
                     .padding(.horizontal, 15)
@@ -195,7 +193,7 @@ struct AnyButton : View {
         Text(buttonText)
             .fontWeight(.bold)
             .foregroundColor(.white)
-            .padding(7)
+            .padding(4)
             .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
             .padding(5)
             .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
