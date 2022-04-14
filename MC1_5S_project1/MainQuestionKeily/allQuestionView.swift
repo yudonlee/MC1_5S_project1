@@ -15,31 +15,35 @@ struct QuestionListView: View {
     @EnvironmentObject var viewModel: postViewModel
 
     var body: some View {
-        VStack {
-            HStack{
-                SearchBar(text: $text)
-                NavigationLink(destination:SearchViewDivView(text: text), label: {
-                    FindButton(buttonText: "검색")
-                })
-            }
-            //SelectHotOrNew
-            HStack{
-                Picker("", selection: $selectedSide) {
-                    ForEach(itemOfMenu.allCases, id:\.self){
-                        Text($0.rawValue)
-                    }
-                }.pickerStyle(.segmented)
-                    .padding()
-                //질문하기(버튼)으로 링크걸기
-                NavigationLink(destination:QuestionCardView(), label: {
-                    AddQuestionButton(buttonText: "질문하기")
-                })
-                .navigationBarTitle("")
-                .navigationBarBackButtonHidden(true)
-                .navigationBarHidden(true)
-            }
-                ChosenHotOrNew(selectedSide: selectedSide)
-        }
+        NavigationView{
+            VStack {
+                HStack{
+                    SearchBar(text: $text)
+                    NavigationLink(destination:SearchViewDivView(text: text), label: {
+                        FindButton(buttonText: "검색")
+                    })
+                }
+                //SelectHotOrNew
+                HStack{
+                    Picker("", selection: $selectedSide) {
+                        ForEach(itemOfMenu.allCases, id:\.self){
+                            Text($0.rawValue)
+                        }
+                    }.pickerStyle(.segmented)
+                        .padding()
+                    //질문하기(버튼)으로 링크걸기
+                    NavigationLink(destination:QuestionCardView(), label: {
+                        AddQuestionButton(buttonText: "질문하기")
+                    })
+                    .navigationBarTitle("")
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarHidden(true)
+                }
+                    ChosenHotOrNew(selectedSide: selectedSide)
+            } // VStack
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+        } //NavigationView
     }
 }
 

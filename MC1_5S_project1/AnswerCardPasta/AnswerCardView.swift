@@ -84,7 +84,9 @@ struct AnswerCardView: View {
                     .frame(width: UIScreen.screenWidth * 0.9, height: 10, alignment: .center)
                     .padding(10)
                 ScrollView(.horizontal){
-                    HStack{
+                    HStack(alignment:.center){
+                        Spacer()
+                            .padding(.leading, 24)
                         // ForEach Envirnoment object 넣어주기
                         ForEach(viewModel.postContents){
                             post in
@@ -97,8 +99,9 @@ struct AnswerCardView: View {
                     }
                 }
                 .padding(10)
-            }.navigationTitle("오늘의 질문")
-                .navigationBarHidden(true)
+            }
+            .navigationTitle("오늘의 질문")
+            .navigationBarHidden(true)
         }
     }
 }
