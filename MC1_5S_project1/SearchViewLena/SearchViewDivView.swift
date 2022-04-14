@@ -197,7 +197,7 @@ struct AnyButton : View {
             .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
             .padding(5)
             .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
-            .cornerRadius(8)
+            .cornerRadius(15)
     }
 }
 

@@ -86,7 +86,7 @@ struct AnswerCardView: View {
                 ScrollView(.horizontal){
                     HStack(alignment:.center){
                         Spacer()
-                            .padding(.leading, 30)
+                            .padding(.leading, 24)
                         // ForEach Envirnoment object 넣어주기
                         ForEach(viewModel.postContents){
                             post in

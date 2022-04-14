@@ -117,8 +117,6 @@ struct QuestionDetailView: View {
                                             .frame(width: 24, height: 24)
                                         Text("익명")
                                     } else {
-//                                        Text("lev\(userLevelDic[answer.name])")
-                                        //                                        Text(userLevelDic[answer.name])
                                         if let levels = userLevelDic[answer.name] {
                                             Image("lev\(levels)")
                                                 .resizable()
@@ -138,19 +136,17 @@ struct QuestionDetailView: View {
                                 Text("\(answer.contents)")
                                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
                                     .fixedSize(horizontal: false, vertical: true)
-                                //                                .frame(height: 180)
-//                                Text(dateFormatter.string(from: Date()))
-//                                    .frame(alignment: .leading)
-//                                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
+
                                 Text(dateFormatter.string(from: answer.created_at))
-                                    .frame(alignment: .leading)
+                                    .frame(alignment: .trailing)
                                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 0))
+                                    .foregroundColor(Color.gray)
+                                    .font(.system(size: 15))
+                                    
                             }
                             
                             //                           Divider가 List elements들 사이에만 존재하도록 코드 수정
-                            if(answer.name != viewModel.postContents[index].lastAnswerName) {
                                 Divider()
-                            }
                         }
                         .padding(.horizontal, 15)
                         .padding(.vertical, 5)
@@ -161,7 +157,8 @@ struct QuestionDetailView: View {
             // border
             .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             // horizontal을 적용한 이유를 모름.
-            .padding(.horizontal, 15)
+            .padding(.horizontal, 10)
+//            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
              
             HStack {
@@ -176,8 +173,10 @@ struct QuestionDetailView: View {
                 }
                 .toggleStyle(.button)
                 
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                
                 Button("완료") {
-//                    print("complete")
+//                    print("complAnete")
                     if let name = UserInformation.loginUser.name {
 //                        print("newAnswer")
                         viewModel.postContents[index].addTestAnswer(answerComment: answerTextField, name: name, created_at: Date(), updated_at: Date(), isAnonymous: isAnswerAnonymous
@@ -189,21 +188,21 @@ struct QuestionDetailView: View {
                         
                     }
                 }
-                
-                .padding(7)
                 .foregroundColor(.white)
+                .padding(9)
+                .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
                 .background(
                     appMainColor
                 )
                 .cornerRadius(19)
                 
             }
-            .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 10))
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
             ZStack {
                 RoundedRectangle(cornerRadius: 19)
                     .stroke(appMainColor, lineWidth: 1.5)
-                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
+                    .frame(width: UIScreen.screenWidth * 0.95, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
                 
                 RoundedRectangle(cornerRadius: 7)
                     .stroke(appMainColor, lineWidth: 1)
@@ -257,6 +256,7 @@ struct QuestionDetailView: View {
                 
             }
             
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
         }
 
         

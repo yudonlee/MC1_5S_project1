@@ -19,7 +19,8 @@ let appPointColor = Color.init(red: 1, green: 204/255, blue: 0)
 
 let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateFormat = "M월 d일 hh시mm분"
+    formatter.dateFormat = "M월 d일 a hh시mm분"
+    formatter.locale = Locale(identifier: "ko_kr")
     return formatter
 }()
 
