@@ -108,5 +108,42 @@
         "level": 4,
         "scrapList": [3, 5]
     }
+    ,
+    {
+        "name": "민정",
+        "password": "1111",
+        "level": 2,
+        "scrapList": [1, 2]
+    },
+    {
+        "name": "미나",
+        "password": "3334",
+        "level": 3,
+        "scrapList": [6]
+    },
+    {
+        "name": "로미",
+        "password": "5555",
+        "level": 4,
+        "scrapList": [8, 9]
+    },
+    {
+        "name": "예감",
+        "password": "2222",
+        "level": 3,
+        "scrapList": [1, 2]
+    },
+    {
+        "name": "헤일리",
+        "password": "2222",
+        "level": 1,
+        "scrapList": [5, 8]
+    },
+    {
+        "name": "오중",
+        "password": "2222",
+        "level": 1,
+        "scrapList": [10, 12]
+    }
 ]
 

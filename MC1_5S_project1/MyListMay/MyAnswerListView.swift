@@ -17,20 +17,19 @@ import SwiftUI
 //    return false
 //}
 
-var ansSet: [Int] = []
+var ansArr: [Int] = []
 
-func isInAnsArray(value: Int) -> Bool {
-    if ansSet.contains(value) {
+func isInAnsArray(value: Int) -> Bool { //ansArr 내에 value가 있는지 검사, 없으면 삽입
+    if ansArr.contains(value) {
         return true
     } else {
-        ansSet.append(value)
+        ansArr.append(value)
         return false
     }
 }
 
 struct MyAnswerListView: View {
     @EnvironmentObject var viewModel: postViewModel
-//    @State var ansSet: Set<Int> = []
     
     var body: some View {
         VStack {
@@ -41,31 +40,20 @@ struct MyAnswerListView: View {
                             $0.name == UserInformation.loginUser.name
                         }) { item in
                             let postIdx = Int(post.index) ?? 0
-//                            $ansSet.insert(postIdx)
-//                            ansSet.insert(postIdx)
+                            
+                            //return이 왜 안되냐고...
                             
                             NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
 //                                MyAnswerContentView(postIdx: postIdx-1,
 //                                                    isIn: isInAnsArray(value: postIdx-1))
-                                MyContentView(postIdx: postIdx)
+                                
+                                MyContentView(postIdx: postIdx-1)
 //                                MyContentView(post: post)
                             }.navigationBarTitleDisplayMode(.inline)
                             Divider()
                         }
                     }
                     .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
-                    
-//                    ForEach(viewModel.postContents.filter{ //연구 대상
-//                        $0.name == UserInformation.loginUser.name
-//                    }) { post in
-//                        let post_index = Int(post.index) ?? 0
-//
-//                        //게시글 상세 이동
-//                        NavigationLink(destination: QuestionDetailView(index: post_index-1)){
-//                            MyAnswerContentView(post: post)
-//                        }.navigationBarTitleDisplayMode(.inline)
-//                        Divider()
-//                    }
                 } //Vstack
                 
             } //ScrollView
@@ -74,15 +62,16 @@ struct MyAnswerListView: View {
     }
 }
 
-struct MyAnswerContentView: View { //질문 게시글 리스트
+struct MyAnswerContentView: View { // 질문 게시글 리스트
     @EnvironmentObject var viewModel: postViewModel
 
     @State var postIdx: Int
-    @State var isIn: Bool
+//    @State var isIn: Bool
     
     var body: some View {
-        if !isIn {
-            HStack {
+//    -> {
+//        if !isIn {
+            return HStack {
                 VStack(alignment: .leading, spacing: 10) {
                     if(viewModel.postContents[postIdx].isAnonymous){
                         Text("익명")
@@ -104,37 +93,9 @@ struct MyAnswerContentView: View { //질문 게시글 리스트
             }//HStack
             .foregroundColor(.black)
                 .multilineTextAlignment(.leading)
-        }
+//        }
     }
 }
-
-//struct MyAnswerContentView: View { //질문 게시글 리스트
-//    @EnvironmentObject var viewModel: postViewModel
-//
-//    @State var post: PostContent
-//    
-//    var body: some View {
-//        HStack {
-//            VStack(alignment: .leading, spacing: 10) {
-//                if(post.isAnonymous){
-//                    Text("익명")
-//                        .bold()
-//                } else {
-//                    Text(post.name) //작성자 닉네임
-//                        .bold()
-//                }
-//                Text(post.title) //게시글 내용
-//            }
-//            Spacer()
-//            HStack(spacing: 3) {
-//                Image(systemName: "bubble.right")
-//                Text(post.answerCount) //댓글 개수
-//            }
-//        }.foregroundColor(.black)
-//            .multilineTextAlignment(.leading)
-//    }
-//}
-
 
 struct MyAnswerListView_Previews: PreviewProvider {
     static var previews: some View {
