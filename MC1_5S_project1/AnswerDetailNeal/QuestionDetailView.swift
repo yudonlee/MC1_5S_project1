@@ -161,7 +161,8 @@ struct QuestionDetailView: View {
             // border
             .overlay(RoundedRectangle(cornerRadius: 19).stroke(Color.gray, lineWidth: 1))
             // horizontal을 적용한 이유를 모름.
-            .padding(.horizontal, 15)
+            .padding(.horizontal, 10)
+//            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
              
             HStack {
@@ -176,6 +177,7 @@ struct QuestionDetailView: View {
                 }
                 .toggleStyle(.button)
                 
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 Button("완료") {
 //                    print("complete")
                     if let name = UserInformation.loginUser.name {
@@ -190,20 +192,20 @@ struct QuestionDetailView: View {
                     }
                 }
                 
-                .padding(7)
+                .padding(12)
                 .foregroundColor(.white)
                 .background(
                     appMainColor
                 )
-                .cornerRadius(19)
+//                .cornerRadius(19)
                 
             }
-            .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 10))
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
             ZStack {
                 RoundedRectangle(cornerRadius: 19)
                     .stroke(appMainColor, lineWidth: 1.5)
-                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
+                    .frame(width: UIScreen.screenWidth * 0.95, height: UIScreen.screenHeight * 0.3 * mul, alignment: .center)
                 
                 RoundedRectangle(cornerRadius: 7)
                     .stroke(appMainColor, lineWidth: 1)
@@ -257,6 +259,7 @@ struct QuestionDetailView: View {
                 
             }
             
+            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
         }
 
         
