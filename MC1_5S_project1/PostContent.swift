@@ -52,7 +52,7 @@ struct PostContent: Codable, Identifiable {
     
     mutating func addTestAnswer(answerComment: String, name: String, created_at: Date, updated_at: Date, isAnonymous: Bool) {
             let newAnswerComment: PostContent.Answer = PostContent.Answer(name: name, created_at: created_at, updated_at: updated_at, isAnonymous: isAnonymous, contents: answerComment)
-            self.answer.append(newAnswerComment)
+            self.answer.insert(newAnswerComment, at:0)
             self.answerCount = "\(self.answer.count)"
             
     }
