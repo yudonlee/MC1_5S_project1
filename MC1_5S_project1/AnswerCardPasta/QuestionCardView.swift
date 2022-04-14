@@ -28,16 +28,29 @@ struct QuestionCardView: View {
                     viewModel.postContents.append(PostContent(title: commentInput, name: name, index: "\(viewModel.postContents.count + 1)", created_at: createdAt, updated_at: createdAt, certifiedUser: false, isAnonymous: anonymous, answerCount: "0", answer: []))
                     self.isLinkAlive = true
                 }){
-                    Text("완료")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(7)
-                        .border(MINTCOLOR, width: 1)
+                    HStack{
+                        
+                        Text("완료")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(4)
+                            .border(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255), width: 1)
+                            .padding(5)
+                            .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
+                            .cornerRadius(8)
+//                        Spacer(minLength: 10)
+                        Text("")
+                            .foregroundColor(.white)
+                            .padding(4)
+                            .padding(5)
+                            .cornerRadius(8)
+                    }
+                    
                 }
             }
-            .background(MINTCOLOR)
-            .cornerRadius(8)
-            .frame(width: 100, height: 100)
+//            .background(MINTCOLOR)
+//            .cornerRadius(8)
+//            .frame(width: 100, height: 100)
             .position(x: UIScreen.screenWidth-10, y: 17)
             VStack{
                 Spacer()
@@ -48,6 +61,7 @@ struct QuestionCardView: View {
                 Toggle(isOn: $anonymous)
                 {
                     Label("익명으로 질문하기", systemImage: "checkmark.square")
+                        .foregroundColor(MINTCOLOR)
                 }
                 .toggleStyle(.button)
                 .frame(width: UIScreen.screenWidth*0.95, height: 15, alignment: .trailing)
