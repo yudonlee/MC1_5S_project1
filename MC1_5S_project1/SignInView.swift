@@ -44,7 +44,7 @@ struct SignInView: View {
                     NavigationLink(destination: MainTabView().navigationBarBackButtonHidden(true)
                     ) {
 
-                        Text("로그인")
+                        Text("Login")
                             .padding(7)
                             .foregroundColor(.white)
                             .background(appMainColor)
@@ -72,7 +72,7 @@ struct SignInView: View {
                     Button(action: {
                         print("SignUp")
                     }) {
-                        Text("회원가입")
+                        Text("SignUp")
                             .padding(7)
                             .foregroundColor(.white)
                             .background(appMainColor)
