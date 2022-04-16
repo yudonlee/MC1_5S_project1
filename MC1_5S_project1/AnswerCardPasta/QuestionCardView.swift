@@ -30,7 +30,7 @@ struct QuestionCardView: View {
                     }){
                         HStack{
                             
-                            Text("완료")
+                            Text("Done")
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .padding(4)
@@ -54,13 +54,13 @@ struct QuestionCardView: View {
                 .position(x: UIScreen.screenWidth-10, y: 17)
                 VStack{
                     Spacer()
-                    Text("질문 작성")
+                    Text("Ask")
                         .font(.system(size: 19, design: .default))
                         .frame(width: UIScreen.screenWidth, height: 50,alignment: .center)
                         .padding(15)
                     Toggle(isOn: $anonymous)
                     {
-                        Label("anonymous", systemImage: "checkmark.square")
+                        Label("unknown", systemImage: "checkmark.square")
                     }
                     .toggleStyle(.button)
                     .frame(width: UIScreen.screenWidth*0.95, height: 15, alignment: .trailing)

@@ -49,7 +49,7 @@ struct QuestionDetailView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 24, height: 24)
-                            Text("익명")
+                            Text("Unknown")
                         } else {
                             if let levels = userLevelDic[viewModel.postContents[index].name] {
                                 Image("lev\(levels)")
@@ -115,7 +115,7 @@ struct QuestionDetailView: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 24, height: 24)
-                                        Text("익명")
+                                        Text("Unkown")
                                     } else {
                                         if let levels = userLevelDic[answer.name] {
                                             Image("lev\(levels)")
@@ -126,10 +126,10 @@ struct QuestionDetailView: View {
                                         Text(answer.name)
                                     }
                                     Spacer()
-                                    Button("edit") {
+                                    Button("Edit") {
                                         print("수정")
                                     }
-                                    Button("del") {
+                                    Button("Del") {
                                         print("delete")
                                     }
                                 }
@@ -169,7 +169,7 @@ struct QuestionDetailView: View {
                 Spacer()
                 Toggle(isOn: $isAnswerAnonymous)
                 {
-                    Label("anonymous", systemImage: "checkmark.square")
+                    Label("Unknown", systemImage: "checkmark.square")
                 }
                 .toggleStyle(.button)
                 

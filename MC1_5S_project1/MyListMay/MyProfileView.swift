@@ -60,7 +60,7 @@ struct NotiView: View { //알림 버튼 클릭 시 보이는 modal view
     
     var body: some View {
         Group {
-            Text("알림 화면")
+            Text("Notifications")
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {

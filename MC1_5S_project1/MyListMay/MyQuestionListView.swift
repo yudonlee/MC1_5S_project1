@@ -55,7 +55,7 @@ struct MyContentView: View { //질문 게시글 리스트
                             .resizable()
                             .scaledToFit()
                             .frame(width: 24, height: 24)
-                        Text("익명")
+                        Text("Unknown")
                             .bold()
                     }
                 } else {

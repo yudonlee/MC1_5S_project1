@@ -44,7 +44,7 @@ struct SignInView: View {
                     NavigationLink(destination: MainTabView().navigationBarBackButtonHidden(true)
                     ) {
 
-                        Text("Login")
+                        Text("SignIn")
                             .padding(7)
                             .foregroundColor(.white)
                             .background(appMainColor)

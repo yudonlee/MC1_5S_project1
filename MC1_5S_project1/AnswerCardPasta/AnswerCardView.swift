@@ -100,7 +100,7 @@ struct AnswerCardView: View {
                 }
                 .padding(10)
             }
-            .navigationTitle("Today's question")
+            .navigationTitle("Today's Question")
             .navigationBarHidden(true)
         }
     }

@@ -20,7 +20,7 @@ struct QuestionListView: View {
                 HStack{
                     SearchBar(text: $text)
                     NavigationLink(destination:SearchViewDivView(text: text), label: {
-                        FindButton(buttonText: "검색")
+                        FindButton(buttonText: "Search")
                     })
                 }
                 //SelectHotOrNew
@@ -33,7 +33,7 @@ struct QuestionListView: View {
                         .padding()
                     //질문하기(버튼)으로 링크걸기
                     NavigationLink(destination:QuestionCardView(), label: {
-                        AddQuestionButton(buttonText: "Question")
+                        AddQuestionButton(buttonText: "Ask")
                     })
                     .navigationBarTitle("")
                     .navigationBarBackButtonHidden(true)
