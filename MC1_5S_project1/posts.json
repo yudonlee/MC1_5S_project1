@@ -1,7 +1,7 @@
 [
     {
-        "name": "민준",
-        "title": "이병찬 국민가수 나오는 방송 무슨요일 마다 해요?",
+        "name": "Minjun",
+        "title": "What day does 'National Singer' air?",
         "index": "1",
         "created_at" : 1647326965,
         "updated_at" : 1647326965,
@@ -10,24 +10,24 @@
         "answerCount": "2",
         "answer": [
             {
-                "name": "서준",
+                "name": "Seojun",
                 "created_at" : 1647334165,
                 "updated_at" : 1647334170,
                 "isAnonymous": true,
-                "contents": "국가수하는 요일은 매주 목요일입니다. 예능력증진 프로그램입니다. 쇼프로라고 보시면됩니다.시간은 22시입니다."
+                "contents": "It airs every Thursday at 22:00."
             },
             {
-                "name": "예준",
+                "name": "Yejun",
                 "created_at" : 1647341365,
                 "updated_at" : 1647341365,
                 "isAnonymous": false,
-                "contents": "목요일 저녁 10시 국민가수로 선발된 가수 6명이 출연하고 이병찬 이 출연해요 게임도하고 노래도 부르고 예능프로그램입니다."
+                "contents": "At 10 p.m. on Thursday, six singers selected as national singers will appear and Lee Byung-chan will appear. It is an entertainment program that plays games and sings."
             }
         ],
     },
     {
-        "name": "예준",
-        "title": "mbti 성격유형 테스트 이거 어디서 하나요 ㅠㅠ?",
+        "name": "Yejun",
+        "title": "Where is the MBTI personality type test?",
         "index": "2",
         "created_at" : 1647334165,
         "updated_at" : 1647334165,
@@ -36,17 +36,17 @@
         "answerCount": "1",
         "answer": [
             {
-                "name": "시우",
+                "name": "Siwoo",
                 "created_at" : 1647432625,
                 "updated_at" : 1647432625,
                 "isAnonymous": true,
-                "contents": "IDRLabs에서 진행하는 MBTI 테스트입니다. ​"
+                "contents": "The MBTI test is conducted by IDRLabs. ​"
             }
         ]
     },
     {
-        "title": "인스타 dm 답장 이거 어떻게 해요?",
-        "name": "하준",
+        "title": "How do I reply to Instagram DM?",
+        "name": "Hajun",
         "index": "3",
         "created_at" : 1647428125,
         "updated_at" : 1647428125,
@@ -55,24 +55,24 @@
         "answerCount": "2",
         "answer": [
             {
-                "name": "선우",
+                "name": "Sunwoo",
                 "created_at" : 1647444325,
                 "updated_at" : 1647444325,
                 "isAnonymous": false,
-                "contents": "페북페메랑 인스타 디엠이랑 업데이트 해야할수있습니다"
+                "contents": "You need to update Instagram."
             },
             {
-                "name": "현수",
+                "name": "Hyunsoo",
                 "created_at" : 1647487525,
                 "updated_at" : 1647488725,
                 "isAnonymous": false,
-                "contents": "사람들 스토리 보면 우측 하단에 비행기 표시 있어요. 그거 눌러서 답장하시거나 스토리에 답장기능 안 막아놓았다면 스토리 하단에 바같은 거 있는데 그거 클릭해서 거기다 타자 치고 전송 누르면 돼요."
+                "contents": "If you look at people's stories, there's an airplane sign on the bottom right If you press it to reply or if you didn't block the reply function, there's a bar at the bottom of the story. Click it, type it, and press Send."
             }
         ]
     },
     {
-        "title": "컴터 부팅후 cpu 온도 상승 이유??? cpu는 5800x입니다!",
-        "name": "준우",
+        "title": "Why is the temperature of the cpu increasing after the computer starts? My cpu model is 5800x!",
+        "name": "Junwoo",
         "index": "4",
         "created_at" : 1647747925,
         "updated_at" : 1647791125,
@@ -81,24 +81,24 @@
         "answerCount": "2",
         "answer": [
             {
-                "name": "오감이",
+                "name": "Ogami",
                 "created_at" : 1647806725,
                 "updated_at" : 1647807180,
                 "isAnonymous": false,
-                "contents": "보드쪽 문제일 가능성이 높네요. 부품 하나하나 바꿔서 테스트 해보는 방법 이외에 눈으로 볼수 있는건  콘덴서 가 부풀었는지 정도 확인 이외 안될것 같네요 사용 가능한 부품 있으면 교체해보는게 좋을것 같고 오래된 보드가 아닐것 같으니 as 보내보는 방법도 있을것 같네요."
+                "contents": "There's a high possibility that it's a board problem. Other than changing parts and testing them out, all you can see is to see if the condenser is swollen I think it would be better to replace the parts if they are available, and I don't think it's an old board, so I think there's a way to send them as well."
             },
             {
-                "name": "승우",
+                "name": "Seungwoo",
                 "created_at" : 1647944400,
                 "updated_at" : 1647944400,
                 "isAnonymous": false,
-                "contents": "5800x는 타 cpu보다 발열이 심합니다. 그만큼 쿨러의 성능이 중요하니 해당부분 고려해 보시면 좋겠네요."
+                "contents": "The 5800x has more heat than other cpu. The performance of the cooler is that important, so please consider that."
             }
         ]
     },
     {
-        "title": "달력 요일 순서가 일월화수목금토 순서인 이유?",
-        "name": "유준",
+        "title": "Why does the calendar day order start from Sunday?",
+        "name": "Yujun",
         "index": "5",
         "created_at" : 1647791125,
         "updated_at" : 1647877800,
@@ -107,24 +107,24 @@
         "answerCount": "2",
         "answer": [
             {
-                "name": "승현",
+                "name": "Seunghyun",
                 "created_at" : 1647892800,
                 "updated_at" : 1647892800,
                 "isAnonymous": true,
-                "contents": "달력의 요일이 일요일부터 시작하는 이유는 유대교에서 '일요일을 일주일에 시작'으로 히브리어에 기록이 되어 있었다더군요(욤 리숀) 그것이 기독교로 넘어와 기독교에서도 일요일을 시작으로 보게 되었죠"
+                "contents": "The reason why the calendar day starts Sunday was recorded in Hebrew as 'starting Sunday week' in Judaism[Yom Rishon] And so that's what we see in Christianity, starting with Sunday."
             },
             {
-                "name": "오감이",
+                "name": "Ogami",
                 "created_at" : 1648065600,
                 "updated_at" : 1648065600,
                 "isAnonymous": false,
-                "contents": "달력 처음 만든 사람이 천주교의 사제였기 때문에 그렇게 되었습니다."
+                "contents": "That's because the first person to make the calendar was a Catholic priest."
             }
         ]
     },
     {
-        "title": "긴급재난문자전송서비스로 문자를 받을 때 항상 제가 있던 지역에 대해서 보내주더라고요 그러면 긴급재난문자전송서비스는 어떻게 제가 그 지역에 있는지 알수있나요?",
-        "name": "준서",
+        "title": "The emergency disaster text message service always sends me messages about the area I was in. So how do they know I'm in the area for emergency text messaging services?",
+        "name": "Junseo",
         "index": "6",
         "created_at" : 1648116900,
         "updated_at" : 1648117800,
@@ -133,17 +133,17 @@
         "answerCount": "1",
         "answer": [
             {
-                "name": "지연",
+                "name": "Jiyeon",
                 "created_at" : 1648122240,
                 "updated_at" : 1648122480,
                 "isAnonymous": true,
-                "contents": "행정안전부는 휴대폰의 CBS(Cell Broadcasting Service)기능을 이용해 재난재해 상황 발생이 예상되거나 발생한 지역에 관련 내용을 CBS가 가능한 휴대폰에 실시간으로 전달한다."
+                "contents": "The Ministry of Public Administration and Security uses the cell broadcasting service (CBS) function of the mobile phone to deliver related information to CBS-enabled mobile phones in areas where disaster situations are expected or occurred."
             }
         ]
     },
     {
-        "title": "5g 인터넷이 뭔가요? 유선 인터네도 5g인가요?",
-        "name": "연우",
+        "title": "What is 5g internet? Is wired internet 5g too?",
+        "name": "Yeonwoo",
         "index": "7",
         "created_at" : 1648213980,
         "updated_at" : 1648213980,
@@ -152,17 +152,17 @@
         "answerCount": "1",
         "answer": [
             {
-                "name": "예서",
+                "name": "Yeseo",
                 "created_at" : 1648215000,
                 "updated_at" : 1648215000,
                 "isAnonymous": true,
-                "contents": "WiFi에서의 5G는 5GHz 주파수 대역을 말하는 것이구요, 유선에서의 5G는 5Gbps 대역폭을 말하는 것이고, 이동통신에서의 5G는 5세대(Generation)을 말하는 것으로 차이가 아주 큽니다."
+                "contents": "5G in WiFi refers to the 5GHz frequency band, 5G in wired refers to the 5Gbps bandwidth, and 5G in mobile communication refers to the 5G generation, which is very different."
             }
         ]
     },
     {
-        "title": "방송에서 상표를 가리는 이유가 궁금해요",
-        "name": "오감이",
+        "title": "I'm curious why you're covering the brand on TV.",
+        "name": "Ogami",
         "index": "8",
         "created_at" : 1648377000,
         "updated_at" : 1648377000,
@@ -171,17 +171,17 @@
         "answerCount": "1",
         "answer": [
             {
-                "name": "연우",
+                "name": "Yeonwoo",
                 "created_at" : 1648393200,
                 "updated_at" : 1648393200,
                 "isAnonymous": true,
-                "contents": "제59조의3 방송법 시행령에 써있는 법 때문에 간접광고를 막기 위해서이고,협찬을 받지 않았는데도 간접적으로 홍보가 되면 알고보니 문제가 있던 (부실설계, 과대포장 등 이미지가 안좋은)브랜드였다면 그 간접광고로 인해 궁금해서 사게 된 사람들에게 피해가 가기 때문에 간접광고,홍보를 막기 위해서입니다."
+                "contents": "This is to prevent indirect advertising because of the law written in the Enforcement Decree of the Broadcasting Act, and if it is indirectly promoted even though it is not sponsored, it is to prevent indirect advertising and advertising because it damages people who are curious about it."
             }
         ]
     },
     {
-        "title": "조개 해감할 때 빛을 차단해야 하는 이유가 뭔가요? 바닷속에 있다는 느낌을 주는 건가요..ㅋㅋ ",
-        "name": "오감이",
+        "title": "Why do you have to block the light when you're unwinding clams?",
+        "name": "Ogami",
         "index": "9",
         "created_at" : 1648465200,
         "updated_at" : 1648465800,
@@ -190,24 +190,24 @@
         "answerCount": "2",
         "answer": [
             {
-                "name": "중식",
+                "name": "Jungsik",
                 "created_at" : 1648473600,
                 "updated_at" : 1648473900,
                 "isAnonymous": true,
-                "contents": "조개를 해감할대 빛을 차단하는 이유는 조개가 살고있었던 비슷한 환경(뻘구멍속이나 바닷속과 같은 환경)을 만들어 조개를 이완시키기 위함이고 빛을 차단하면 조개들이 뻘을 잘뱉어내기때문입니다"
+                "contents": "The reason why they cut off the light is because they create a similar environment where they lived (such as in a hole or in the ocean) and when they cut off the light, they spit out the shell very well."
             },
             {
-                "name": "현수",
+                "name": "Hyunsoo",
                 "created_at" : 1648477500,
                 "updated_at" : 1648477800,
                 "isAnonymous": false,
-                "contents": "네 맞습니다. 빛을 차단해야 조개가 활발히 해감작용이 되기때문입니다."
+                "contents": "It's because it's more active when you block out the light."
             }
         ]
     },
     {
-        "title": "팽이버섯은 왜 팽이버섯이죠??",
-        "name": "오감이",
+        "title": "I'm curious about the origin of the enoki mushroom",
+        "name": "Ogami",
         "index": "10",
         "created_at" : 1648473300,
         "updated_at" : 1648473300,
@@ -216,17 +216,17 @@
         "answerCount": "1",
         "answer": [
             {
-                "name": "자쿠",
+                "name": "Zakoo",
                 "created_at" : 1648473600,
                 "updated_at" : 1648473600,
                 "isAnonymous": true,
-                "contents": "팽이버섯의 이름은 말라죽은 팽나무에서 자란다고 하여 이름붙여진 것입니다. 10~15도씨의 온도에서 잘 자라는 특징이 있습니다. 팽이버섯은 다른 버섯에 비하여 기온이 낮은 곳에서 잘 자라기 때문에 겨울버섯이라고도 합니다."
+                "contents": "The name of enoki mushroom was given because it is said to grow on a dried enoki tree. It is characterized by growing well at a temperature of 10 to 15 degrees Celsius. Enoki mushrooms are also called winter mushrooms because they grow well in places with lower temperatures than other mushrooms."
             }
         ]
     },
     {
-        "title": "밤만 되면 방에서 기계 돌아가는?듯한 소리가 계속 나는데 이건 어디에 말씀드려야하나요?",
-        "name": "로미",
+        "title": "I keep hearing the sound of the machine every night in the accommodation. Where should I talk about this kind of problem?",
+        "name": "Romi",
         "index": "11",
         "created_at" : 1648548000,
         "updated_at" : 1648548000,
@@ -235,25 +235,25 @@
         "answerCount": "2",
         "answer": [
             {
-                "name": "오중",
+                "name": "Ohjoong",
                 "created_at" : 1648550400,
                 "updated_at" : 1648550400,
                 "isAnonymous": true,
-                "contents": "저도 드릴돌아가는 소리가 계속 났는데 소리가 세탁기에서 나는것 같아요!"
+                "contents": "I hear that sound, too. It sounds like from washing machine"
             },
             {
-                "name": "쑤리",
+                "name": "Ssuri",
                 "created_at" : 1648563000,
                 "updated_at" : 1648563000,
                 "isAnonymous": true,
-                "contents": "소리로 인해 너무 힘든 상황이면 생활관 13동 1층 생활관운영팀 당직실로 전화해 보시겠어요? 현장 확인 해주실 거에요!"
+                "contents": "If you're having a hard time because of the sound, would you like to call the duty office of the dormitory operation team on the 1st floor of the dormitory 13th building? They'll check the site!"
             }
             
         ]
     },
     {
-        "title": "포스빌 도어락 어떻게 변경하나요?",
-        "name": "민정",
+        "title": "How do I change the Posville door lock password?",
+        "name": "Minjung",
         "index": "12",
         "created_at" : 1648563000,
         "updated_at" : 1648566000,
@@ -263,8 +263,8 @@
         "answer": []
     },
     {
-        "title": "학습지원장학금 다들 받으셨나요?",
-        "name": "미나",
+        "title": "Did you all get a scholarship?",
+        "name": "Mina",
         "index": "13",
         "created_at" : 1648563000,
         "updated_at" : 1648566000,
@@ -274,8 +274,8 @@
         "answer": []
     },
     {
-        "title": "외부 숙소 사용하는 멘티들은 출입증 어디서 수령한다고 했나요? 공지글을 못찾겠어요ㅠㅠ",
-        "name": "예감",
+        "title": "Where did the mentees who use the outside accommodation receive the pass? I can't find the notice.",
+        "name": "Yegami",
         "index": "14",
         "created_at" : 1648563000,
         "updated_at" : 1648566000,
@@ -285,8 +285,8 @@
         "answer": []
     },
     {
-        "title": "국민취업지원제도 측에서 출석증빙서류를 원하는데, 그동안 출석했다는 증빙서류를 받을 수 있을까요?",
-        "name": "자쿠",
+        "title": "The National Employment Support System wants attendance documents, so can I get the evidence that I've been attending?",
+        "name": "Zakoo",
         "index": "15",
         "created_at" : 1648563000,
         "updated_at" : 1648566000,

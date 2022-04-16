@@ -7,26 +7,25 @@
 
 import SwiftUI
 
-//var ansSet: Set<Int> = []
-//
-//func isInAnsArray(value: Int) -> Bool {
-//    ansSet.insert(value)
-//    if ansSet.contains(value){
-//        return true
-//    }
-//    return false
-//}
+var ansSet: Set<Int> = []
 
-var ansArr: [Int] = []
-
-func isInAnsArray(value: Int) -> Bool { //ansArr 내에 value가 있는지 검사, 없으면 삽입
-    if ansArr.contains(value) {
+func isInAnsSet(value: Int) -> Bool {
+    if ansSet.contains(value){
         return true
-    } else {
-        ansArr.insert(value,at:0)
-        return false
     }
+    return false
 }
+
+//var ansArr: [Int] = []
+//
+//func isInAnsArray(value: Int) -> Bool { //ansArr 내에 value가 있는지 검사, 없으면 삽입
+//    if ansArr.contains(value) {
+//        return true
+//    } else {
+//        ansArr.insert(value,at:0)
+//        return false
+//    }
+//}
 
 struct MyAnswerListView: View {
     @EnvironmentObject var viewModel: postViewModel
@@ -40,20 +39,35 @@ struct MyAnswerListView: View {
                             $0.name == UserInformation.loginUser.name
                         }) { item in
                             let postIdx = Int(post.index) ?? 0
-                            
+
                             //return이 왜 안되냐고...
-                            
+
                             NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
 //                                MyAnswerContentView(postIdx: postIdx-1,
 //                                                    isIn: isInAnsArray(value: postIdx-1))
-                                
+
                                 MyContentView(postIdx: postIdx-1)
 //                                MyContentView(post: post)
                             }.navigationBarTitleDisplayMode(.inline)
                             Divider()
                         }
                     }
-                    .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+//                    .padding(EdgeInsets(top: 10, leading: 30, bottom: 0, trailing: 30))
+//                     viewModel.postContents.map {
+//                        $0.answer.filter {
+//                            $0.name == UserInformation.loginUser.name
+//                        }
+//                        let postIdx = Int($0.index) ?? 0
+//
+//                        if !isInAnsSet(value: postIdx-1) {
+//                            NavigationLink(destination: QuestionDetailView(index: postIdx-1)){
+//                                MyContentView(postIdx: postIdx-1)
+//                            }
+//                            .navigationBarTitleDisplayMode(.inline)
+//                            Divider()
+//                        }
+//                        ansSet.insert(postIdx-1)
+//                    }
                 } //Vstack
                 
             } //ScrollView
