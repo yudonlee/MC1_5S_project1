@@ -60,7 +60,7 @@ struct QuestionCardView: View {
                         .padding(15)
                     Toggle(isOn: $anonymous)
                     {
-                        Label("익명으로 질문하기", systemImage: "checkmark.square")
+                        Label("anonymous", systemImage: "checkmark.square")
                     }
                     .toggleStyle(.button)
                     .frame(width: UIScreen.screenWidth*0.95, height: 15, alignment: .trailing)

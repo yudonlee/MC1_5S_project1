@@ -47,7 +47,7 @@ struct Searching: View {
     var body: some View {
         
         HStack {
-            TextField("검색", text: $text)
+            TextField("Search", text: $text)
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(.white)
@@ -82,9 +82,9 @@ struct Searching: View {
     
         
 enum SideOfMenu: String, CaseIterable {
-    case myQues = "내 질문"
-    case myAns = "내 답변"
-    case myScr = "스크랩"
+    case myQues = "My Question"
+    case myAns = "My Answer"
+    case myScr = "My Scrap"
 }
 
 struct ChosenView: View {

@@ -78,7 +78,7 @@ struct AnswerCardView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("오늘의 질문")
+                Text("Today's question")
                     .font(.title)
                     .fontWeight(.bold)
                     .frame(width: UIScreen.screenWidth * 0.9, height: 10, alignment: .center)
@@ -100,7 +100,7 @@ struct AnswerCardView: View {
                 }
                 .padding(10)
             }
-            .navigationTitle("오늘의 질문")
+            .navigationTitle("Today's question")
             .navigationBarHidden(true)
         }
     }

@@ -60,11 +60,11 @@ struct QuestionDetailView: View {
                             Text(viewModel.postContents[index].name)
                         }
                         Spacer()
-                        Button("수정"){
+                        Button("edit"){
                             print("s")
                         }
                         
-                        Button("삭제"){
+                        Button("del"){
                             print("s")
                         }
                     }
@@ -85,7 +85,7 @@ struct QuestionDetailView: View {
                     HStack {
                         Toggle(isOn: $alsoQuestionable)
                         {
-                            Label("나도 궁금해요", systemImage: "checkmark.square")
+                            Label("Scrap", systemImage: "checkmark.square")
                         }
                         .toggleStyle(.button)
                         Spacer()
@@ -126,10 +126,10 @@ struct QuestionDetailView: View {
                                         Text(answer.name)
                                     }
                                     Spacer()
-                                    Button("수정") {
+                                    Button("edit") {
                                         print("수정")
                                     }
-                                    Button("삭제") {
+                                    Button("del") {
                                         print("delete")
                                     }
                                 }
@@ -162,20 +162,20 @@ struct QuestionDetailView: View {
             
              
             HStack {
-                Text("답변하기")
+                Text("Answer")
                     .font(.title)
                     .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0))
                 
                 Spacer()
                 Toggle(isOn: $isAnswerAnonymous)
                 {
-                    Label("익명", systemImage: "checkmark.square")
+                    Label("anonymous", systemImage: "checkmark.square")
                 }
                 .toggleStyle(.button)
                 
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 
-                Button("완료") {
+                Button("Done") {
 //                    print("complAnete")
                     if let name = UserInformation.loginUser.name {
 //                        print("newAnswer")

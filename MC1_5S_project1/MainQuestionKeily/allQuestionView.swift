@@ -33,7 +33,7 @@ struct QuestionListView: View {
                         .padding()
                     //질문하기(버튼)으로 링크걸기
                     NavigationLink(destination:QuestionCardView(), label: {
-                        AddQuestionButton(buttonText: "질문하기")
+                        AddQuestionButton(buttonText: "Question")
                     })
                     .navigationBarTitle("")
                     .navigationBarBackButtonHidden(true)

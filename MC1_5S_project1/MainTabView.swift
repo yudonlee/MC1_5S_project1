@@ -15,14 +15,14 @@ struct MainTabView : View {
         TabView {
             QuestionListView()
                 .tabItem {
-                    Label("질문", systemImage: "pencil")
+                    Label("Question", systemImage: "pencil")
                         .foregroundColor(.gray)
                         
                 }
             
             AnswerCardView()
                 .tabItem {
-                    Label("답변", systemImage: "character.bubble")
+                    Label("Answer", systemImage: "character.bubble")
                         .foregroundColor(.gray)
                 }
             
