@@ -19,13 +19,11 @@ import SwiftUI
 
 var ansArr: [Int] = []
 
-func isInAnsArray(value: Int) -> Bool { //ansArr 내에 value가 있는지 검사, 없으면 삽입
-    if ansArr.contains(value) {
+func isInAnsSet(value: Int) -> Bool {
+    if ansSet.contains(value){
         return true
-    } else {
-        ansArr.append(value)
-        return false
     }
+    return false
 }
 
 struct MyAnswerListView: View {
