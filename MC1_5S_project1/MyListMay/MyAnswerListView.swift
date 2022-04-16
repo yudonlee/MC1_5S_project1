@@ -23,7 +23,7 @@ func isInAnsArray(value: Int) -> Bool { //ansArr 내에 value가 있는지 검�
     if ansArr.contains(value) {
         return true
     } else {
-        ansArr.insert(value,at:0)
+        ansArr.append(value)
         return false
     }
 }

@@ -25,7 +25,7 @@ struct QuestionCardView: View {
                         let name = UserInformation.loginUser.name ?? ""
                         let createdAt = Date()
                         
-                        viewModel.postContents.insert(PostContent(title: commentInput, name: name, index: "\(viewModel.postContents.count + 1)", created_at: createdAt, updated_at: createdAt, certifiedUser: false, isAnonymous: anonymous, answerCount: "0", answer: []), at:0)
+                        viewModel.postContents.append(PostContent(title: commentInput, name: name, index: "\(viewModel.postContents.count + 1)", created_at: createdAt, updated_at: createdAt, certifiedUser: false, isAnonymous: anonymous, answerCount: "0", answer: []))
                         self.isLinkAlive = true
                     }){
                         HStack{
