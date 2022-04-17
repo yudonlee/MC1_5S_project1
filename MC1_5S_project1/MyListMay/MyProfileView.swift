@@ -50,7 +50,7 @@ struct MyProfileView: View {
                         .padding(.trailing)
                     }
                 }.padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 10))
-                    .background(Color.mint)
+                    .background(Color(red: 48 / 255, green: 176 / 255, blue: 199 / 255))
             }
     }
 }
