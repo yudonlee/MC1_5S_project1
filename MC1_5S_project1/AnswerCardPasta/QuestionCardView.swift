@@ -92,7 +92,7 @@ struct QuestionCardView: View {
                         .padding(15)
                     Toggle(isOn: $anonymous)
                     {
-                        Label("Unknown", systemImage: "checkmark.square")
+                        Label("unknown", systemImage: "checkmark.square")
                     }
                     .toggleStyle(.button)
                     .frame(width: UIScreen.screenWidth*0.95, height: 15, alignment: .trailing)
