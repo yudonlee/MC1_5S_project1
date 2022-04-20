@@ -7,6 +7,30 @@
 
 import SwiftUI
 
+<<<<<<< HEAD
+=======
+//var ansSet: Set<Int> = []
+//
+//func isInAnsArray(value: Int) -> Bool {
+//    ansSet.insert(value)
+//    if ansSet.contains(value){
+//        return true
+//    }
+//    return false
+//}
+
+var ansArr: [Int] = []
+
+func isInAnsArray(value: Int) -> Bool { //ansArr 내에 value가 있는지 검사, 없으면 삽입
+    if ansArr.contains(value) {
+        return true
+    } else {
+        ansArr.append(value)
+        return false
+    }
+}
+
+>>>>>>> parent of 6ffdbb0 (append->insert)
 struct MyAnswerListView: View {
     @EnvironmentObject var viewModel: postViewModel
     
