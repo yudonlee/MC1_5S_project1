@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-<<<<<<< HEAD
-=======
 //var ansSet: Set<Int> = []
 //
 //func isInAnsArray(value: Int) -> Bool {
@@ -30,7 +28,6 @@ func isInAnsArray(value: Int) -> Bool { //ansArr 내에 value가 있는지 검�
     }
 }
 
->>>>>>> parent of 6ffdbb0 (append->insert)
 struct MyAnswerListView: View {
     @EnvironmentObject var viewModel: postViewModel
     
