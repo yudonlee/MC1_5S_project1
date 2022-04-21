@@ -22,12 +22,12 @@
 
 ## :framed_picture: Application Demo
 
-![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/AnswerFromCard.gif?raw=true)
-![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/AnswerFromList.gif?raw=true)
+| 질문 카드에 답글 달기 |질문 리스트에 답글 달기 |
+| :---------: | :---------: |
+| <img src="https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/AnswerFromCard.gif?raw=true" width="214.5" height="440.1"> | <img src="https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/AnswerFromList.gif?raw=true" width="214.5" height="440.1">|
 
 
 ## :fireworks: Application Screenshots
-
 ![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/ViewResult.jpeg?raw=true)
 ![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/ViewResult2.jpeg?raw=true)
 ![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/LevelSystem.jpeg?raw=true)
