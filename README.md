@@ -1,4 +1,4 @@
-![Logo](https://dummyimage.com/1000x300/000/fff.png)
+![Logo](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/Logo.png?raw=true)
 
 # :iphone: 너:나들이
 
@@ -22,26 +22,22 @@
 
 ## :framed_picture: Application Demo
 
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
+![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/AnswerFromCard.gif?raw=true)
+![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/AnswerFromList.gif?raw=true)
 
 
-## :fireworks: Screenshots
+## :fireworks: Application Screenshots
 
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
-
+![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/ViewResult.jpeg?raw=true)
+![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/ViewResult2.jpeg?raw=true)
+![App Screenshot](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/LevelSystem.jpeg?raw=true)
 
 ## :sparkles: Skills & Tech Stack
 SwiftUI
 
 ## :books: Documentation
 
-[Documentation](https://developer.apple.com/documentation/swiftui)
+[SwiftUI Documentation](https://developer.apple.com/documentation/swiftui)
 
 
 ## :lock_with_ink_pen: License
