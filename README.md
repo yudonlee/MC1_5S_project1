@@ -1,5 +1,3 @@
-![Logo](https://github.com/yudonlee/MC1_5S_project1/blob/main/readme_image/Logo.png?raw=true)
-
 # :iphone: 너:나들이
 
 궁금증을 해소할 수 있는 커뮤니티
