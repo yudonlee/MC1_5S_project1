@@ -53,5 +53,7 @@ SwiftUI
 - 색깔은 테마색상은 민트색(#30B0C7), 추가색상(포인트)은 노란색(#ffcc00)으로 한다. 
 
 
-# 2. error 해결 케이스
+# 2. Trouble Shooting
 - 1. clone된 repository의 xcode project에서 simulator가 보이지 않는 현상(xcode version 문제로 target device 버전 지원이 안되어 업데이트로 해결)
+- 2. 전체 View에서 참조 가능한 데이터를 만들고, 데이터값이 변경되면 전체 뷰들또한 업데이트 되도록 만드는 방법(@StateObject, @EnvironmentObject, @ObservedObject, ObservableObject)
+

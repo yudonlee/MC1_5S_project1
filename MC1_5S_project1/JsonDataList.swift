@@ -10,7 +10,15 @@ import SwiftUI
 
 
 public class postViewModel: ObservableObject {
-    @Published var postContents: [PostContent] = load("posts.json")
+//    Pulished는 해당하는 변수가 변경시 자동으로 objectWillChange.send()가 호출되고, 이를통해 뷰가 자동으로 업데이트 된다!
+//    Published를 사용하지 않으면 뷰가 실시간으로 업데이트가 되지 않음.
+//    https://nsios.tistory.com/120 이건 한글판 블로그에서 가져온 것. 오피셜 문서를 통해 보완 필요! ㄴ
+    @Published var postContents: [PostContent]
+//    = load("posts.json")
+    init(jsonFileName: String) {
+        postContents = load(jsonFileName)
+    }
+//    var postContents: [PostContent] = load("posts.json")
     func addNewContent(title: String, name: String,
                        created_at: Date, updated_at: Date, certifiedUser: Bool,
                        isAnonymous: Bool, answerCount:String) {
@@ -22,6 +30,7 @@ public class postViewModel: ObservableObject {
         postContents.append(new_post)
     }
 }
+
 
 var postContentList: [PostContent] = load("posts.json")
 var userProfileList: [UserProfile] = load("users.json")
@@ -36,12 +45,9 @@ var userLevelDic : [String: Int] = [ : ]
 //}
 
 func loadUserLevel() {
-    print("loaduserLevel\n\n\n\n\n\n\n")
     for user in userProfileList {
         userLevelDic.updateValue(user.level, forKey: user.name)
-//        print("\(user.level) and \(user.name)")
     }
-    print("민준아!\(userLevelDic["민준"])")
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

@@ -15,7 +15,12 @@ struct SignInView: View {
     @State var isSignInSuccess: Bool = false
     
     
-    @StateObject var viewModel = postViewModel()
+//    무작정 선언은 불가능하다. ObservableObject를 따라하면 @StateObject, @ObservedObject property wrapper를 사용할 수 있다. 
+//    @ObservedObject private var postFileName: String
+//    @StateObject private var postFIleName: String
+    
+    @StateObject var viewModel = postViewModel(jsonFileName: "posts.json")
+    var viewModelTwo = postViewModel(jsonFileName: "posts.json")
     
     var body: some View {
         NavigationView {
@@ -71,6 +76,7 @@ struct SignInView: View {
                     //                Spacer()
                     Button(action: {
                         print("SignUp")
+//                        viewModel.objectWillChange.send()
                     }) {
                         Text("SignUp")
                             .padding(7)
@@ -81,7 +87,7 @@ struct SignInView: View {
                 }
                 .padding((EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0)))
                 
-        
+                Text(viewModelTwo.postContents[1].answerCount)
             }
             
         }.environmentObject(viewModel)
