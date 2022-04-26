@@ -14,8 +14,13 @@
 - 스크랩
 - 로그인 기능(Apple sign with, Kakao Sign with등)
 ## :people_hugging: Authors
-
-- [@Keily](https://github.com/lululll) | [@Lena](https://www.github.com/lenamin) | [@May](https://github.com/wonhui-kim) | [@Neal](https://www.github.com/yudonlee) | [@Pasta](https://www.github.com/mth9406)
+| Contributor | Roll |
+| :-------------: | :------------------------: |
+|[@Keily](https://www.github.com/lenamin) | |
+|[@Lena](https://www.github.com/lenamin) | | 
+| [@May](https://github.com/wonhui-kim) ||
+| [@Neal](https://github.com/lululll) | [SignInView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SignInView.swift) , [UserProfile](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/UserProfile.swift) , [JsonDataList](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/JsonDataList.swift) , [PostContent](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/PostContent.swift) , [QuestionDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerDetailNeal/QuestionDetailView.swift)|
+| [@Pasta](https://www.github.com/mth9406) |[AnswerCardView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerCardPasta/AnswerCardView.swift), [QuestionCardView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerCardPasta/QuestionCardView.swift)|
 
 
 ## :framed_picture: Application Demo
