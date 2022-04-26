@@ -9,7 +9,7 @@
 - 실시간 질문 기능
 - 게시물 및 댓글에 익명 기능
 
-### 미완성 기능
+### 보완될 기능
 - 오늘의 질문 배달 기능
 - 스크랩
 - 로그인 기능(Apple sign with, Kakao Sign with등)
@@ -43,17 +43,7 @@ SwiftUI
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-# 목차
-- 1. 명세
-- 2. error 해결 케이스     
-
-# 1. 명세
-- 폰트는 AppleSDGothic이고, 폰트 사이즈는 15p입니다. 
-- CornerRadius: Rounded Rectangle에 corner round는 19이고, inner rounded rectangle은 8입니다.
-- 색깔은 테마색상은 민트색(#30B0C7), 추가색상(포인트)은 노란색(#ffcc00)으로 한다. 
-
-
-# 2. Trouble Shooting
+## Trouble Shooting
 - 1. clone된 repository의 xcode project에서 simulator가 보이지 않는 현상(xcode version 문제로 target device 버전 지원이 안되어 업데이트로 해결)
-- 2. 전체 View에서 참조 가능한 데이터를 만들고, 데이터값이 변경되면 전체 뷰들또한 업데이트 되도록 만드는 방법(@StateObject, @EnvironmentObject, @ObservedObject, ObservableObject)
+- 2. [전체 View에서 참조 가능한 데이터를 만들고, 데이터값이 변경되면 전체 뷰들또한 업데이트 되도록 만드는 방법(@StateObject, @EnvironmentObject, @ObservedObject, ObservableObject)](https://github.com/yudonlee/TIL/blob/main/iOS/2022/April/2022_04_23.md)
 

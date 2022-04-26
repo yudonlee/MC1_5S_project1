@@ -13,7 +13,7 @@ struct SignInView: View {
     @State var id: String = ""
     @State var password: String = ""
     @State var isSignInSuccess: Bool = false
-    
+//    @Published var ss: String = ""
     
 //    무작정 선언은 불가능하다. ObservableObject를 따라하면 @StateObject, @ObservedObject property wrapper를 사용할 수 있다. 
 //    @ObservedObject private var postFileName: String
