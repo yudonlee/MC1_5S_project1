@@ -60,11 +60,11 @@ struct QuestionDetailView: View {
                             Text(viewModel.postContents[index].name)
                         }
                         Spacer()
-                        Button("edit"){
+                        Button("Edit"){
                             print("s")
                         }
                         
-                        Button("del"){
+                        Button("Del"){
                             print("s")
                         }
                     }
@@ -115,7 +115,7 @@ struct QuestionDetailView: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 24, height: 24)
-                                        Text("Unkown")
+                                        Text("Unknown")
                                     } else {
                                         if let levels = userLevelDic[answer.name] {
                                             Image("lev\(levels)")

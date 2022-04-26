@@ -81,7 +81,7 @@
         "answerCount": "2",
         "answer": [
             {
-                "name": "Ogami",
+                "name": "Neal",
                 "created_at" : 1647806725,
                 "updated_at" : 1647807180,
                 "isAnonymous": false,
@@ -114,7 +114,7 @@
                 "contents": "The reason why the calendar day starts Sunday was recorded in Hebrew as 'starting Sunday week' in Judaism[Yom Rishon] And so that's what we see in Christianity, starting with Sunday."
             },
             {
-                "name": "Ogami",
+                "name": "Neal",
                 "created_at" : 1648065600,
                 "updated_at" : 1648065600,
                 "isAnonymous": false,
@@ -162,7 +162,7 @@
     },
     {
         "title": "I'm curious why you're covering the brand on TV.",
-        "name": "Ogami",
+        "name": "Neal",
         "index": "8",
         "created_at" : 1648377000,
         "updated_at" : 1648377000,
@@ -181,7 +181,7 @@
     },
     {
         "title": "Why do you have to block the light when you're unwinding clams?",
-        "name": "Ogami",
+        "name": "Neal",
         "index": "9",
         "created_at" : 1648465200,
         "updated_at" : 1648465800,
@@ -207,7 +207,7 @@
     },
     {
         "title": "I'm curious about the origin of the enoki mushroom",
-        "name": "Ogami",
+        "name": "Neal",
         "index": "10",
         "created_at" : 1648473300,
         "updated_at" : 1648473300,
@@ -242,7 +242,7 @@
                 "contents": "I hear that sound, too. It sounds like from washing machine"
             },
             {
-                "name": "Ssuri",
+                "name": "Pasta",
                 "created_at" : 1648563000,
                 "updated_at" : 1648563000,
                 "isAnonymous": true,

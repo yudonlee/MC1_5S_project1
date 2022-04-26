@@ -25,10 +25,10 @@
         "scrapList": [2, 10]
     },
     {
-        "name": "Ogami",
+        "name": "Neal",
         "password": "0198",
         "level": 1,
-        "scrapList": [3, 5]
+        "scrapList": [13, 5]
     },
     {
         "name": "Seungwoo",
@@ -124,7 +124,7 @@
     {
         "name": "Romi",
         "password": "5555",
-        "level": 4,
+        "level": 3,
         "scrapList": [8, 9]
     },
     {
@@ -134,7 +134,7 @@
         "scrapList": [1, 2]
     },
     {
-        "name": "Ssuri",
+        "name": "Pasta",
         "password": "2222",
         "level": 4,
         "scrapList": [5, 8]
