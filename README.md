@@ -14,7 +14,7 @@
 - 스크랩
 - 로그인 기능(Apple sign with, Kakao Sign with등)
 ## :people_hugging: Authors
-| Contributor | Roll |
+| Contributor | Role |
 | :-------------: | :------------------------: |
 |[@Keily](https://www.github.com/lenamin) | |
 |[@Lena](https://www.github.com/lenamin) |[SearchAnswerDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchAnswerDetailView.swift), [SearchNoAnswerDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchNoAnswerDetailView.swift), [SearchViewDivView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchViewDivView.swift), [MainTabView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MainTabView.swift)| 
