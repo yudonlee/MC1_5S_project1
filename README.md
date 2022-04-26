@@ -16,15 +16,10 @@
 ## :people_hugging: Authors
 | Contributor | Role |
 | :-------------: | :------------------------: |
-|[@Keily](https://www.github.com/lenamin) | |
+|[@Keily](https://www.github.com/lululll) | |
 |[@Lena](https://www.github.com/lenamin) |[SearchAnswerDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchAnswerDetailView.swift), [SearchNoAnswerDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchNoAnswerDetailView.swift), [SearchViewDivView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchViewDivView.swift), [MainTabView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MainTabView.swift)| 
-| [@May](https://github.com/wonhui-kim) |
-    [MyPageView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyPageView.swift)
-    [MyProfileView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyProfileView.swift)
-    [MyQuestionListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyQuestionListView.swift)
-    [MyAnswerListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyAnswerListView.swift)
-    [MyScrapListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyScrapListView.swift) |
-| [@Neal](https://github.com/lululll) | [SignInView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SignInView.swift) , [UserProfile](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/UserProfile.swift) , [JsonDataList](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/JsonDataList.swift) , [PostContent](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/PostContent.swift) , [QuestionDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerDetailNeal/QuestionDetailView.swift)|
+| [@May](https://github.com/wonhui-kim) | |
+| [@Neal](https://github.com/yudonlee) | [SignInView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SignInView.swift) , [UserProfile](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/UserProfile.swift) , [JsonDataList](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/JsonDataList.swift) , [PostContent](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/PostContent.swift) , [QuestionDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerDetailNeal/QuestionDetailView.swift)|
 | [@Pasta](https://www.github.com/mth9406) |[AnswerCardView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerCardPasta/AnswerCardView.swift), [QuestionCardView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerCardPasta/QuestionCardView.swift)|
 
 
