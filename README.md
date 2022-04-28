@@ -16,7 +16,10 @@
 ## :people_hugging: Authors
 | Contributor | Role |
 | :-------------: | :------------------------: |
-|[@Keily](https://www.github.com/lululll) | |
+|[@Keily](https://www.github.com/lululll) | [HotQuestionListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MainQuestionKeily/HotQuestionListView.swift)
+[RecentQuestionListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MainQuestionKeily/RecentQuestionListView.swift)
+[allQuestionView.swift](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MainQuestionKeily/allQuestionView.swift)
+|
 |[@Lena](https://www.github.com/lenamin) |[SearchAnswerDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchAnswerDetailView.swift), [SearchNoAnswerDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchNoAnswerDetailView.swift), [SearchViewDivView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SearchViewLena/SearchViewDivView.swift), [MainTabView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MainTabView.swift)| 
 | [@May](https://github.com/wonhui-kim) |[MyPageView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyPageView.swift), [MyProfileView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyProfileView.swift), [MyQuestionListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyQuestionListView.swift), [MyAnswerListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyAnswerListView.swift), [MyScrapListView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/MyListMay/MyScrapListView.swift)|
 | [@Neal](https://github.com/yudonlee) | [SignInView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/SignInView.swift) , [UserProfile](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/UserProfile.swift) , [JsonDataList](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/JsonDataList.swift) , [PostContent](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/PostContent.swift) , [QuestionDetailView](https://github.com/yudonlee/MC1_5S_project1/blob/main/MC1_5S_project1/AnswerDetailNeal/QuestionDetailView.swift)|
@@ -51,4 +54,5 @@ SwiftUI
 ## Trouble Shooting
 - 1. clone된 repository의 xcode project에서 simulator가 보이지 않는 현상(xcode version 문제로 target device 버전 지원이 안되어 업데이트로 해결)
 - 2. [전체 View에서 참조 가능한 데이터를 만들고, 데이터값이 변경되면 전체 뷰들또한 업데이트 되도록 만드는 방법(@StateObject, @EnvironmentObject, @ObservedObject, ObservableObject)](https://github.com/yudonlee/TIL/blob/main/iOS/2022/April/2022_04_23.md)
+- 3. [View를 합치는 과정에서 발생한 navigationLink 오류](https://github.com/lululll/-TIL/blob/main/swift/2022_04_28.md)
 
